@@ -1,0 +1,2 @@
+import{a as r,i as o,j as i,k as m}from"/app.framerstatic.com/chunk-DVV27ZNA.mjs";var a=Object.fromEntries(Object.keys(r).map(e=>[e,"off"])),n=new o(a);n.update(l());var c=i(n);function f(e){return m(n,e,t=>t==="on")}function l(){if(globalThis?.framerUser?.isFramerEmployee!==!0)return{};let t={...r};try{let s=JSON.parse(localStorage.employeesOnlySettings||"{}");Object.assign(t,s)}catch{}return t}export{n as a,c as b,f as c};
+//# sourceMappingURL=/app.framerstatic.com/chunk-ZPWGBKH4.mjs.map
