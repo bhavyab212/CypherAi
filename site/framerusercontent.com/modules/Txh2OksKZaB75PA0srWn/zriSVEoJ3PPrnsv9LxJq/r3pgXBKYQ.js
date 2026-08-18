@@ -293,7 +293,7 @@ const getProps = ({
 }) => {
   return {
     ...props,
-    BN3wpCMSK: title ?? props.BN3wpCMSK ?? "Phantom Node Studio",
+    BN3wpCMSK: title ?? props.BN3wpCMSK ?? "Chypher Ai",
     kimQ09aws: link ?? props.kimQ09aws,
     ow9UOALGc: padding ?? props.ow9UOALGc ?? "0px 120px 0px 120px",
     SsyD4X2kj: contactLink ?? props.SsyD4X2kj,
@@ -411,7 +411,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                             "var(--extracted-r6o4lv, var(--token-00af65c3-92fd-4f69-9228-cfe71d95f29a, rgb(0, 0, 0)))",
                         },
                         children: /*#__PURE__*/ _jsx(motion.strong, {
-                          children: "Phantom Node Studio",
+                          children: "Chypher Ai",
                         }),
                       }),
                     }),
@@ -844,7 +844,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                                       "ggW5SjA21",
                                                     children:
                                                       /*#__PURE__*/ _jsx(Link, {
-                                                        href: "https://stfn.lemonsqueezy.com/buy/6a3875eb-f614-4485-a256-49d0247956e4",
+                                                        href: "https://wa.me/919582440495",
                                                         motionChild: true,
                                                         nodeId: "BZPVqunp0",
                                                         openInNewTab: true,
@@ -923,7 +923,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                                             VftTy7iTx: "x",
                                                             width: "100%",
                                                             Z63mvCN3B:
-                                                              "x.com/stfnco",
+                                                              "x.com/Priyans90072914",
                                                           }
                                                         ),
                                                     }
@@ -964,7 +964,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                                               "linkedin",
                                                             width: "100%",
                                                             Z63mvCN3B:
-                                                              "https://www.linkedin.com/in/nickstepuk/",
+                                                              "https://www.linkedin.com/in/priyansh-razz-293154372",
                                                           }
                                                         ),
                                                     }
@@ -1005,7 +1005,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                                               "instagram",
                                                             width: "100%",
                                                             Z63mvCN3B:
-                                                              "https://www.instagram.com/stfnco/",
+                                                              "https://www.instagram.com/thepriyansh06/",
                                                           }
                                                         ),
                                                     }
@@ -1072,7 +1072,7 @@ addPropertyControls(Framerr3pgXBKYQ, {
     type: ControlType.Padding,
   },
   BN3wpCMSK: {
-    defaultValue: "Phantom Node Studio",
+    defaultValue: "Chypher Ai",
     displayTextArea: false,
     title: "Title",
     type: ControlType.String,

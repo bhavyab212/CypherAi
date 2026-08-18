@@ -674,7 +674,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                   "--framer-text-color":
                                     "var(--token-00af65c3-92fd-4f69-9228-cfe71d95f29a, rgb(0, 0, 0))",
                                 },
-                                children: "Hello! Welcome to Phantom Node",
+                                children: "Hello! Welcome to Chypher Ai",
                               }),
                             }),
                             className: "framer-1wcd3ka",
@@ -688,27 +688,38 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                         className: "framer-1y81y3z",
                         "data-framer-name": "heading",
                         children: [
-                          /*#__PURE__*/ _jsx(RichText, {
-                            __fromCanvasComponent: true,
-                            children: /*#__PURE__*/ _jsx(React.Fragment, {
-                              children: /*#__PURE__*/ _jsxs("h1", {
-                                className: "framer-styles-preset-wd4756",
-                                "data-styles-preset": "Aww_5w5bo",
-                                children: [
-                                  /*#__PURE__*/ _jsx("strong", {
-                                    children: "Unlimited",
-                                  }),
-                                  " ",
-                                ],
-                              }),
-                            }),
-                            className: "framer-1wdv21l",
-                            effect: textEffect,
-                            fonts: ["Inter", "Inter-Bold"],
-                            verticalAlignment: "top",
-                            withExternalLayout: true,
-                          }),
-                          /*#__PURE__*/ _jsx(
+                          /*#__PURE__*/ _jsxs("div", {
+                            className: "framer-heading-row",
+                            style: {
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              gap: "inherit",
+                              width: "100%",
+                              flexWrap: "nowrap",
+                            },
+                            children: [
+                              /*#__PURE__*/ _jsx(RichText, {
+                                __fromCanvasComponent: true,
+                                children: /*#__PURE__*/ _jsx(React.Fragment, {
+                                  children: /*#__PURE__*/ _jsxs("h1", {
+                                    className: "framer-styles-preset-wd4756",
+                                    "data-styles-preset": "Aww_5w5bo",
+                                    children: [
+                                      /*#__PURE__*/ _jsx("strong", {
+                                        children: "We build",
+                                      },),
+                                      " ",
+                                    ],
+                                  },),
+                                },),
+                                className: "framer-1wdv21l",
+                                effect: textEffect,
+                                fonts: ["Inter", "Inter-Bold"],
+                                verticalAlignment: "top",
+                                withExternalLayout: true,
+                              },),
+                              /*#__PURE__*/ _jsx(
                             MotionDivWithOptimizedAppearEffect,
                             {
                               animate: animation3,
@@ -852,50 +863,63 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                               ),
                             },
                           ),
-                          /*#__PURE__*/ _jsx(RichText, {
-                            __fromCanvasComponent: true,
-                            children: /*#__PURE__*/ _jsx(React.Fragment, {
-                              children: /*#__PURE__*/ _jsxs("h1", {
-                                className: "framer-styles-preset-wd4756",
-                                "data-styles-preset": "Aww_5w5bo",
-                                style: {
-                                  "--framer-text-color":
-                                    "var(--token-cecefbc2-3137-4c31-97a2-c273c08d7ba5, rgba(0, 0, 0, 0.5))",
-                                },
-                                children: [
-                                  /*#__PURE__*/ _jsx("strong", {
-                                    children: " ",
-                                  }),
-                                  "Design",
-                                ],
-                              }),
-                            }),
-                            className: "framer-1wr3nz2",
-                            effect: textEffect1,
-                            fonts: ["Inter", "Inter-Bold"],
-                            verticalAlignment: "top",
-                            withExternalLayout: true,
+                              /*#__PURE__*/ _jsx(RichText, {
+                                __fromCanvasComponent: true,
+                                children: /*#__PURE__*/ _jsx(React.Fragment, {
+                                  children: /*#__PURE__*/ _jsxs("h1", {
+                                    className: "framer-styles-preset-wd4756",
+                                    "data-styles-preset": "Aww_5w5bo",
+                                    style: {
+                                      "--framer-text-color":
+                                        "var(--token-cecefbc2-3137-4c31-97a2-c273c08d7ba5, rgba(0, 0, 0, 0.5))",
+                                    },
+                                    children: [
+                                      /*#__PURE__*/ _jsx("strong", {
+                                        children: " ",
+                                      },),
+                                      "AI systems",
+                                    ],
+                                  },),
+                                },),
+                                className: "framer-1wr3nz2",
+                                effect: textEffect1,
+                                fonts: ["Inter", "Inter-Bold"],
+                                verticalAlignment: "top",
+                                withExternalLayout: true,
+                              },),
+                            ],
                           }),
-                          /*#__PURE__*/ _jsx(RichText, {
-                            __fromCanvasComponent: true,
-                            children: /*#__PURE__*/ _jsx(React.Fragment, {
-                              children: /*#__PURE__*/ _jsx("h1", {
-                                className: "framer-styles-preset-wd4756",
-                                "data-styles-preset": "Aww_5w5bo",
-                                style: {
-                                  "--framer-text-color":
-                                    "var(--token-cecefbc2-3137-4c31-97a2-c273c08d7ba5, rgba(0, 0, 0, 0.5))",
-                                },
-                                children: "for ",
-                              }),
-                            }),
-                            className: "framer-azanq1",
-                            effect: textEffect1,
-                            fonts: ["Inter"],
-                            verticalAlignment: "top",
-                            withExternalLayout: true,
-                          }),
-                          /*#__PURE__*/ _jsx(
+                          /*#__PURE__*/ _jsxs("div", {
+                            className: "framer-heading-row",
+                            style: {
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              gap: "inherit",
+                              width: "100%",
+                              flexWrap: "nowrap",
+                            },
+                            children: [
+                              /*#__PURE__*/ _jsx(RichText, {
+                                __fromCanvasComponent: true,
+                                children: /*#__PURE__*/ _jsx(React.Fragment, {
+                                  children: /*#__PURE__*/ _jsx("h1", {
+                                    className: "framer-styles-preset-wd4756",
+                                    "data-styles-preset": "Aww_5w5bo",
+                                    style: {
+                                      "--framer-text-color":
+                                        "var(--token-cecefbc2-3137-4c31-97a2-c273c08d7ba5, rgba(0, 0, 0, 0.5))",
+                                    },
+                                    children: "that automate work ",
+                                  },),
+                                },),
+                                className: "framer-azanq1",
+                                effect: textEffect1,
+                                fonts: ["Inter"],
+                                verticalAlignment: "top",
+                                withExternalLayout: true,
+                              },),
+                              /*#__PURE__*/ _jsx(
                             MotionDivWithOptimizedAppearEffect,
                             {
                               animate: animation5,
@@ -1003,22 +1027,24 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                               ),
                             },
                           ),
-                          /*#__PURE__*/ _jsx(RichText, {
-                            __fromCanvasComponent: true,
-                            children: /*#__PURE__*/ _jsx(React.Fragment, {
-                              children: /*#__PURE__*/ _jsx("h1", {
-                                className: "framer-styles-preset-wd4756",
-                                "data-styles-preset": "Aww_5w5bo",
-                                children: /*#__PURE__*/ _jsx("strong", {
-                                  children: " Solid Startups",
-                                }),
-                              }),
-                            }),
-                            className: "framer-d5p526",
-                            effect: textEffect2,
-                            fonts: ["Inter", "Inter-Bold"],
-                            verticalAlignment: "top",
-                            withExternalLayout: true,
+                              /*#__PURE__*/ _jsx(RichText, {
+                                __fromCanvasComponent: true,
+                                children: /*#__PURE__*/ _jsx(React.Fragment, {
+                                  children: /*#__PURE__*/ _jsx("h1", {
+                                    className: "framer-styles-preset-wd4756",
+                                    "data-styles-preset": "Aww_5w5bo",
+                                    children: /*#__PURE__*/ _jsx("strong", {
+                                      children: " accelerate growth",
+                                    },),
+                                  },),
+                                },),
+                                className: "framer-d5p526",
+                                effect: textEffect2,
+                                fonts: ["Inter", "Inter-Bold"],
+                                verticalAlignment: "top",
+                                withExternalLayout: true,
+                              },),
+                            ],
                           }),
                         ],
                       }),
@@ -1079,7 +1105,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                   VftTy7iTx: "Book Consultation",
                                   width: "100%",
                                   Z63mvCN3B:
-                                    "https://stfn.lemonsqueezy.com/buy/6a3875eb-f614-4485-a256-49d0247956e4",
+                                    "https://wa.me/919582440495",
                                 }),
                               }),
                             }),
@@ -2532,7 +2558,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                   wgJNGZUvB: "Sophie Lemaire",
                                   width: "100%",
                                   ZPZP8DvxK:
-                                    "Working with Joris was a game-changer. He instantly understood our vision and translated it into a sleek, intuitive product. The process felt effortless, and the results exceeded our expectations.",
+                                    "Working with Priyansh was a game-changer. He instantly understood our vision and translated it into a sleek, intuitive product. The process felt effortless, and the results exceeded our expectations.",
                                 }),
                               }),
                             }),
@@ -2594,7 +2620,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                   wgJNGZUvB: "Milan Bakker",
                                   width: "100%",
                                   ZPZP8DvxK:
-                                    "Joris brings clarity to chaos. His design work is not only beautiful but deeply strategic. He helped us rebrand from the ground up, and our audience response has been incredible.",
+                                    "Priyansh brings clarity to complex AI problems. His automation work is not only elegant but deeply strategic. He helped us automate operations from the ground up, and our team efficiency has improved dramatically.",
                                 }),
                               }),
                             }),
@@ -3005,7 +3031,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                         "var(--token-00af65c3-92fd-4f69-9228-cfe71d95f29a, rgb(0, 0, 0))",
                                     },
                                     children: /*#__PURE__*/ _jsx("strong", {
-                                      children: "Joris van Dijk",
+                                      children: "Priyansh Razz",
                                     }),
                                   }),
                                 }),
@@ -3047,7 +3073,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                                   VftTy7iTx: "Instagram",
                                                   width: "100%",
                                                   Z63mvCN3B:
-                                                    "https://www.instagram.com/stfnco/",
+                                                    "https://www.instagram.com/thepriyansh06/",
                                                 },
                                               ),
                                             },
@@ -3079,7 +3105,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                                   VftTy7iTx: "Linkedin",
                                                   width: "100%",
                                                   Z63mvCN3B:
-                                                    "https://www.linkedin.com/in/nickstepuk/",
+                                                    "https://www.linkedin.com/in/priyansh-razz-293154372",
                                                 },
                                               ),
                                             },
@@ -3111,7 +3137,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                                   VftTy7iTx: "X",
                                                   width: "100%",
                                                   Z63mvCN3B:
-                                                    "https://x.com/stfnco",
+                                                    "https://x.com/Priyans90072914",
                                                 },
                                               ),
                                             },
@@ -3133,7 +3159,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                             "--framer-text-alignment": "right",
                                           },
                                           children:
-                                            "Phantom Node Studio, Founder",
+                                            "Chypher Ai, Founder",
                                         }),
                                       },
                                     ),
@@ -3163,7 +3189,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                     className: "framer-styles-preset-1ihf1r3",
                                     "data-styles-preset": "ggW5SjA21",
                                     children:
-                                      "Joris van Dijk is a Dutch designer known for his minimalist, expressive digital work. He helps startups and studios create clean interfaces and strong branding. Based in Utrecht, he blends function with emotion ÔÇö and often spends his free time cycling or exploring generative art.",
+                                      "Priyansh Razz is an AI automation specialist and founder of Chypher Ai, building intelligent AI systems, voice agents, aion ÔÇö and often spends his free time cycling or exploring generative art.",
                                   }),
                                 }),
                                 className: "framer-lnjdja",
@@ -3264,7 +3290,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                                   borderTopWidth: 0,
                                                 },
                                                 DCZKUwppc:
-                                                  "Phantom Node Studio Studio",
+                                                  "Chypher Ai",
                                                 height: "100%",
                                                 HVfJAGuBg: "16px 0px 16px 0px",
                                                 id: "sdKE1J34N",
@@ -3660,7 +3686,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                                   "Book a Discovery Call",
                                                 width: "100%",
                                                 Z63mvCN3B:
-                                                  "https://stfn.lemonsqueezy.com/buy/6a3875eb-f614-4485-a256-49d0247956e4",
+                                                  "https://wa.me/919582440495",
                                               },
                                             ),
                                           },
@@ -3682,7 +3708,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                     children: [
                                       "Or, email me at ",
                                       /*#__PURE__*/ _jsx(Link, {
-                                        href: "mailto:contact@phantomnode.ai",
+                                        href: "mailto:Aiwithpriyansh@gmail.com",
                                         motionChild: true,
                                         nodeId: "A6c98nNuzdnAIpsOYx",
                                         openInNewTab: true,
@@ -3693,7 +3719,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                           className:
                                             "framer-styles-preset-1o5inal",
                                           "data-styles-preset": "ddgHoWqw8",
-                                          children: "contact@phantomnode.ai",
+                                          children: "Aiwithpriyansh@gmail.com",
                                         }),
                                       }),
                                     ],

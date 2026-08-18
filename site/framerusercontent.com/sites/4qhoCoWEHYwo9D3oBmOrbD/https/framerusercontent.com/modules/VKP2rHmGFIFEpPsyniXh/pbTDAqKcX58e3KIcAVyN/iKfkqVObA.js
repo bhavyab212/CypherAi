@@ -630,7 +630,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                               variant: "qgjy5j1tw",
                               VftTy7iTx: "Book a free intro call",
                               width: "100%",
-                              Z63mvCN3B: "hello@stfn.co",
+                              Z63mvCN3B: "Aiwithpriyansh@gmail.com",
                             }),
                           }
                         ),
@@ -670,7 +670,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                               "--framer-text-color":
                                 "var(--extracted-r6o4lv, var(--token-cd9f24d5-f0ad-4213-bead-63c4e991dc40, rgb(255, 255, 255)))",
                             },
-                            children: "\xa9 Phantom Node Studio, 2026",
+                            children: "\xa9 Chypher Ai, 2026",
                           }),
                         }),
                         className: "framer-1iy3v4h",
@@ -849,7 +849,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                 variant: "CoTy2wjpS",
                                 VftTy7iTx: "Book a free intro call",
                                 width: "100%",
-                                Z63mvCN3B: "hello@stfn.co",
+                                Z63mvCN3B: "Aiwithpriyansh@gmail.com",
                               }),
                             }
                           ),
@@ -1010,7 +1010,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                 variant: "CoTy2wjpS",
                                 VftTy7iTx: "Book a free intro call",
                                 width: "100%",
-                                Z63mvCN3B: "x.com/stfnco",
+                                Z63mvCN3B: "x.com/Priyans90072914",
                               }),
                             }
                           ),
@@ -1171,7 +1171,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                 variant: "CoTy2wjpS",
                                 VftTy7iTx: "Book a free intro call",
                                 width: "100%",
-                                Z63mvCN3B: "linkedin.com",
+                                Z63mvCN3B: "linkedin.com/in/priyansh-razz-293154372",
                               }),
                             }
                           ),
@@ -1332,7 +1332,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                 variant: "CoTy2wjpS",
                                 VftTy7iTx: "Book a free intro call",
                                 width: "100%",
-                                Z63mvCN3B: "instagram.com/stfnco",
+                                Z63mvCN3B: "instagram.com/thepriyansh06",
                               }),
                             }
                           ),

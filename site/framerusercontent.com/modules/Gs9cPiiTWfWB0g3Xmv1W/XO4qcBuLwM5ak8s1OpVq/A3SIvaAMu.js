@@ -1184,7 +1184,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                   id: "z6A5Yeoy9",
                                   layoutId: "z6A5Yeoy9",
                                   nmLZt8IGj:
-                                    "https://stfn.lemonsqueezy.com/buy/bdea8d71-7a0c-4928-b1a2-72c6bec0c4b5",
+                                    "https://wa.me/919582440495",
                                   qR8hvECGg: "Demo and free download",
                                   style: { width: "100%" },
                                   width: "100%",

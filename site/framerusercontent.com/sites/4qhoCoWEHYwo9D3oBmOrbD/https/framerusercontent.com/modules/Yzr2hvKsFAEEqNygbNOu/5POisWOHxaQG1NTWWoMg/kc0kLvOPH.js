@@ -227,7 +227,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                           },
                         },
                         children: /*#__PURE__*/ _jsx(Nav, {
-                          BN3wpCMSK: "Phantom Node Studio",
+                          BN3wpCMSK: "Chypher Ai",
                           height: "100%",
                           id: "Oyt7QQ6s0",
                           kimQ09aws: resolvedLinks[0],

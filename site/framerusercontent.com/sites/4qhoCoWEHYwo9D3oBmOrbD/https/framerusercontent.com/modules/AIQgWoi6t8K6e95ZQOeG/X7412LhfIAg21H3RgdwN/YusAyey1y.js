@@ -114,7 +114,7 @@ const getProps = ({
   return {
     ...props,
     rU2IDww5W: padding ?? props.rU2IDww5W ?? "96px 48px 96px 48px",
-    RygS6snOe: role ?? props.RygS6snOe ?? "Phantom Node Studio, Founder",
+    RygS6snOe: role ?? props.RygS6snOe ?? "Chypher Ai, Founder",
     variant:
       humanReadableVariantMap[props.variant] ?? props.variant ?? "nKuzuvOd8",
     VVEudFRYM: avatar ?? props.VVEudFRYM,
@@ -310,7 +310,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                             children: /*#__PURE__*/ _jsx(motion.p, {
                               className: "framer-styles-preset-21ogod",
                               "data-styles-preset": "xZndidUCt",
-                              children: "Phantom Node Studio, Founder",
+                              children: "Chypher Ai, Founder",
                             }),
                           }),
                           className: "framer-4au6qu",
@@ -517,7 +517,7 @@ addPropertyControls(FramerYusAyey1y, {
     type: ControlType.String,
   },
   RygS6snOe: {
-    defaultValue: "Phantom Node Studio, Founder",
+    defaultValue: "Chypher Ai, Founder",
     displayTextArea: false,
     title: "Role",
     type: ControlType.String,

@@ -4,9 +4,9 @@ export default function metadata(params, activeLocale) {
     customHTMLBodyStart:
       '<!-- Plugin: 4547ab --> <script>document.body.style.overscrollBehavior = "none";</script>',
     description:
-      "Phantom Node Studio is a free minimal and elegant portfolio template made for product, software, and digital designers to share their work quickly and effectively.",
+      "Chypher Ai is a free minimal and elegant portfolio template made for product, software, and digital designers to share their work quickly and effectively.",
     robots: "max-image-preview:large",
-    title: "Phantom Node Studio — a Design Craftsman's Portfolio Template",
+    title: "Chypher Ai — a Design Craftsman's Portfolio Template",
   };
 }
 export const metadataVersion = 1;

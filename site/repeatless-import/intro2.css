@@ -1,0 +1,109 @@
+/* ============================================================
+   Intro replacement — "Hello!" statement + floating skill pills.
+   Replaces the native #intro section (fixed absolute-pixel pill
+   positions broke on narrow viewports and felt sparse/small).
+   ============================================================ */
+
+.intro2-section {
+  position: relative;
+  min-height: 100svh;
+  width: 100%;
+  overflow: hidden;
+  background: #f4f1ec;
+  display: flex;
+  align-items: center;
+  padding: 6rem 1.5rem;
+}
+.intro2-glow {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(circle at 50% 40%, rgba(109,33,240,0.10) 0%, transparent 55%);
+  animation: intro2-glow-pulse 8s ease-in-out infinite;
+}
+@keyframes intro2-glow-pulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+.intro2-grid {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin-inline: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 2.5rem;
+}
+@media (min-width: 1100px) {
+  .intro2-grid { grid-template-columns: minmax(0,1fr) minmax(0,1.4fr) minmax(0,1fr); gap: 1.5rem; }
+}
+
+.intro2-center { text-align: center; order: 1; }
+@media (min-width: 1100px) { .intro2-center { order: 2; } }
+
+.intro2-eyebrow {
+  display: flex; align-items: center; justify-content: center; gap: 1rem;
+  font-family: "Instrument Serif", "Instrument Serif Placeholder", serif; font-style: italic;
+  color: rgba(0,0,0,0.5); font-size: 1.5rem; margin-bottom: 1.5rem;
+}
+.intro2-eyebrow::before, .intro2-eyebrow::after { content: ""; height: 1px; width: 48px; background: #c9c3b4; }
+
+.intro2-heading {
+  font-family: "Inter Display", "Inter Display Placeholder", sans-serif;
+  font-feature-settings: 'salt' on;
+  font-size: clamp(1.9rem, 4.6vw, 3.6rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+  color: #000;
+  margin: 0;
+}
+
+.intro2-pills { display: flex; flex-direction: column; gap: 1.1rem; order: 2; }
+.intro2-pills--left { align-items: flex-end; order: 1; }
+.intro2-pills--right { align-items: flex-start; order: 3; }
+@media (max-width: 1099.98px) {
+  .intro2-pills { flex-direction: row; flex-wrap: wrap; justify-content: center; order: 3 !important; }
+  .intro2-pills--left, .intro2-pills--right { align-items: center; }
+}
+
+.intro2-pill {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  background: #fff; border-radius: 9999px; padding: 0.55rem 1.1rem 0.55rem 0.55rem;
+  box-shadow: 0 10px 24px rgba(20,16,8,0.08);
+  font-size: 0.92rem; font-weight: 600; color: #171310;
+  white-space: nowrap;
+  animation: intro2-float 5s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.intro2-pill:hover { transform: translateY(-6px) scale(1.05) !important; box-shadow: 0 18px 34px rgba(20,16,8,0.16); animation-play-state: paused; }
+@keyframes intro2-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-1.5deg); }
+}
+.intro2-pills--right .intro2-pill { animation-name: intro2-float-r; }
+@keyframes intro2-float-r {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1.5deg); }
+}
+
+.intro2-pill__icon {
+  display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9999px; color: #fff; flex-shrink: 0;
+}
+.intro2-pill__icon svg { width: 15px; height: 15px; }
+
+/* scroll-reveal (JS toggles .intro2-word--in) */
+.intro2-word {
+  display: inline-block;
+  opacity: 0.18;
+  filter: blur(3px);
+  transform: translateY(8px);
+  transition: opacity 0.5s cubic-bezier(0.44,0,0.56,1), filter 0.5s cubic-bezier(0.44,0,0.56,1), transform 0.5s cubic-bezier(0.44,0,0.56,1);
+}
+.intro2-word--in { opacity: 1; filter: blur(0); transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .intro2-pill, .intro2-glow { animation: none; }
+}

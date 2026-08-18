@@ -153,13 +153,13 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                 scopeId: "EymusuWxe",
                 children: /*#__PURE__*/ _jsx(Accordion, {
                   eEvLkW4gn:
-                    "What’s the difference between a subscription and a custom project?",
+                    "How long does development take?",
                   height: "100%",
                   id: "M62WJU1r1",
                   K69WR0DKh: /*#__PURE__*/ _jsx(React.Fragment, {
                     children: /*#__PURE__*/ _jsx("p", {
                       children:
-                        "The subscription is ongoing and flexible — ideal for continuous design needs. Custom projects are one-time, fixed-scope engagements for larger goals like a rebrand or product launch.",
+                        "Most custom AI automation workflows, AI agents, and integrations are built, thoroughly tested, and deployed within 2 to 4 weeks, depending on the project scope.",
                     }),
                   }),
                   layoutId: "M62WJU1r1",
@@ -185,13 +185,13 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                 rendersWithMotion: true,
                 scopeId: "EymusuWxe",
                 children: /*#__PURE__*/ _jsx(Accordion, {
-                  eEvLkW4gn: "How fast is the turnaround?",
+                  eEvLkW4gn: "Can AI integrate with our existing CRM and tools?",
                   height: "100%",
                   id: "K5xtPqjXp",
                   K69WR0DKh: /*#__PURE__*/ _jsx(React.Fragment, {
                     children: /*#__PURE__*/ _jsx("p", {
                       children:
-                        "Most requests are delivered within 1–2 business days. Larger tasks may take longer, but you’ll always be kept in the loop.",
+                        "Yes. We integrate seamlessly with all major CRMs and business platforms including HubSpot, Salesforce, GoHighLevel, Airtable, Notion, WhatsApp Business API, Slack, and custom databases via REST & GraphQL APIs.",
                     }),
                   }),
                   layoutId: "K5xtPqjXp",
@@ -217,13 +217,13 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                 rendersWithMotion: true,
                 scopeId: "EymusuWxe",
                 children: /*#__PURE__*/ _jsx(Accordion, {
-                  eEvLkW4gn: "How many requests can I make?",
+                  eEvLkW4gn: "Can your AI agents handle phone calls and voice conversations?",
                   height: "100%",
                   id: "Ws6qEQlJZ",
                   K69WR0DKh: /*#__PURE__*/ _jsx(React.Fragment, {
                     children: /*#__PURE__*/ _jsx("p", {
                       children:
-                        "As many as you like — with a subscription, you can queue unlimited requests, and they’ll be handled one at a time in priority order.",
+                        "Yes. Our intelligent voice AI agents handle inbound and outbound calls with human-like conversation flow to qualify leads, book appointments, and answer customer questions 24/7.",
                     }),
                   }),
                   layoutId: "Ws6qEQlJZ",
@@ -249,13 +249,13 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                 rendersWithMotion: true,
                 scopeId: "EymusuWxe",
                 children: /*#__PURE__*/ _jsx(Accordion, {
-                  eEvLkW4gn: "What types of design do you handle?",
+                  eEvLkW4gn: "What AI models and technologies do you use?",
                   height: "100%",
                   id: "Adqwpo0ne",
                   K69WR0DKh: /*#__PURE__*/ _jsx(React.Fragment, {
                     children: /*#__PURE__*/ _jsx("p", {
                       children:
-                        "Websites, product UI, landing pages, brand assets, decks, social media visuals — anything digital that needs to look and feel sharp.",
+                        "We architect solutions using top-tier foundation models including OpenAI (GPT-4o), Anthropic Claude, Google Gemini, and open-source models (Llama), paired with n8n, Make, ElevenLabs, Twilio, and PostgreSQL.",
                     }),
                   }),
                   layoutId: "Adqwpo0ne",
@@ -283,13 +283,13 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                 rendersWithMotion: true,
                 scopeId: "EymusuWxe",
                 children: /*#__PURE__*/ _jsx(Accordion, {
-                  eEvLkW4gn: "What tools do you use?",
+                  eEvLkW4gn: "Do we need technical knowledge to manage the systems?",
                   height: "100%",
                   id: "B85UnowYv",
                   K69WR0DKh: /*#__PURE__*/ _jsx(React.Fragment, {
                     children: /*#__PURE__*/ _jsx("p", {
                       children:
-                        "Figma for design, Notion for task management, and Slack or email for async communication.",
+                        "No technical knowledge required. We handle everything end-to-end — architecture, development, integrations, and deployment — and provide full training and documentation for your team.",
                     }),
                   }),
                   layoutId: "B85UnowYv",
@@ -317,13 +317,13 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                 rendersWithMotion: true,
                 scopeId: "EymusuWxe",
                 children: /*#__PURE__*/ _jsx(Accordion, {
-                  eEvLkW4gn: "Can I pause the subscription?",
+                  eEvLkW4gn: "Can you build custom CRMs and internal AI tools?",
                   height: "100%",
                   id: "i30kPEjuZ",
                   K69WR0DKh: /*#__PURE__*/ _jsx(React.Fragment, {
                     children: /*#__PURE__*/ _jsx("p", {
                       children:
-                        "Yes — you can pause anytime and resume when you’re ready. Unused days roll over.",
+                        "Yes. We build tailor-made CRMs, internal company assistants trained on your SOPs, automated document processing systems, and custom analytics dashboards tailored to your exact workflows.",
                     }),
                   }),
                   layoutId: "i30kPEjuZ",
@@ -351,13 +351,13 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                 rendersWithMotion: true,
                 scopeId: "EymusuWxe",
                 children: /*#__PURE__*/ _jsx(Accordion, {
-                  eEvLkW4gn: "Do you offer development too?",
+                  eEvLkW4gn: "Do you provide ongoing support and maintenance?",
                   height: "100%",
                   id: "wwFnYP2IF",
                   K69WR0DKh: /*#__PURE__*/ _jsx(React.Fragment, {
                     children: /*#__PURE__*/ _jsx("p", {
                       children:
-                        "Joris focuses on design only, but all deliverables are dev-ready. He can also recommend trusted no-code or Webflow/Framer developers if needed.",
+                        "Yes. We provide ongoing maintenance, model monitoring, prompt optimizations, and technical support to ensure your AI workflows continue operating reliably as your business scales.",
                     }),
                   }),
                   layoutId: "wwFnYP2IF",

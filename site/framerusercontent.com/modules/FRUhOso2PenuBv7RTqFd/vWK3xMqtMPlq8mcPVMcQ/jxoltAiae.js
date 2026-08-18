@@ -456,7 +456,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                     VftTy7iTx: "Book Free Discovery Call",
                                     width: "100%",
                                     Z63mvCN3B:
-                                      "https://stfn.lemonsqueezy.com/buy/6a3875eb-f614-4485-a256-49d0247956e4",
+                                      "https://wa.me/919582440495",
                                   }),
                                 }
                               ),

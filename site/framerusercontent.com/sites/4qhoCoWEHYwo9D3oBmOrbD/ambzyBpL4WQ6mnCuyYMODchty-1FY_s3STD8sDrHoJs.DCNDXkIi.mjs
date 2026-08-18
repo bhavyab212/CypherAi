@@ -1,262 +1,136 @@
 
 const PROJECTS_DB = {
-  "nitro": {
-    uTZAUbA1P: "nitro",
-    uLRpQRGcH: "Nitro",
-    V48QqcuXU: "Nitro — Design System & Web Template",
-    rm2tapp6I: "https://nitro.framer.website",
-    lQBdWmB0N: "Designers often struggle to create visually striking and engaging websites that stand out in a competitive market, lacking the time or expertise to implement advanced layouts and intricate details that captivate visitors.",
-    dnVagKu6Z: "Nitro addresses this challenge by offering a premium Framer template designed for designers. With its advanced layout and attention to detail, Nitro enables designers to create visually stunning websites that capture the attention of visitors. Its success, with over 200 copies sold, highlights its effectiveness in helping designers create standout websites in a competitive market.",
-    tS_yc4nrS: {
-      src: "/framerusercontent.com/images/3aXWeqXIIYMcGQPJZLsEszLm4GE.jpg",
-      srcSet: "/framerusercontent.com/images/3aXWeqXIIYMcGQPJZLsEszLm4GE.jpg?scale-down-to=512 512w, /framerusercontent.com/images/3aXWeqXIIYMcGQPJZLsEszLm4GE.jpg?scale-down-to=1024 1024w, /framerusercontent.com/images/3aXWeqXIIYMcGQPJZLsEszLm4GE.jpg 2560w",
-      alt: "Nitro"
-    },
-    Ilm_tuKWl: {
-      src: "/framerusercontent.com/images/Nv7Y0EONdiLsrTQTVKfynGHZk.jpg",
-      srcSet: "/framerusercontent.com/images/Nv7Y0EONdiLsrTQTVKfynGHZk.jpg?scale-down-to=512 512w, /framerusercontent.com/images/Nv7Y0EONdiLsrTQTVKfynGHZk.jpg 1920w",
-      alt: "Nitro Gallery 1"
-    },
-    gFi3QPm5F: {
-      src: "/framerusercontent.com/images/vPgjgDdSTcYpr6ZW53k7BHvJlNU.jpg",
-      srcSet: "/framerusercontent.com/images/vPgjgDdSTcYpr6ZW53k7BHvJlNU.jpg?scale-down-to=512 512w, /framerusercontent.com/images/vPgjgDdSTcYpr6ZW53k7BHvJlNU.jpg 2560w",
-      alt: "Nitro Gallery 2"
-    },
-    rA8UF9a3f: {
-      src: "/framerusercontent.com/images/yT3Ik3lEHmhWdMWkxOspHhMWJ1M.jpg",
-      srcSet: "/framerusercontent.com/images/yT3Ik3lEHmhWdMWkxOspHhMWJ1M.jpg?scale-down-to=512 512w, /framerusercontent.com/images/yT3Ik3lEHmhWdMWkxOspHhMWJ1M.jpg 2560w",
-      alt: "Nitro Gallery 3"
-    },
-    i9fTNB1vg: [
-      { id: "1", name: "Design System" },
-      { id: "2", name: "Web Development" }
-    ]
-  },
   "strida": {
     uTZAUbA1P: "strida",
     uLRpQRGcH: "Strida",
     V48QqcuXU: "Strida — Full-Screen Portfolio",
+    lQBdWmB0N: "portfolio",
+    dnVagKu6Z: "sidebar",
     rm2tapp6I: "https://strida.framer.website",
-    lQBdWmB0N: "Many designers need a minimalist yet expressive canvas that lets their work take center stage without clutter, standard navigation limitations, or sluggish page transitions.",
-    dnVagKu6Z: "Strida provides an intuitive, high-performance layout featuring full-bleed imagery, refined micro-interactions, and fluid slide-in panels.",
+    Ilm_tuKWl: "UI/UX, Web Design",
+    gFi3QPm5F: "Framer, React",
+    rA8UF9a3f: "2024 / 2 Weeks",
     tS_yc4nrS: {
       src: "/framerusercontent.com/images/aLickQcDkn7JlTftxkq33tHE.jpg",
-      srcSet: "/framerusercontent.com/images/aLickQcDkn7JlTftxkq33tHE.jpg?scale-down-to=512 512w, /framerusercontent.com/images/aLickQcDkn7JlTftxkq33tHE.jpg?scale-down-to=1024 1024w, /framerusercontent.com/images/aLickQcDkn7JlTftxkq33tHE.jpg 2560w",
+      srcSet: "/framerusercontent.com/images/aLickQcDkn7JlTftxkq33tHE.jpg?scale-down-to=512 512w,/framerusercontent.com/images/aLickQcDkn7JlTftxkq33tHE.jpg?scale-down-to=1024 1024w,/framerusercontent.com/images/aLickQcDkn7JlTftxkq33tHE.jpg 2560w",
       alt: "Strida"
-    },
-    Ilm_tuKWl: {
-      src: "/framerusercontent.com/images/cpbJvQoTTkomFOd8RSNsHF3b8.jpg",
-      srcSet: "/framerusercontent.com/images/cpbJvQoTTkomFOd8RSNsHF3b8.jpg?scale-down-to=512 512w, /framerusercontent.com/images/cpbJvQoTTkomFOd8RSNsHF3b8.jpg 1920w",
-      alt: "Strida Gallery 1"
-    },
-    gFi3QPm5F: {
-      src: "/framerusercontent.com/images/TWgBR6dpy8VfcVcGIy2oyBYzyY.jpg",
-      srcSet: "/framerusercontent.com/images/TWgBR6dpy8VfcVcGIy2oyBYzyY.jpg?scale-down-to=512 512w, /framerusercontent.com/images/TWgBR6dpy8VfcVcGIy2oyBYzyY.jpg 2560w",
-      alt: "Strida Gallery 2"
-    },
-    rA8UF9a3f: {
-      src: "/framerusercontent.com/images/aLickQcDkn7JlTftxkq33tHE.jpg",
-      srcSet: "/framerusercontent.com/images/aLickQcDkn7JlTftxkq33tHE.jpg?scale-down-to=512 512w, /framerusercontent.com/images/aLickQcDkn7JlTftxkq33tHE.jpg 2560w",
-      alt: "Strida Gallery 3"
-    },
-    i9fTNB1vg: [
-      { id: "1", name: "UI/UX Design" },
-      { id: "2", name: "Web Development" }
-    ]
+    }
+  },
+  "nitro": {
+    uTZAUbA1P: "nitro",
+    uLRpQRGcH: "Nitro",
+    V48QqcuXU: "Nitro — Design System & Web Template",
+    lQBdWmB0N: "Design System",
+    dnVagKu6Z: "Web",
+    rm2tapp6I: "https://nitro.framer.website",
+    Ilm_tuKWl: "Design System",
+    gFi3QPm5F: "Framer, React",
+    rA8UF9a3f: "2024 / 3 Weeks",
+    tS_yc4nrS: {
+      src: "/framerusercontent.com/images/3aXWeqXIIYMcGQPJZLsEszLm4GE.jpg",
+      srcSet: "/framerusercontent.com/images/3aXWeqXIIYMcGQPJZLsEszLm4GE.jpg?scale-down-to=512 512w,/framerusercontent.com/images/3aXWeqXIIYMcGQPJZLsEszLm4GE.jpg?scale-down-to=1024 1024w,/framerusercontent.com/images/3aXWeqXIIYMcGQPJZLsEszLm4GE.jpg 2560w",
+      alt: "Nitro"
+    }
   },
   "bravo": {
     uTZAUbA1P: "bravo",
     uLRpQRGcH: "Bravo",
     V48QqcuXU: "Bravo — Mobile Application Experience",
+    lQBdWmB0N: "UI/UX",
+    dnVagKu6Z: "App",
     rm2tapp6I: "https://bravo.framer.website",
-    lQBdWmB0N: "Mobile app users drop off quickly if the onboarding experience is confusing or visual hierarchy lacks clarity.",
-    dnVagKu6Z: "Bravo delivers dynamic gesture-based interactions, cohesive typography, and high-impact visual feedback.",
+    Ilm_tuKWl: "Mobile App Design",
+    gFi3QPm5F: "Framer, iOS",
+    rA8UF9a3f: "2024 / 4 Weeks",
     tS_yc4nrS: {
       src: "/framerusercontent.com/images/ISAjHKBwJV6BJzD55lhE8XAFBM.jpg",
-      srcSet: "/framerusercontent.com/images/ISAjHKBwJV6BJzD55lhE8XAFBM.jpg?scale-down-to=512 512w, /framerusercontent.com/images/ISAjHKBwJV6BJzD55lhE8XAFBM.jpg?scale-down-to=1024 1024w, /framerusercontent.com/images/ISAjHKBwJV6BJzD55lhE8XAFBM.jpg 2560w",
+      srcSet: "/framerusercontent.com/images/ISAjHKBwJV6BJzD55lhE8XAFBM.jpg?scale-down-to=512 512w,/framerusercontent.com/images/ISAjHKBwJV6BJzD55lhE8XAFBM.jpg?scale-down-to=1024 1024w,/framerusercontent.com/images/ISAjHKBwJV6BJzD55lhE8XAFBM.jpg 2560w",
       alt: "Bravo"
-    },
-    Ilm_tuKWl: {
-      src: "/framerusercontent.com/images/J4Ox47KYv4g8Lb2C0PXNkjDaA.jpg",
-      srcSet: "/framerusercontent.com/images/J4Ox47KYv4g8Lb2C0PXNkjDaA.jpg?scale-down-to=512 512w, /framerusercontent.com/images/J4Ox47KYv4g8Lb2C0PXNkjDaA.jpg 1920w",
-      alt: "Bravo Gallery 1"
-    },
-    gFi3QPm5F: {
-      src: "/framerusercontent.com/images/0Y1cjcOdQp68PBw6G3HHfHz6TYo.jpg",
-      srcSet: "/framerusercontent.com/images/0Y1cjcOdQp68PBw6G3HHfHz6TYo.jpg?scale-down-to=512 512w, /framerusercontent.com/images/0Y1cjcOdQp68PBw6G3HHfHz6TYo.jpg 2560w",
-      alt: "Bravo Gallery 2"
-    },
-    rA8UF9a3f: {
-      src: "/framerusercontent.com/images/ISAjHKBwJV6BJzD55lhE8XAFBM.jpg",
-      srcSet: "/framerusercontent.com/images/ISAjHKBwJV6BJzD55lhE8XAFBM.jpg?scale-down-to=512 512w, /framerusercontent.com/images/ISAjHKBwJV6BJzD55lhE8XAFBM.jpg 2560w",
-      alt: "Bravo Gallery 3"
-    },
-    i9fTNB1vg: [
-      { id: "1", name: "Mobile App" },
-      { id: "2", name: "Interaction Design" }
-    ]
+    }
   },
   "fargo": {
     uTZAUbA1P: "fargo",
     uLRpQRGcH: "Fargo",
     V48QqcuXU: "Fargo — SaaS Platform & Design System",
+    lQBdWmB0N: "SaaS",
+    dnVagKu6Z: "Web",
     rm2tapp6I: "https://fargo.framer.website",
-    lQBdWmB0N: "Complex analytical data often overwhelms users, leading to lower engagement and subscription churn.",
-    dnVagKu6Z: "Fargo unifies dark mode contrast, modular component cards, and real-time visualization widgets into an effortless dashboard.",
+    Ilm_tuKWl: "SaaS UI/UX, Design System",
+    gFi3QPm5F: "Framer, Next.js",
+    rA8UF9a3f: "2023 / 5 Weeks",
     tS_yc4nrS: {
       src: "/framerusercontent.com/images/vzQsCEYy7zN2RmDQcgrizz0O0MI.jpg",
-      srcSet: "/framerusercontent.com/images/vzQsCEYy7zN2RmDQcgrizz0O0MI.jpg?scale-down-to=512 512w, /framerusercontent.com/images/vzQsCEYy7zN2RmDQcgrizz0O0MI.jpg?scale-down-to=1024 1024w, /framerusercontent.com/images/vzQsCEYy7zN2RmDQcgrizz0O0MI.jpg 2560w",
+      srcSet: "/framerusercontent.com/images/vzQsCEYy7zN2RmDQcgrizz0O0MI.jpg?scale-down-to=512 512w,/framerusercontent.com/images/vzQsCEYy7zN2RmDQcgrizz0O0MI.jpg?scale-down-to=1024 1024w,/framerusercontent.com/images/vzQsCEYy7zN2RmDQcgrizz0O0MI.jpg 2560w",
       alt: "Fargo"
-    },
-    Ilm_tuKWl: {
-      src: "/framerusercontent.com/images/670uUrkwoRnzhCl9b3kEMwUmgE4.jpg",
-      srcSet: "/framerusercontent.com/images/670uUrkwoRnzhCl9b3kEMwUmgE4.jpg?scale-down-to=512 512w, /framerusercontent.com/images/670uUrkwoRnzhCl9b3kEMwUmgE4.jpg 1920w",
-      alt: "Fargo Gallery 1"
-    },
-    gFi3QPm5F: {
-      src: "/framerusercontent.com/images/9nNEv94U4EwW3ZkcswuOBMt2jk.jpg",
-      srcSet: "/framerusercontent.com/images/9nNEv94U4EwW3ZkcswuOBMt2jk.jpg?scale-down-to=512 512w, /framerusercontent.com/images/9nNEv94U4EwW3ZkcswuOBMt2jk.jpg 2560w",
-      alt: "Fargo Gallery 2"
-    },
-    rA8UF9a3f: {
-      src: "/framerusercontent.com/images/vzQsCEYy7zN2RmDQcgrizz0O0MI.jpg",
-      srcSet: "/framerusercontent.com/images/vzQsCEYy7zN2RmDQcgrizz0O0MI.jpg?scale-down-to=512 512w, /framerusercontent.com/images/vzQsCEYy7zN2RmDQcgrizz0O0MI.jpg 2560w",
-      alt: "Fargo Gallery 3"
-    },
-    i9fTNB1vg: [
-      { id: "1", name: "SaaS Design" },
-      { id: "2", name: "Brand Identity" }
-    ]
+    }
   },
   "remix-supply": {
     uTZAUbA1P: "remix-supply",
     uLRpQRGcH: "Remix Supply",
     V48QqcuXU: "Remix Supply — Free and Premium Templates",
+    lQBdWmB0N: "Personal",
+    dnVagKu6Z: "Templates",
     rm2tapp6I: "https://remix.supply",
-    lQBdWmB0N: "Designers and makers often struggle to efficiently showcase their skills online, facing challenges such as time constraints and limited resources to create compelling portfolios or presentations of their work.",
-    dnVagKu6Z: "Remix offers a neatly crafted collection of free and premium Framer templates designed for various purposes. These templates are meticulously crafted to help users quickly and effectively showcase their skills, saving them valuable time and resources.",
+    Ilm_tuKWl: "Template Design",
+    gFi3QPm5F: "Framer",
+    rA8UF9a3f: "2024 / 3 Weeks",
     tS_yc4nrS: {
       src: "/framerusercontent.com/images/ZOgoP4GVcZkc3vOPq5dGClu5Ohw.jpg",
-      srcSet: "/framerusercontent.com/images/ZOgoP4GVcZkc3vOPq5dGClu5Ohw.jpg?scale-down-to=512 512w, /framerusercontent.com/images/ZOgoP4GVcZkc3vOPq5dGClu5Ohw.jpg 2880w",
+      srcSet: "/framerusercontent.com/images/ZOgoP4GVcZkc3vOPq5dGClu5Ohw.jpg?scale-down-to=512 512w,/framerusercontent.com/images/ZOgoP4GVcZkc3vOPq5dGClu5Ohw.jpg?scale-down-to=1024 1024w,/framerusercontent.com/images/ZOgoP4GVcZkc3vOPq5dGClu5Ohw.jpg 2880w",
       alt: "Remix Supply"
-    },
-    Ilm_tuKWl: {
-      src: "/framerusercontent.com/images/DyV7fKrQqiHgVKVDl2OSRiMzSw.jpg",
-      srcSet: "/framerusercontent.com/images/DyV7fKrQqiHgVKVDl2OSRiMzSw.jpg?scale-down-to=512 512w, /framerusercontent.com/images/DyV7fKrQqiHgVKVDl2OSRiMzSw.jpg 2880w",
-      alt: "Remix Supply Gallery 1"
-    },
-    gFi3QPm5F: {
-      src: "/framerusercontent.com/images/8FtrILgixMVCYlEzAhKV3dMFQ.jpg",
-      srcSet: "/framerusercontent.com/images/8FtrILgixMVCYlEzAhKV3dMFQ.jpg?scale-down-to=512 512w, /framerusercontent.com/images/8FtrILgixMVCYlEzAhKV3dMFQ.jpg 2880w",
-      alt: "Remix Supply Gallery 2"
-    },
-    rA8UF9a3f: {
-      src: "/framerusercontent.com/images/7Fk8nCPTGiwHY2QVcT7NGezVss.jpg",
-      srcSet: "/framerusercontent.com/images/7Fk8nCPTGiwHY2QVcT7NGezVss.jpg?scale-down-to=512 512w, /framerusercontent.com/images/7Fk8nCPTGiwHY2QVcT7NGezVss.jpg 2880w",
-      alt: "Remix Supply Gallery 3"
-    },
-    i9fTNB1vg: [
-      { id: "1", name: "Templates" },
-      { id: "2", name: "Framer" }
-    ]
+    }
   },
   "easyfast": {
     uTZAUbA1P: "easyfast",
     uLRpQRGcH: "Easyfast",
     V48QqcuXU: "Easyfast — Fast Framer Website Development",
+    lQBdWmB0N: "Productized",
+    dnVagKu6Z: "Web",
     rm2tapp6I: "https://easyfast.design",
-    lQBdWmB0N: "Many businesses struggle with the time and effort required to launch a website quickly while ensuring it is memorable and engaging for their audience.",
-    dnVagKu6Z: "Easyfast provides a productized service focused on fast Framer website development. The incorporation of a bunny logo and subtle roll animation adds catchy elements that make the website memorable, helping businesses launch their online presence quickly and effectively.",
+    Ilm_tuKWl: "Fast Website Dev",
+    gFi3QPm5F: "Framer",
+    rA8UF9a3f: "2024 / 3 Weeks",
     tS_yc4nrS: {
       src: "/framerusercontent.com/images/0PD0eqWSc3SRlPrXeMm5i4vBEs.jpg",
-      srcSet: "/framerusercontent.com/images/0PD0eqWSc3SRlPrXeMm5i4vBEs.jpg?scale-down-to=512 512w, /framerusercontent.com/images/0PD0eqWSc3SRlPrXeMm5i4vBEs.jpg 2560w",
+      srcSet: "/framerusercontent.com/images/0PD0eqWSc3SRlPrXeMm5i4vBEs.jpg?scale-down-to=512 512w,/framerusercontent.com/images/0PD0eqWSc3SRlPrXeMm5i4vBEs.jpg?scale-down-to=1024 1024w,/framerusercontent.com/images/0PD0eqWSc3SRlPrXeMm5i4vBEs.jpg 2560w",
       alt: "Easyfast"
-    },
-    Ilm_tuKWl: {
-      src: "/framerusercontent.com/images/3TSLjUYOG93NJsPHuWtBrR95U.jpg",
-      srcSet: "/framerusercontent.com/images/3TSLjUYOG93NJsPHuWtBrR95U.jpg?scale-down-to=512 512w, /framerusercontent.com/images/3TSLjUYOG93NJsPHuWtBrR95U.jpg 2560w",
-      alt: "Easyfast Gallery 1"
-    },
-    gFi3QPm5F: {
-      src: "/framerusercontent.com/images/Q4VhyNzVsGG4ahqNlIermqz5Gy0.jpg",
-      srcSet: "/framerusercontent.com/images/Q4VhyNzVsGG4ahqNlIermqz5Gy0.jpg?scale-down-to=512 512w, /framerusercontent.com/images/Q4VhyNzVsGG4ahqNlIermqz5Gy0.jpg 2560w",
-      alt: "Easyfast Gallery 2"
-    },
-    rA8UF9a3f: {
-      src: "/framerusercontent.com/images/TdW2ZLfKEX004jE3xElPZmECeo.jpg",
-      srcSet: "/framerusercontent.com/images/TdW2ZLfKEX004jE3xElPZmECeo.jpg?scale-down-to=512 512w, /framerusercontent.com/images/TdW2ZLfKEX004jE3xElPZmECeo.jpg 2560w",
-      alt: "Easyfast Gallery 3"
-    },
-    i9fTNB1vg: [
-      { id: "1", name: "Productized" },
-      { id: "2", name: "Web Development" }
-    ]
+    }
   },
-  "nickstepuk": {
-    uTZAUbA1P: "nickstepuk",
-    uLRpQRGcH: "Nick Stepuk",
-    V48QqcuXU: "Nick Stepuk — Freelance Design Practice",
-    rm2tapp6I: "https://nickstepuk.com",
-    lQBdWmB0N: "As a freelance designer, it can be challenging to attract and secure clients in a competitive market, especially without a strong online presence or booking system in place.",
-    dnVagKu6Z: "By launching a personal freelance design practice website with open booking, designers can showcase their portfolio and services effectively, making it easier for clients to find and hire them.",
+  "priyansh-razz": {
+    uTZAUbA1P: "priyansh-razz",
+    uLRpQRGcH: "Priyansh Razz",
+    V48QqcuXU: "Priyansh Razz — Freelance Design Practice",
+    lQBdWmB0N: "Personal",
+    dnVagKu6Z: "Booking",
+    rm2tapp6I: "https://chypherai.com",
+    Ilm_tuKWl: "Portfolio & Brand",
+    gFi3QPm5F: "Framer",
+    rA8UF9a3f: "2024 / 3 Weeks",
     tS_yc4nrS: {
       src: "/framerusercontent.com/images/RyROOAfRGvFoeCFHd3qtq9REtUc.jpg",
-      srcSet: "/framerusercontent.com/images/RyROOAfRGvFoeCFHd3qtq9REtUc.jpg?scale-down-to=512 512w, /framerusercontent.com/images/RyROOAfRGvFoeCFHd3qtq9REtUc.jpg 2560w",
-      alt: "Nick Stepuk"
-    },
-    Ilm_tuKWl: {
-      src: "/framerusercontent.com/images/2hTIOEMu9RdeojgPacbipFuCk.png",
-      srcSet: "/framerusercontent.com/images/2hTIOEMu9RdeojgPacbipFuCk.png?scale-down-to=512 512w, /framerusercontent.com/images/2hTIOEMu9RdeojgPacbipFuCk.png 2400w",
-      alt: "Nick Stepuk Gallery 1"
-    },
-    gFi3QPm5F: {
-      src: "/framerusercontent.com/images/nzj59MuDOjtXTJ5f4XIu86pb4Y.png",
-      srcSet: "/framerusercontent.com/images/nzj59MuDOjtXTJ5f4XIu86pb4Y.png?scale-down-to=512 512w, /framerusercontent.com/images/nzj59MuDOjtXTJ5f4XIu86pb4Y.png 2400w",
-      alt: "Nick Stepuk Gallery 2"
-    },
-    rA8UF9a3f: {
-      src: "/framerusercontent.com/images/m31I3q3gqR4CMtldOZ0tA6zYsM.png",
-      srcSet: "/framerusercontent.com/images/m31I3q3gqR4CMtldOZ0tA6zYsM.png?scale-down-to=512 512w, /framerusercontent.com/images/m31I3q3gqR4CMtldOZ0tA6zYsM.png 2400w",
-      alt: "Nick Stepuk Gallery 3"
-    },
-    i9fTNB1vg: [
-      { id: "1", name: "Brand" },
-      { id: "2", name: "UI/UX" }
-    ]
+      srcSet: "/framerusercontent.com/images/RyROOAfRGvFoeCFHd3qtq9REtUc.jpg?scale-down-to=512 512w,/framerusercontent.com/images/RyROOAfRGvFoeCFHd3qtq9REtUc.jpg?scale-down-to=1024 1024w,/framerusercontent.com/images/RyROOAfRGvFoeCFHd3qtq9REtUc.jpg 2560w",
+      alt: "Priyansh Razz"
+    }
   },
   "haze": {
     uTZAUbA1P: "haze",
     uLRpQRGcH: "Haze Template",
     V48QqcuXU: "Haze — Fullscreen Horizontal Experience",
+    lQBdWmB0N: "Photography",
+    dnVagKu6Z: "Branding",
     rm2tapp6I: "https://haze.framer.website",
-    lQBdWmB0N: "Traditional website templates often fail to effectively showcase photography and branding projects on larger formats, lacking a fullscreen horizontal experience that fully immerses the viewer in the content.",
-    dnVagKu6Z: "The Haze template was designed specifically to address this issue, offering a unique fullscreen horizontal layout that elegantly presents photography and branding projects.",
+    Ilm_tuKWl: "Fullscreen Showcase",
+    gFi3QPm5F: "Framer",
+    rA8UF9a3f: "2024 / 3 Weeks",
     tS_yc4nrS: {
       src: "/framerusercontent.com/images/bhkdcQ8HVgsM0A8jr7meqTSU62c.jpg",
-      srcSet: "/framerusercontent.com/images/bhkdcQ8HVgsM0A8jr7meqTSU62c.jpg?scale-down-to=512 512w, /framerusercontent.com/images/bhkdcQ8HVgsM0A8jr7meqTSU62c.jpg 2560w",
+      srcSet: "/framerusercontent.com/images/bhkdcQ8HVgsM0A8jr7meqTSU62c.jpg?scale-down-to=512 512w,/framerusercontent.com/images/bhkdcQ8HVgsM0A8jr7meqTSU62c.jpg?scale-down-to=1024 1024w,/framerusercontent.com/images/bhkdcQ8HVgsM0A8jr7meqTSU62c.jpg 2560w",
       alt: "Haze"
-    },
-    Ilm_tuKWl: {
-      src: "/framerusercontent.com/images/rJp1qAQWM3cWy6TpPBpH7xuM3o.jpg",
-      srcSet: "/framerusercontent.com/images/rJp1qAQWM3cWy6TpPBpH7xuM3o.jpg?scale-down-to=512 512w, /framerusercontent.com/images/rJp1qAQWM3cWy6TpPBpH7xuM3o.jpg 2560w",
-      alt: "Haze Gallery 1"
-    },
-    gFi3QPm5F: {
-      src: "/framerusercontent.com/images/7BCuT7TLb9guWHExV0RkVUcFYE.jpg",
-      srcSet: "/framerusercontent.com/images/7BCuT7TLb9guWHExV0RkVUcFYE.jpg?scale-down-to=512 512w, /framerusercontent.com/images/7BCuT7TLb9guWHExV0RkVUcFYE.jpg 2560w",
-      alt: "Haze Gallery 2"
-    },
-    rA8UF9a3f: {
-      src: "/framerusercontent.com/images/AV5Nm8vi6Onfh0Dlh0jMGbtATo.jpg",
-      srcSet: "/framerusercontent.com/images/AV5Nm8vi6Onfh0Dlh0jMGbtATo.jpg?scale-down-to=512 512w, /framerusercontent.com/images/AV5Nm8vi6Onfh0Dlh0jMGbtATo.jpg 1920w",
-      alt: "Haze Gallery 3"
-    },
-    i9fTNB1vg: [
-      { id: "1", name: "Photography" },
-      { id: "2", name: "Branding" }
-    ]
+    }
   }
 };
+
+
 
 import{t as e}from"./rolldown-runtime.Dh6celcD.mjs";import{F as t,I as n,M as r,P as i,T as a,b as o,c as ee,j as te,k as s,l as c,s as l,u,v as ne}from"./react.BcaIDK9K.mjs";import{C as d,a as f,r as p,t as m}from"./motion.BW-XM46o.mjs";import{A as re,B as h,C as g,Ct as _,D as ie,E as v,R as y,S as b,U as ae,V as x,_ as oe,_t as S,a as C,at as se,bt as w,ct as ce,d as le,dt as ue,ft as de,gt as T,ht as fe,i as E,l as pe,lt as me,m as he,o as D,ot as ge,q as O,t as _e,ut as k,v as A,vt as j,xt as ve,yt as M}from"./framer.DMMo5M92.mjs";import{D as N,E as ye,O as P,_ as F,b as I,g as L,k as be,o as xe,r as Se,v as Ce,x as we,y as Te}from"./shared-lib.DgHwHRRa.mjs";import{n as Ee,t as De}from"./r3pgXBKYQ.BuPaez4e.mjs";import{a as R,c as Oe,d as ke,f as Ae,g as je,h as Me,i as Ne,l as z,m as Pe,n as Fe,o as Ie,p as Le,r as Re,s as ze,t as B,u as V}from"./z5W_y93dY.Bq6-_oFX.mjs";import Be,{t as Ve}from"./EvzMVxrx-AYsCbx6HpdjVaptLVLHRHzJirvoiw6-Bus.D02Oyu1i.mjs";function H({blur:e,borderRadius:t,direction:n,transition:i}){return c(`div`,{style:{position:`absolute`,inset:0,overflow:`hidden`},children:r(()=>[{blur:`${e/2/2/2/2/2/2/2}px`,gradient:`rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 12.5%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 37.5%`},{blur:`${e/2/2/2/2/2/2}px`,gradient:`rgba(0, 0, 0, 0) 12.5%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 1) 37.5%, rgba(0, 0, 0, 0) 50%`},{blur:`${e/2/2/2/2/2}px`,gradient:`rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 1) 37.5%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 62.5%`},{blur:`${e/2/2/2/2}px`,gradient:`rgba(0, 0, 0, 0) 37.5%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 62.5%, rgba(0, 0, 0, 0) 75%`},{blur:`${e/2/2/2}px`,gradient:`rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 62.5%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 87.5%`},{blur:`${e/2/2}px`,gradient:`rgba(0, 0, 0, 0) 62.5%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 1) 87.5%, rgba(0, 0, 0, 0) 100%`},{blur:`${e/2}px`,gradient:`rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 1) 87.5%, rgba(0, 0, 0, 1) 100%`},{blur:`${e}px`,gradient:`rgba(0, 0, 0, 0) 87.5%, rgba(0, 0, 0, 1) 100%`}],[e]).map((e,r)=>c(d.div,{transition:i,initial:{backdropFilter:`blur(${e.blur})`},animate:{backdropFilter:`blur(${e.blur})`},style:{opacity:1,position:`absolute`,inset:0,zIndex:r+1,maskImage:`linear-gradient(${n}, ${e.gradient})`,WebkitMaskImage:`linear-gradient(${n}, ${e.gradient})`,borderRadius:t,pointerEvents:`none`}},r))})}var He=e((()=>{l(),a(),m(),O(),H.defaultProps={blur:10,borderRadius:`0px`,direction:`toBottom`,transition:{duration:.3}},ie(H,{blur:{title:`Blur`,type:D.Number,defaultValue:10,min:0,max:100,step:1,description:`Large blur values (10<) can impact performance.`},borderRadius:{title:`Radius`,type:D.BorderRadius,defaultValue:`0px`,description:`Blur Gradient component's parent frame can't have border radius (it will break the component). If you need corner radius, apply it directly to the Blur Gradient component here.`},direction:{title:`Direction`,type:D.SegmentedEnum,options:[`to bottom`,`to top`,`to left`,`to right`],optionTitles:[`↓`,`↑`,`←`,`→`],defaultValue:`to bottom`},transition:{type:D.Transition,defaultValue:{duration:.3},title:`Transition`,description:`Control how the blur animates when used on hover states or any othe interaction.
 
