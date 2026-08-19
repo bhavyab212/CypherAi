@@ -1010,7 +1010,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                 variant: "CoTy2wjpS",
                                 VftTy7iTx: "Book a free intro call",
                                 width: "100%",
-                                Z63mvCN3B: "https://x.com/Priyans90072914",
+                                Z63mvCN3B: "x.com/Priyans90072914",
                               }),
                             }
                           ),
@@ -1171,7 +1171,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                 variant: "CoTy2wjpS",
                                 VftTy7iTx: "Book a free intro call",
                                 width: "100%",
-                                Z63mvCN3B: "https://www.linkedin.com/in/priyansh-razz-293154372",
+                                Z63mvCN3B: "linkedin.com/in/priyansh-razz-293154372",
                               }),
                             }
                           ),
@@ -1332,7 +1332,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                 variant: "CoTy2wjpS",
                                 VftTy7iTx: "Book a free intro call",
                                 width: "100%",
-                                Z63mvCN3B: "https://www.instagram.com/thepriyansh06/",
+                                Z63mvCN3B: "instagram.com/thepriyansh06",
                               }),
                             }
                           ),
