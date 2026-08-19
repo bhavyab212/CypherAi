@@ -4,9 +4,9 @@ export default function metadata(params, activeLocale) {
     customHTMLBodyStart:
       '<!-- Plugin: 4547ab --> <script>document.body.style.overscrollBehavior = "none";</script>',
     description:
-      "Chypher Ai is a free minimal and elegant portfolio template made for product, software, and digital designers to share their work quickly and effectively.",
+      "Cypher Ai is a free minimal and elegant portfolio template made for product, software, and digital designers to share their work quickly and effectively.",
     robots: "max-image-preview:large",
-    title: "Chypher Ai — a Design Craftsman's Portfolio Template",
+    title: "Cypher Ai — a Design Craftsman's Portfolio Template",
   };
 }
 export const metadataVersion = 1;

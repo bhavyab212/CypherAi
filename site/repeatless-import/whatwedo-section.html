@@ -12,18 +12,18 @@
     <div class="wwd-grid-layout__orbit">
       <div class="wwd-orbit" id="wwd-orbit-desktop">
         <div class="wwd-orbit__glow"></div>
-        <svg viewBox="0 0 420 420" aria-hidden="true">
+        <svg viewBox="0 0 420 420" aria-hidden="true" class="wwd-orbit__svg">
           <defs>
             <radialGradient id="wwd-fill" cx="50%" cy="50%" r="58%">
               <stop offset="0%" stop-color="#050608"/>
-              <stop offset="68%" stop-color="#12111d"/>
-              <stop offset="100%" stop-color="#171329"/>
+              <stop offset="68%" stop-color="#072018" id="wwd-stop-1" style="transition: stop-color 0.7s ease;"/>
+              <stop offset="100%" stop-color="#03100c" id="wwd-stop-2" style="transition: stop-color 0.7s ease;"/>
             </radialGradient>
           </defs>
-          <circle cx="210" cy="210" r="154" fill="url(#wwd-fill)"/>
-          <circle cx="210" cy="210" r="160" fill="none" stroke="rgba(124,58,237,0.42)" stroke-width="1.5" stroke-dasharray="7 6"/>
+          <circle cx="210" cy="210" r="154" fill="url(#wwd-fill)" class="wwd-circle-bg"/>
+          <circle cx="210" cy="210" r="160" fill="none" class="wwd-orbit-dashed-ring" stroke-width="1.5" stroke-dasharray="7 6"/>
           <circle cx="210" cy="210" r="176" fill="none" stroke="rgba(255,255,255,0.13)" stroke-width="1"/>
-          <circle class="wwd-orbit-ring" cx="210" cy="210" r="176" fill="none" stroke="rgba(255,255,255,0.72)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="1105.84" transform="rotate(180 210 210)" stroke-dashoffset="1105.84"/>
+          <circle class="wwd-orbit-ring" cx="210" cy="210" r="176" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="1105.84" transform="rotate(180 210 210)" stroke-dashoffset="1105.84"/>
         </svg>
         <div class="wwd-orbit__mask"></div>
         <div class="wwd-orbit__content" id="wwd-cards-desktop"></div>
@@ -58,11 +58,18 @@
     <div class="wwd-mobile__orbit-wrap">
       <div class="wwd-orbit wwd-orbit--mobile" id="wwd-orbit-mobile">
         <div class="wwd-orbit__glow"></div>
-        <svg viewBox="0 0 420 420" aria-hidden="true">
-          <circle cx="210" cy="210" r="154" fill="url(#wwd-fill)"/>
-          <circle cx="210" cy="210" r="160" fill="none" stroke="rgba(124,58,237,0.42)" stroke-width="1.5" stroke-dasharray="7 6"/>
+        <svg viewBox="0 0 420 420" aria-hidden="true" class="wwd-orbit__svg">
+          <defs>
+            <radialGradient id="wwd-fill-m" cx="50%" cy="50%" r="58%">
+              <stop offset="0%" stop-color="#050608"/>
+              <stop offset="68%" stop-color="#072018" id="wwd-stop-1-m" style="transition: stop-color 0.7s ease;"/>
+              <stop offset="100%" stop-color="#03100c" id="wwd-stop-2-m" style="transition: stop-color 0.7s ease;"/>
+            </radialGradient>
+          </defs>
+          <circle cx="210" cy="210" r="154" fill="url(#wwd-fill-m)" class="wwd-circle-bg"/>
+          <circle cx="210" cy="210" r="160" fill="none" class="wwd-orbit-dashed-ring" stroke-width="1.5" stroke-dasharray="7 6"/>
           <circle cx="210" cy="210" r="176" fill="none" stroke="rgba(255,255,255,0.13)" stroke-width="1"/>
-          <circle class="wwd-orbit-ring" cx="210" cy="210" r="176" fill="none" stroke="rgba(255,255,255,0.72)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="1105.84" transform="rotate(180 210 210)" stroke-dashoffset="1105.84"/>
+          <circle class="wwd-orbit-ring" cx="210" cy="210" r="176" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="1105.84" transform="rotate(180 210 210)" stroke-dashoffset="1105.84"/>
         </svg>
         <div class="wwd-orbit__mask"></div>
         <div class="wwd-orbit__content" id="wwd-cards-mobile"></div>

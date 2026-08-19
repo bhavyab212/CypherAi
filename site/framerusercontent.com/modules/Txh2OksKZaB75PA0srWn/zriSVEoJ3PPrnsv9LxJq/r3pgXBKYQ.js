@@ -293,7 +293,7 @@ const getProps = ({
 }) => {
   return {
     ...props,
-    BN3wpCMSK: title ?? props.BN3wpCMSK ?? "Chypher Ai",
+    BN3wpCMSK: title ?? props.BN3wpCMSK ?? "Cypher Ai",
     kimQ09aws: link ?? props.kimQ09aws,
     ow9UOALGc: padding ?? props.ow9UOALGc ?? "0px 120px 0px 120px",
     SsyD4X2kj: contactLink ?? props.SsyD4X2kj,
@@ -411,7 +411,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                             "var(--extracted-r6o4lv, var(--token-00af65c3-92fd-4f69-9228-cfe71d95f29a, rgb(0, 0, 0)))",
                         },
                         children: /*#__PURE__*/ _jsx(motion.strong, {
-                          children: "Chypher Ai",
+                          children: "Cypher Ai",
                         }),
                       }),
                     }),
@@ -1072,7 +1072,7 @@ addPropertyControls(Framerr3pgXBKYQ, {
     type: ControlType.Padding,
   },
   BN3wpCMSK: {
-    defaultValue: "Chypher Ai",
+    defaultValue: "Cypher Ai",
     displayTextArea: false,
     title: "Title",
     type: ControlType.String,

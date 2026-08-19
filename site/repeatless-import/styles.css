@@ -615,7 +615,7 @@
   cursor: pointer; padding: 0;
 }
 .rl-cat-card:hover { transform: translateY(-16px) scale(1.05); box-shadow: 0 30px 60px rgba(0,0,0,0.15); z-index: 5; }
-.rl-cat-card__inner { display: flex; flex-direction: column; height: 100%; width: 100%; padding: 2rem; }
+.rl-cat-card__inner { display: flex; flex-direction: column; height: 100%; width: 100%; padding: 2rem; background: #fff; border-radius: inherit; }
 .rl-cat-card__top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; }
 .rl-cat-card__top .rl-mark { width: 64px; height: 64px; border-radius: 16px; }
 .rl-cat-card__arrow { width: 32px; height: 32px; border-radius: 9999px; background: #f9fafb; display: flex; align-items: center; justify-content: center; color: #d1d5db; transition: background-color 0.2s ease, color 0.2s ease; }
@@ -704,7 +704,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .rl-featured:hover { transform: translateY(-12px) scale(1.03); box-shadow: 0 30px 60px rgba(0,0,0,0.15); z-index: 5; }
-.rl-featured .rl-card-clip { overflow: hidden; border-radius: inherit; display: grid; grid-template-columns: minmax(0,1fr); }
+.rl-featured .rl-card-clip { overflow: hidden; border-radius: inherit; background: #fff; display: grid; grid-template-columns: minmax(0,1fr); }
 @media (min-width: 1024px) { .rl-featured .rl-card-clip { grid-template-columns: 1fr 1fr; } }
 .rl-featured__image { background: #1a1a1a; padding: 2rem; display: flex; align-items: center; justify-content: center; aspect-ratio: 16/9; min-height: 300px; }
 @media (min-width: 1024px) { .rl-featured__image { aspect-ratio: auto; } }
@@ -723,7 +723,7 @@
 @media (min-width: 1024px) { .rl-auto-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
 .rl-auto-card { position: relative; z-index: 1; display: flex; flex-direction: column; text-align: left; background: #fff; border: 1px solid #f3f4f6; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); cursor: pointer; padding: 0; transition: transform 0.3s ease, box-shadow 0.3s ease; }
 .rl-auto-card:hover { transform: translateY(-16px) scale(1.05); box-shadow: 0 30px 60px rgba(0,0,0,0.15); z-index: 5; }
-.rl-auto-card .rl-card-clip { overflow: hidden; border-radius: inherit; display: flex; flex-direction: column; height: 100%; }
+.rl-auto-card .rl-card-clip { overflow: hidden; border-radius: inherit; background: #fff; display: flex; flex-direction: column; height: 100%; }
 .rl-auto-card__image { background: #1a1a1a; padding: 1.5rem; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; }
 .rl-auto-card__image img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4)); }
 .rl-auto-card__body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
@@ -762,12 +762,23 @@
   inset: -3px;
   border-radius: inherit;
   background: linear-gradient(-45deg, #000000 0%, #facc15 50%, #000000 100%);
-  transform: translate3d(0, 0, 0) scale(0.95);
-  filter: blur(20px);
+  transform: translate3d(0, 0, 0) scale(0.97);
+  filter: blur(14px);
   transition: all 0.6s ease;
   opacity: 0;
   pointer-events: none;
 }
 .magic-card:hover::before, .magic-card:hover::after { opacity: 1; }
-.magic-card:hover::after { filter: blur(30px); }
-.magic-card:hover::before { transform: rotate(-10deg) scale(1.02); }
+.magic-card:hover::after { filter: blur(18px); }
+.magic-card:hover::before { transform: rotate(-2deg) scale(1.008); }
+
+/* Hero heading fix — each "<text> [image] <text>" row is native Framer
+   markup pinned to fixed per-breakpoint font/image px sizes with
+   flex-wrap:nowrap (set inline, hence !important here). Between breakpoints
+   (e.g. 1280-1400px laptop panels) the fixed-size row doesn't fit its
+   available width and the browser clips the overflow at the edges. Letting
+   the row wrap keeps every word fully visible on any screen instead. */
+.framer-heading-row {
+  flex-wrap: wrap !important;
+  row-gap: 0.15em !important;
+}

@@ -23,8 +23,88 @@
     { icon: "link2", title: "Seamless APIs", body: "Bridging software silos to unify your tech stack", label: "Seamless\nAPIs", detail: "No more disjointed tools. We build custom API connectors to ensure your CRM, marketing platforms, and internal databases communicate flawlessly in real-time." },
   ];
 
+  const THEMES = [
+    {
+      accent: "#10B981",       // 01 Proven Results - Emerald
+      accentLight: "#34D399",
+      glow: "rgba(16, 185, 129, 0.32)",
+      glowBg: "#051f18",
+      stop1: "#072018",
+      stop2: "#03100c",
+    },
+    {
+      accent: "#8B5CF6",       // 02 n8n Automation - Electric Violet
+      accentLight: "#A78BFA",
+      glow: "rgba(139, 92, 246, 0.32)",
+      glowBg: "#130a26",
+      stop1: "#1a0f33",
+      stop2: "#0c0618",
+    },
+    {
+      accent: "#06B6D4",       // 03 Consultant Approach - Cyan Blue
+      accentLight: "#38BDF8",
+      glow: "rgba(6, 182, 212, 0.32)",
+      glowBg: "#041a22",
+      stop1: "#09242d",
+      stop2: "#030e12",
+    },
+    {
+      accent: "#D946EF",       // 04 AI Integration - Neon Magenta
+      accentLight: "#F0ABFC",
+      glow: "rgba(217, 70, 239, 0.32)",
+      glowBg: "#220729",
+      stop1: "#2b0a33",
+      stop2: "#120317",
+    },
+    {
+      accent: "#F59E0B",       // 05 Workflow Optimization - Amber Gold
+      accentLight: "#FDE047",
+      glow: "rgba(245, 158, 11, 0.32)",
+      glowBg: "#221404",
+      stop1: "#2c1c06",
+      stop2: "#130a02",
+    },
+    {
+      accent: "#14B8A6",       // 06 Continuous Scaling - Teal Green
+      accentLight: "#5EEAD4",
+      glow: "rgba(20, 184, 166, 0.32)",
+      glowBg: "#041e1a",
+      stop1: "#072822",
+      stop2: "#02110e",
+    },
+    {
+      accent: "#6366F1",       // 07 Seamless APIs - Indigo
+      accentLight: "#A5B4FC",
+      glow: "rgba(99, 102, 241, 0.32)",
+      glowBg: "#0b0e2b",
+      stop1: "#121538",
+      stop2: "#06071a",
+    },
+  ];
+
   function esc(s) {
     return s.replace(/\n/g, "<br>");
+  }
+
+  function applyTheme(idx) {
+    const theme = THEMES[idx] || THEMES[0];
+    const section = document.getElementById("wwd-section");
+    if (section) {
+      section.style.setProperty("--wwd-accent", theme.accent);
+      section.style.setProperty("--wwd-accent-light", theme.accentLight);
+      section.style.setProperty("--wwd-glow", theme.glow);
+      section.style.setProperty("--wwd-glow-bg", theme.glowBg);
+    }
+
+    const stop1 = document.getElementById("wwd-stop-1");
+    const stop2 = document.getElementById("wwd-stop-2");
+    if (stop1) stop1.setAttribute("stop-color", theme.stop1);
+    if (stop2) stop2.setAttribute("stop-color", theme.stop2);
+
+    const stop1m = document.getElementById("wwd-stop-1-m");
+    const stop2m = document.getElementById("wwd-stop-2-m");
+    if (stop1m) stop1m.setAttribute("stop-color", theme.stop1);
+    if (stop2m) stop2m.setAttribute("stop-color", theme.stop2);
   }
 
   function render() {
@@ -32,37 +112,54 @@
       CARDS.map(
         (c, i) =>
           '<div class="wwd-orbit__card' + (i === active ? " wwd-orbit__card--active" : "") + '" data-idx="' + i + '">' +
-            '<div><div class="wwd-orbit__icon">' + icon(c.icon) + "</div>" +
-            "<h3>" + c.title + "</h3>" +
-            "<p>" + c.body + "</p></div>" +
+            '<div class="wwd-orbit__card-inner">' +
+              '<div class="wwd-orbit__icon">' + icon(c.icon) + '</div>' +
+              "<h3>" + c.title + "</h3>" +
+              "<p>" + c.body + "</p>" +
+            "</div>" +
           "</div>"
       ).join("");
 
-    document.getElementById("wwd-cards-desktop").innerHTML = cardsHtml(0);
-    document.getElementById("wwd-cards-mobile").innerHTML = cardsHtml(0);
+    const desk = document.getElementById("wwd-cards-desktop");
+    const mob = document.getElementById("wwd-cards-mobile");
+    if (desk) desk.innerHTML = cardsHtml(0);
+    if (mob) mob.innerHTML = cardsHtml(0);
 
-    document.getElementById("wwd-labels-track").innerHTML = CARDS.map(
-      (c) =>
-        '<div class="wwd-labels__item"><p><span class="wwd-labels__badge">' +
-        icon("arrowDownRight") +
-        "</span>" +
-        esc(c.label) +
-        "</p></div>"
-    ).join("");
+    const labelsTrack = document.getElementById("wwd-labels-track");
+    if (labelsTrack) {
+      labelsTrack.innerHTML = CARDS.map(
+        (c) =>
+          '<div class="wwd-labels__item"><p><span class="wwd-labels__badge">' +
+          icon("arrowDownRight") +
+          "</span>" +
+          esc(c.label) +
+          "</p></div>"
+      ).join("");
+    }
 
-    document.getElementById("wwd-desc-track").innerHTML = CARDS.map(
-      (c) => '<div class="wwd-desc__item"><p>' + c.detail + "</p></div>"
-    ).join("");
+    const descTrack = document.getElementById("wwd-desc-track");
+    if (descTrack) {
+      descTrack.innerHTML = CARDS.map(
+        (c) => '<div class="wwd-desc__item"><p>' + c.detail + "</p></div>"
+      ).join("");
+    }
 
-    document.getElementById("wwd-desc-track-m").innerHTML =
-      '<div class="wwd-mobile__desc-track" style="transition: transform 0.5s ease">' +
-      CARDS.map((c) => '<p class="wwd-mobile__desc-item">' + c.detail + "</p>").join("") +
-      "</div>";
+    const descTrackM = document.getElementById("wwd-desc-track-m");
+    if (descTrackM) {
+      descTrackM.innerHTML =
+        '<div class="wwd-mobile__desc-track" style="transition: transform 0.5s ease">' +
+        CARDS.map((c) => '<p class="wwd-mobile__desc-item">' + c.detail + "</p>").join("") +
+        "</div>";
+    }
 
-    const numDigits = (id) =>
-      (document.getElementById(id).innerHTML = CARDS.map((_, i) => "<span>" + (i + 1) + "</span>").join(""));
+    const numDigits = (id) => {
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = CARDS.map((_, i) => "<span>" + (i + 1) + "</span>").join("");
+    };
     numDigits("wwd-bignum-track");
     numDigits("wwd-bignum-track-m");
+
+    applyTheme(0);
   }
 
   function initScroll() {
@@ -104,6 +201,7 @@
 
         if (idx !== lastIdx) {
           lastIdx = idx;
+          applyTheme(idx);
           cardSets.forEach((set) => {
             if (!set) return;
             set.querySelectorAll(".wwd-orbit__card").forEach((el) => {

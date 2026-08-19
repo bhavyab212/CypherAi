@@ -670,7 +670,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                               "--framer-text-color":
                                 "var(--extracted-r6o4lv, var(--token-cd9f24d5-f0ad-4213-bead-63c4e991dc40, rgb(255, 255, 255)))",
                             },
-                            children: "\xa9 Chypher Ai, 2025",
+                            children: "\xa9 Cypher Ai, 2025",
                           }),
                         }),
                         className: "framer-1iy3v4h",

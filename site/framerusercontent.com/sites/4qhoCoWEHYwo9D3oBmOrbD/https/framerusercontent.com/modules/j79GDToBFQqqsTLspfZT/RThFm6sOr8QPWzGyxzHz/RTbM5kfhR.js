@@ -674,7 +674,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                   "--framer-text-color":
                                     "var(--token-00af65c3-92fd-4f69-9228-cfe71d95f29a, rgb(0, 0, 0))",
                                 },
-                                children: "Hello! Welcome to Chypher Ai",
+                                children: "Hello! Welcome to Cypher Ai",
                               }),
                             }),
                             className: "framer-1wcd3ka",
@@ -3159,7 +3159,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                             "--framer-text-alignment": "right",
                                           },
                                           children:
-                                            "Chypher Ai, Founder",
+                                            "Cypher Ai, Founder",
                                         }),
                                       },
                                     ),
@@ -3189,7 +3189,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                     className: "framer-styles-preset-1ihf1r3",
                                     "data-styles-preset": "ggW5SjA21",
                                     children:
-                                      "Priyansh Razz is an AI automation specialist and founder of Chypher Ai, building intelligent AI systems, voice agents, aion ÔÇö and often spends his free time cycling or exploring generative art.",
+                                      "Priyansh Razz is an AI automation specialist and founder of Cypher Ai, building intelligent AI systems, voice agents, aion ÔÇö and often spends his free time cycling or exploring generative art.",
                                   }),
                                 }),
                                 className: "framer-lnjdja",
@@ -3290,7 +3290,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                                   borderTopWidth: 0,
                                                 },
                                                 DCZKUwppc:
-                                                  "Chypher Ai",
+                                                  "Cypher Ai",
                                                 height: "100%",
                                                 HVfJAGuBg: "16px 0px 16px 0px",
                                                 id: "sdKE1J34N",
