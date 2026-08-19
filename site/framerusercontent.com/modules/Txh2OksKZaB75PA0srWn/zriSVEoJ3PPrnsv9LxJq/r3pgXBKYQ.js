@@ -923,7 +923,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                                             VftTy7iTx: "x",
                                                             width: "100%",
                                                             Z63mvCN3B:
-                                                              "x.com/Priyans90072914",
+                                                              "https://x.com/Priyans90072914",
                                                           }
                                                         ),
                                                     }
