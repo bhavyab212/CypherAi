@@ -2660,7 +2660,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                 className: "framer-styles-preset-10ljhlf",
                                 "data-styles-preset": "yCCIjz3lb",
                                 children: /*#__PURE__*/ _jsx("em", {
-                                  children: "Our Projects",
+                                  children: "About Me",
                                 }),
                               }),
                             }),
@@ -2906,7 +2906,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                 className: "framer-styles-preset-10ljhlf",
                                 "data-styles-preset": "yCCIjz3lb",
                                 children: /*#__PURE__*/ _jsx("em", {
-                                  children: "Our Projects",
+                                  children: "About Me",
                                 }),
                               }),
                             }),
@@ -2928,13 +2928,13 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                             "data-styles-preset": "xe9wrZjxH",
                             style: { "--framer-text-alignment": "center" },
                             children: [
-                              "Pushing boundaries ",
+                              "Driven by trust, reliability & ",
                               /*#__PURE__*/ _jsx("span", {
                                 style: {
                                   "--framer-text-color":
                                     "var(--token-cecefbc2-3137-4c31-97a2-c273c08d7ba5, rgba(0, 0, 0, 0.5))",
                                 },
-                                children: "since 2011",
+                                children: "uncompromising quality",
                               }),
                             ],
                           }),

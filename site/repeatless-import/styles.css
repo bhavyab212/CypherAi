@@ -17,6 +17,26 @@
    viewports) and the section read as small/sparse; see intro2.css. */
 #intro { display: none !important; }
 
+/* Native experience timeline table hidden at user request */
+.framer-7gltf0, #experience { display: none !important; }
+.framer-1ttr2a3 {
+  justify-content: flex-start !important;
+  place-content: flex-start !important;
+  height: auto !important;
+  gap: 1.5rem !important;
+}
+.framer-1xfuprx {
+  height: auto !important;
+  width: 100% !important;
+  flex: 1 0 auto !important;
+}
+.framer-lnjdja {
+  max-width: 100% !important;
+  width: 100% !important;
+  flex: 1 0 auto !important;
+}
+
+
 @font-face {
   font-family: "RL Poppins";
   font-style: normal;
