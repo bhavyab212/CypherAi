@@ -65,15 +65,25 @@
     headings.forEach((h) => observer.observe(h));
   }
 
-  // ---------- AI demo cycle (ported from the "AI Automation" Framer code component) ----------
+  // ---------- AI demo cycle with infinite replay / looping ----------
   const DEMO_TEXT =
     "English Premier League Arsenal match, crowded stadium stands. The person sits casually, not posing, looking toward the field.";
 
-  function runDemo() {
+  let activeTimers = [];
+
+  function clearDemoTimers() {
+    activeTimers.forEach((t) => clearTimeout(t));
+    activeTimers = [];
+  }
+
+  function runDemo(onComplete) {
     const stage = document.getElementById("am-demo-stage");
     const typedEl = document.getElementById("am-demo-typed");
     if (!stage || !typedEl) return;
 
+    clearDemoTimers();
+
+    // 1. Reset stage to clean input state
     stage.dataset.phase = "input";
     stage.removeAttribute("data-revealed");
     typedEl.textContent = "";
@@ -86,44 +96,79 @@
         typedEl.textContent = DEMO_TEXT.slice(0, charIndex);
         charIndex++;
         typingTimer = setTimeout(typeNext, 25);
+        activeTimers.push(typingTimer);
       }
     }
 
-    setTimeout(() => {
+    // Start typing after small initial breath
+    const t1 = setTimeout(() => {
       stage.dataset.phase = "input";
       typeNext();
-    }, 300);
+    }, 400);
+    activeTimers.push(t1);
 
-    setTimeout(() => {
-      clearTimeout(typingTimer);
+    // Switch to processing/spinner phase
+    const t2 = setTimeout(() => {
+      if (typingTimer) clearTimeout(typingTimer);
+      typedEl.textContent = DEMO_TEXT;
       stage.dataset.phase = "processing";
-    }, 2300);
+    }, 2800);
+    activeTimers.push(t2);
 
-    setTimeout(() => {
+    // Switch to image reveal phase
+    const t3 = setTimeout(() => {
       stage.dataset.phase = "image";
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           stage.dataset.revealed = "1";
         });
       });
-    }, 6300);
+    }, 6200);
+    activeTimers.push(t3);
+
+    // Hold the revealed image, then notify onComplete to loop
+    const t4 = setTimeout(() => {
+      // Fade out image smoothly before restarting next cycle
+      stage.removeAttribute("data-revealed");
+      const t5 = setTimeout(() => {
+        if (typeof onComplete === "function") {
+          onComplete();
+        }
+      }, 600);
+      activeTimers.push(t5);
+    }, 10400);
+    activeTimers.push(t4);
   }
 
   function initDemoOnView() {
     const stage = document.getElementById("am-demo-stage");
     if (!stage) return;
-    let played = false;
+    let isRunning = false;
+
+    function startLoop() {
+      if (!isRunning) return;
+      runDemo(() => {
+        if (isRunning) {
+          startLoop();
+        }
+      });
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !played) {
-            played = true;
-            runDemo();
-            observer.disconnect();
+          if (entry.isIntersecting) {
+            if (!isRunning) {
+              isRunning = true;
+              startLoop();
+            }
+          } else {
+            isRunning = false;
+            clearDemoTimers();
           }
         });
       },
-      { threshold: 0.35 }
+      { threshold: 0.2 }
     );
     observer.observe(stage);
   }
