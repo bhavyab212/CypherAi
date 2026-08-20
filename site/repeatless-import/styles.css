@@ -19,6 +19,13 @@
 
 /* Native experience timeline table hidden at user request */
 .framer-7gltf0, #experience { display: none !important; }
+
+/* "Book a Discovery Call" CTA + FAQ block removed at user request — the page
+   should end at the "Let's Connect" footer. The CTA button, the
+   "Or, email me at ..." line and every FAQ row all live inside this one
+   #faq wrapper, so a single rule covers the whole block. */
+#faq { display: none !important; }
+
 .framer-1ttr2a3 {
   justify-content: flex-start !important;
   place-content: flex-start !important;
@@ -792,13 +799,204 @@
 .magic-card:hover::after { filter: blur(18px); }
 .magic-card:hover::before { transform: rotate(-2deg) scale(1.008); }
 
-/* Hero heading fix — each "<text> [image] <text>" row is native Framer
-   markup pinned to fixed per-breakpoint font/image px sizes with
-   flex-wrap:nowrap (set inline, hence !important here). Between breakpoints
-   (e.g. 1280-1400px laptop panels) the fixed-size row doesn't fit its
-   available width and the browser clips the overflow at the edges. Letting
-   the row wrap keeps every word fully visible on any screen instead. */
-.framer-heading-row {
-  flex-wrap: wrap !important;
-  row-gap: 0.15em !important;
+/* Hero heading — hold it to exactly two lines at every width.
+   Each "<text> [image] <text>" row is native Framer markup with fixed
+   per-breakpoint font and image sizes, and Framer caps the container at
+   1000px. On anything narrower than the width it was designed for the row
+   either clips at the edges or wraps into extra lines (which is what turned
+   this into four). So instead: widen the container, hold each row on a single
+   line, and scale the type and the inline image fluidly with the viewport so
+   both rows always fit — two lines from small laptops up to large displays. */
+@media (min-width: 700px) {
+  .framer-1y81y3z {
+    max-width: min(94vw, 1560px) !important;
+  }
+  .framer-heading-row {
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    /* Framer's fixed 12px gap reads as cramped once the type scales up, and
+       the images are rotated so their corners eat into it. */
+    column-gap: clamp(10px, 1.6vw, 28px) !important;
+  }
+  .framer-heading-row h1.framer-text {
+    font-size: clamp(20px, 4vw, 70px) !important;
+    white-space: nowrap !important;
+  }
+  /* Scale both inline images with the type so they can't dominate the row —
+     and so the two rows stay visually matched. Left to Framer's own fixed
+     per-breakpoint sizes they jump in steps and drift out of sync with each
+     other (e.g. 83px vs 102px on the same screen). The width tracks the font
+     clamp at ~1.4x, which lands each image's height just under one text line
+     (4:3 aspect) — at Framer's original ratio they stood ~1.5x taller than
+     the line and, with the rows now tightened to two, collided vertically. */
+  .framer-heading-row .framer-nlltkq,
+  .framer-heading-row .framer-1a56uwu {
+    width: clamp(30px, 5.6vw, 98px) !important;
+    height: auto !important;
+    aspect-ratio: 1.33333 !important;
+  }
 }
+
+/* ============================================================
+   Cypher AI — Founder & Capabilities 6-Card Grid
+   ============================================================ */
+.framer-1ttr2a3, [data-framer-name="Text Container"] {
+  justify-content: flex-start !important;
+  gap: 28px !important;
+}
+
+.cypher-founder-bio {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: clamp(20px, 2.1vw, 25px) !important;
+  font-weight: 500 !important;
+  color: #111827 !important;
+  line-height: 1.45 !important;
+  letter-spacing: -0.018em !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 809.98px) {
+  .cypher-founder-bio {
+    font-size: 17px !important;
+    line-height: 1.45 !important;
+  }
+}
+
+.cypher-about-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 22px 18px !important;
+  margin-top: 0 !important;
+  width: 100% !important;
+}
+
+@media (max-width: 1100px) {
+  .cypher-about-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px 16px !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .cypher-about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+.cypher-about-card {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 11px !important;
+}
+
+.cypher-about-card__icon {
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  border-radius: 11px !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.06), 0 1px 3px -1px rgba(0, 0, 0, 0.04) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  color: #171717 !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.cypher-about-card__icon svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.cypher-about-card:hover .cypher-about-card__icon {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 14px -2px rgba(0, 0, 0, 0.1), 0 2px 5px -1px rgba(0, 0, 0, 0.05) !important;
+}
+
+.cypher-about-card__content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+
+.cypher-about-card__title {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.01em !important;
+  margin: 0 !important;
+}
+
+.cypher-about-card__desc {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 11.5px !important;
+  font-weight: 400 !important;
+  color: #525252 !important;
+  line-height: 1.38 !important;
+  letter-spacing: -0.005em !important;
+  margin: 0 !important;
+}
+
+.cypher-founder-bottom {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  margin-top: 14px !important;
+  padding: 0 4px !important;
+}
+
+.cypher-social-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.cypher-social-link {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 32px !important;
+  height: 32px !important;
+  color: #6b7280 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease, transform 0.2s ease !important;
+}
+
+.cypher-social-link:hover {
+  color: #111827 !important;
+  transform: translateY(-1.5px) !important;
+}
+
+.cypher-founder-meta {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  text-align: right !important;
+}
+
+.cypher-founder-name {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
+}
+
+.cypher-founder-role {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  color: #6b7280 !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
+}
+
+
