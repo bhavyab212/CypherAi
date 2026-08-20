@@ -45,6 +45,14 @@ function findFile(relative) {
   const direct = path.join(root, relative);
   if (existsSync(direct) && statSync(direct).isFile()) return direct;
 
+  // Directory request ("/contact/", "/work/") -> serve its index.html, the
+  // same way static hosts do. Without this the dev server 404s on every
+  // clean URL even though the deployed site resolves them fine.
+  if (existsSync(direct) && statSync(direct).isDirectory()) {
+    const indexFile = path.join(direct, "index.html");
+    if (existsSync(indexFile) && statSync(indexFile).isFile()) return indexFile;
+  }
+
   const dir = path.dirname(direct);
   const base = path.basename(direct);
   if (existsSync(dir) && statSync(dir).isDirectory()) {

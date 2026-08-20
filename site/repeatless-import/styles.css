@@ -26,6 +26,12 @@
    #faq wrapper, so a single rule covers the whole block. */
 #faq { display: none !important; }
 
+/* Email (@) icon removed from the footer social row at user request. This is
+   the "At" icon slot specifically — the other mailto link in the footer
+   (.framer-1610r1m-container) is the "Book a free intro call" CTA button, so
+   it must stay. X, LinkedIn and Instagram are untouched. */
+.framer-1gnn4kr-container { display: none !important; }
+
 .framer-1ttr2a3 {
   justify-content: flex-start !important;
   place-content: flex-start !important;

@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a Consultation — Cypher Ai</title>
+<meta name="description" content="Book a free consultation with Cypher Ai. Tell us about your workflows and we'll design the AI automation that fits.">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="/images/favicon.png">
+
+<style>
+  @font-face {
+    font-family: "CN Inter";
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url("/fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZ1rib2Bg-4.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "CN Manrope";
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url("/fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2") format("woff2");
+  }
+
+  :root {
+    --bg: #d9d9d9;
+    --surface: #ffffff;
+    --ink: #0d0d0f;
+    --ink-soft: #55555c;
+    --ink-faint: #8a8a92;
+    --line: #e4e4e7;
+    --accent: #eab308;
+    --ok: #15803d;
+    --err: #b91c1c;
+    --radius: 18px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    min-height: 100svh;
+    background:
+      radial-gradient(115% 85% at 8% 0%, #f2f2f0 0%, rgba(242,242,240,0) 58%),
+      linear-gradient(180deg, #e2e2e1 0%, var(--bg) 100%);
+    color: var(--ink);
+    font-family: "CN Inter", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 1080px;
+    margin-inline: auto;
+    padding: 1.5rem 1.25rem 4rem;
+  }
+  @media (min-width: 720px) { .wrap { padding: 2rem 2rem 5rem; } }
+
+  /* ---------- header ---------- */
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: clamp(2rem, 6vw, 4rem);
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: #fff;
+    border-radius: 999px;
+    padding: 0.5rem 1.05rem 0.5rem 0.6rem;
+    box-shadow: 0 8px 22px rgba(15, 12, 4, 0.1);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .brand:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(15,12,4,.16); }
+  .brand img { width: 22px; height: 22px; object-fit: contain; display: block; }
+  .nav__back {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .nav__back:hover { color: var(--ink); border-bottom-color: currentColor; }
+
+  /* ---------- layout ---------- */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(1.75rem, 4vw, 3rem);
+    align-items: start;
+  }
+  @media (min-width: 940px) {
+    .grid { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 3.5rem; }
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 1rem;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 7px; height: 7px;
+    border-radius: 999px;
+    background: #16a34a;
+    box-shadow: 0 0 0 4px rgba(22,163,74,.16);
+  }
+
+  h1 {
+    font-family: "CN Manrope", "CN Inter", ui-sans-serif, system-ui, sans-serif;
+    font-size: clamp(2.1rem, 5.4vw, 3.4rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.04;
+    margin: 0 0 1rem;
+  }
+  .lede {
+    font-size: clamp(1rem, 1.5vw, 1.08rem);
+    color: var(--ink-soft);
+    margin: 0 0 2rem;
+    max-width: 46ch;
+  }
+
+  .points { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.9rem; }
+  .points li {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 0.7rem;
+    font-size: 0.93rem;
+    color: var(--ink-soft);
+  }
+  .points svg { width: 20px; height: 20px; color: var(--ink); flex: none; margin-top: 1px; }
+  .points b { color: var(--ink); font-weight: 650; }
+
+  /* ---------- form card ---------- */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: clamp(1.25rem, 3.2vw, 2.15rem);
+    box-shadow: 0 18px 50px rgba(12, 10, 4, 0.09);
+  }
+
+  .fields { display: grid; gap: 1.05rem; grid-template-columns: 1fr; }
+  @media (min-width: 620px) { .two { grid-template-columns: 1fr 1fr; } }
+
+  .field { display: grid; gap: 0.4rem; min-width: 0; }
+  label {
+    font-size: 0.83rem;
+    font-weight: 650;
+    color: var(--ink);
+  }
+  label .opt { font-weight: 500; color: var(--ink-faint); }
+
+  input, select, textarea {
+    width: 100%;
+    font: inherit;
+    font-size: 0.95rem;
+    color: var(--ink);
+    background: #fbfbfb;
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    padding: 0.72rem 0.85rem;
+    transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+  textarea { resize: vertical; min-height: 118px; }
+  select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2355555c' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .7rem center; background-size: 17px; padding-right: 2.3rem; }
+  input:hover, select:hover, textarea:hover { background: #fff; }
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    background: #fff;
+    border-color: #111;
+    box-shadow: 0 0 0 3px rgba(17,17,17,.1);
+  }
+  input[aria-invalid="true"], textarea[aria-invalid="true"] {
+    border-color: var(--err);
+    box-shadow: 0 0 0 3px rgba(185,28,28,.1);
+  }
+
+  .err {
+    font-size: 0.78rem;
+    color: var(--err);
+    min-height: 0;
+  }
+  .err:empty { display: none; }
+
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  .actions {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.9rem 1.1rem;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: #0d0d0f;
+    color: #fff;
+    border: 0;
+    border-radius: 999px;
+    padding: 0.85rem 1.5rem;
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 650;
+    cursor: pointer;
+    box-shadow: 0 10px 26px rgba(0,0,0,.22);
+    transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+  }
+  .btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(0,0,0,.28); }
+  .btn:disabled { opacity: .62; cursor: progress; }
+  .btn svg { width: 17px; height: 17px; }
+  .note { font-size: 0.82rem; color: var(--ink-faint); }
+
+  /* spinner */
+  .spin {
+    width: 15px; height: 15px;
+    border: 2px solid rgba(255,255,255,.35);
+    border-top-color: #fff;
+    border-radius: 999px;
+    animation: sp .7s linear infinite;
+  }
+  @keyframes sp { to { transform: rotate(360deg); } }
+
+  /* form-level status */
+  .status {
+    margin-top: 1.1rem;
+    font-size: 0.88rem;
+    padding: 0.75rem 0.9rem;
+    border-radius: 11px;
+    display: none;
+  }
+  .status--err { display: block; color: var(--err); background: #fef2f2; border: 1px solid #fecaca; }
+
+  /* success panel */
+  .done { display: none; text-align: center; padding: clamp(1.5rem, 4vw, 2.5rem) 0.5rem; }
+  .done__tick {
+    width: 62px; height: 62px;
+    margin: 0 auto 1.25rem;
+    border-radius: 999px;
+    display: grid; place-items: center;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: var(--ok);
+    animation: pop .45s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  .done__tick svg { width: 28px; height: 28px; }
+  @keyframes pop { from { transform: scale(.72); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  .done h2 {
+    font-family: "CN Manrope", ui-sans-serif, system-ui, sans-serif;
+    font-size: clamp(1.4rem, 3.4vw, 1.85rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin: 0 0 0.6rem;
+  }
+  .done p { color: var(--ink-soft); margin: 0 auto 1.6rem; max-width: 38ch; font-size: 0.95rem; }
+
+  .alt {
+    margin-top: 2rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--line);
+    display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem;
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+  }
+  .alt a { color: var(--ink); text-decoration: none; border-bottom: 1px solid rgba(0,0,0,.22); }
+  .alt a:hover { border-bottom-color: var(--ink); }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav">
+    <a class="brand" href="/">
+      <img src="/images/boot-logo.png" alt="" onerror="this.remove()">
+      <span>Cypher Ai</span>
+    </a>
+    <a class="nav__back" href="/">&larr; Back to site</a>
+  </nav>
+
+  <div class="grid">
+
+    <div>
+      <p class="eyebrow">2 spots available</p>
+      <h1>Book a free consultation</h1>
+      <p class="lede">
+        Tell us what you're trying to automate. We'll map the workflow, show you
+        what's realistic, and follow up with a concrete plan — no obligation.
+      </p>
+
+      <ul class="points">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <span><b>Reply within 24 hours</b> — usually much sooner, on a weekday.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v5a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M12 3v4"/><circle cx="9" cy="13" r="1.2" fill="currentColor"/><circle cx="15" cy="13" r="1.2" fill="currentColor"/></svg>
+          <span><b>Founder-led</b> — you talk to the person who builds it.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          <span><b>Practical scope first</b> — we start where the time is actually lost.</span>
+        </li>
+      </ul>
+
+      <div class="alt">
+        <span>Prefer something else?</span>
+        <a href="mailto:Aiwithpriyansh@gmail.com">Email us</a>
+        <a href="https://wa.me/919582440495" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="card">
+
+      <form id="cn-form" novalidate>
+        <div class="fields">
+
+          <div class="fields two">
+            <div class="field">
+              <label for="f-name">Your name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Priyansh Razz">
+              <div class="err" data-err-for="name"></div>
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="you@company.com">
+              <div class="err" data-err-for="email"></div>
+            </div>
+          </div>
+
+          <div class="fields two">
+            <div class="field">
+              <label for="f-company">Company <span class="opt">(optional)</span></label>
+              <input id="f-company" name="company" type="text" autocomplete="organization" placeholder="Company name">
+            </div>
+            <div class="field">
+              <label for="f-phone">Phone / WhatsApp <span class="opt">(optional)</span></label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+91 00000 00000">
+            </div>
+          </div>
+
+          <div class="fields two">
+            <div class="field">
+              <label for="f-service">What do you need?</label>
+              <select id="f-service" name="service">
+                <option value="AI Automation">AI Automation</option>
+                <option value="Voice Agents">Voice Agents</option>
+                <option value="Custom Workflows">Custom Workflows (n8n)</option>
+                <option value="AI Agent / Chatbot">AI Agent / Chatbot</option>
+                <option value="CRM &amp; Tool Integration">CRM &amp; Tool Integration</option>
+                <option value="Not sure yet">Not sure yet — advise me</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-budget">Budget <span class="opt">(optional)</span></label>
+              <select id="f-budget" name="budget">
+                <option value="">Prefer not to say</option>
+                <option value="&lt; $1k">Under $1,000</option>
+                <option value="$1k–$5k">$1,000 – $5,000</option>
+                <option value="$5k–$15k">$5,000 – $15,000</option>
+                <option value="$15k+">$15,000+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-when">Best time for a call <span class="opt">(optional)</span></label>
+            <input id="f-when" name="preferredTime" type="text" placeholder="e.g. weekday mornings IST, or a specific date">
+          </div>
+
+          <div class="field">
+            <label for="f-message">What would you like to automate?</label>
+            <textarea id="f-message" name="message" required placeholder="Tell us about the process, the tools you use today, and where time gets lost."></textarea>
+            <div class="err" data-err-for="message"></div>
+          </div>
+
+        </div>
+
+        <!-- spam trap: real people never fill this -->
+        <div class="hp" aria-hidden="true">
+          <label for="f-hp">Do not fill</label>
+          <input id="f-hp" name="_hp" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="actions">
+          <button class="btn" id="cn-submit" type="submit">
+            <span id="cn-btn-label">Book my consultation</span>
+            <svg id="cn-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+          <span class="note">No spam. Your details stay private.</span>
+        </div>
+
+        <div class="status" id="cn-status" role="alert"></div>
+      </form>
+
+      <div class="done" id="cn-done" role="status">
+        <div class="done__tick">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h2>Request received</h2>
+        <p id="cn-done-msg">Thanks — we've got your details and will get back to you within 24 hours.</p>
+        <a class="btn" href="/" style="text-decoration:none">
+          Back to site
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- fire-and-forget fallback target: a plain form POST is not subject to CORS,
+     so the lead still reaches the webhook if the JSON fetch is blocked -->
+<iframe name="cn-sink" title="" style="display:none" aria-hidden="true"></iframe>
+
+<script>
+(function () {
+  "use strict";
+
+  var WEBHOOK = "https://n8n.srv1278657.hstgr.cloud/webhook/bookconsulting";
+
+  var form    = document.getElementById("cn-form");
+  var doneEl  = document.getElementById("cn-done");
+  var doneMsg = document.getElementById("cn-done-msg");
+  var btn     = document.getElementById("cn-submit");
+  var label   = document.getElementById("cn-btn-label");
+  var icon    = document.getElementById("cn-btn-icon");
+  var status  = document.getElementById("cn-status");
+
+  function setErr(name, msg) {
+    var box = form.querySelector('[data-err-for="' + name + '"]');
+    var input = form.elements[name];
+    if (box) box.textContent = msg || "";
+    if (input) {
+      if (msg) input.setAttribute("aria-invalid", "true");
+      else input.removeAttribute("aria-invalid");
+    }
+  }
+
+  function validate(data) {
+    var ok = true;
+    setErr("name", ""); setErr("email", ""); setErr("message", "");
+    if (!data.name || data.name.trim().length < 2) {
+      setErr("name", "Please tell us your name."); ok = false;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(data.email || "")) {
+      setErr("email", "Enter a valid email address."); ok = false;
+    }
+    if (!data.message || data.message.trim().length < 10) {
+      setErr("message", "A sentence or two about the work, please."); ok = false;
+    }
+    return ok;
+  }
+
+  function busy(on) {
+    btn.disabled = on;
+    label.textContent = on ? "Sending…" : "Book my consultation";
+    if (on) {
+      icon.style.display = "none";
+      if (!document.getElementById("cn-spin")) {
+        var s = document.createElement("span");
+        s.className = "spin"; s.id = "cn-spin";
+        btn.appendChild(s);
+      }
+    } else {
+      icon.style.display = "";
+      var sp = document.getElementById("cn-spin");
+      if (sp) sp.remove();
+    }
+  }
+
+  function succeed(msg) {
+    if (msg) doneMsg.textContent = msg;
+    form.style.display = "none";
+    doneEl.style.display = "block";
+    doneEl.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
+  function fail(msg) {
+    status.className = "status status--err";
+    status.textContent = msg;
+  }
+
+  // Plain form POST into a hidden iframe. Not subject to CORS, so this still
+  // delivers the lead when the browser blocks reading the fetch response.
+  function fallbackPost(payload) {
+    var f = document.createElement("form");
+    f.method = "POST";
+    f.action = WEBHOOK;
+    f.target = "cn-sink";
+    f.style.display = "none";
+    Object.keys(payload).forEach(function (k) {
+      var i = document.createElement("input");
+      i.type = "hidden";
+      i.name = k;
+      i.value = typeof payload[k] === "string" ? payload[k] : JSON.stringify(payload[k]);
+      f.appendChild(i);
+    });
+    document.body.appendChild(f);
+    f.submit();
+    setTimeout(function () { f.remove(); }, 2000);
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    status.className = "status";
+    status.textContent = "";
+
+    var fd = new FormData(form);
+    var data = {};
+    fd.forEach(function (v, k) { data[k] = typeof v === "string" ? v.trim() : v; });
+
+    // honeypot filled => silently pretend success, send nothing
+    if (data._hp) { succeed(); return; }
+    delete data._hp;
+
+    if (!validate(data)) {
+      var firstBad = form.querySelector('[aria-invalid="true"]');
+      if (firstBad) firstBad.focus();
+      return;
+    }
+
+    var params = new URLSearchParams(location.search);
+    var payload = {
+      name: data.name,
+      email: data.email,
+      company: data.company || "",
+      phone: data.phone || "",
+      service: data.service || "",
+      budget: data.budget || "",
+      preferredTime: data.preferredTime || "",
+      message: data.message,
+      source: params.get("from") || "contact page",
+      sourcePath: params.get("path") || "",
+      submittedAt: new Date().toISOString(),
+      pageUrl: location.href,
+      referrer: document.referrer || "",
+      userAgent: navigator.userAgent
+    };
+
+    busy(true);
+
+    fetch(WEBHOOK, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    })
+      .then(function (res) {
+        busy(false);
+        if (res.ok) { succeed(); return; }
+        // Reached the server but it rejected the request.
+        fail("Something went wrong on our side (error " + res.status + "). Please email Aiwithpriyansh@gmail.com and we'll pick it up right away.");
+      })
+      .catch(function () {
+        // Network/CORS blocked reading the response — deliver via form POST
+        // instead, which cannot be read back, so report optimistically.
+        busy(false);
+        fallbackPost(payload);
+        succeed("Thanks — your request is on its way. If you don't hear back within 24 hours, email Aiwithpriyansh@gmail.com and we'll follow up.");
+      });
+  });
+
+  // Prefill the service dropdown when a CTA passes ?service=
+  (function prefill() {
+    var params = new URLSearchParams(location.search);
+    var want = (params.get("service") || "").toLowerCase();
+    if (!want) return;
+    var sel = form.elements.service;
+    for (var i = 0; i < sel.options.length; i++) {
+      if (sel.options[i].value.toLowerCase() === want) { sel.selectedIndex = i; return; }
+    }
+  })();
+})();
+</script>
+</body>
+</html>
