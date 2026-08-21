@@ -537,6 +537,13 @@
   }
   .cal__day:hover:not(.cal__day--sel) { background: #f2f2f5; }
   .cal__day:active { box-shadow: var(--sh-press); }
+  .cal__day:disabled {
+    box-shadow: none;
+    background: transparent;
+    border-color: transparent;
+    color: #bcbcc4;
+    cursor: default;
+  }
   .cal__day--today { font-weight: 750; }
   .cal__day--today::after {
     content: "";
@@ -587,6 +594,14 @@
   }
   .slot:hover:not([aria-pressed="true"]) { background: #f2f2f5; transform: translateY(-1px); }
   .slot:active { box-shadow: var(--sh-press); transform: none; }
+  .slot:disabled {
+    box-shadow: none;
+    background: transparent;
+    border-color: transparent;
+    color: #bcbcc4;
+    cursor: default;
+    text-decoration: line-through;
+  }
   .slot[aria-pressed="true"] {
     background: #fbf3d8;
     border-color: rgba(234, 179, 8, 0.65);
@@ -1092,7 +1107,7 @@
         <span class="cal__sum" id="cal-sum" aria-live="polite">No date picked yet</span>
         <button type="button" class="cal__clear" id="cal-clear">Clear</button>
       </div>
-      <p class="cal__hint">All dates available · times shown in your timezone (<span id="cal-tz"></span>)</p>
+      <p class="cal__hint">Today &amp; future dates only · times shown in your timezone (<span id="cal-tz"></span>)</p>
 
     </div>
     <div class="pop__foot">
@@ -1332,6 +1347,10 @@
     calMonth.textContent = new Date(cal.vy, cal.vm, 1)
       .toLocaleDateString("en", { month: "long", year: "numeric" });
 
+    // never navigate to a month before the current one
+    var nowM = new Date();
+    calPrev.disabled = cal.vy * 12 + cal.vm <= nowM.getFullYear() * 12 + nowM.getMonth();
+
     var frag = document.createDocumentFragment();
     var lead = (new Date(cal.vy, cal.vm, 1).getDay() + 6) % 7; // Monday-first
     for (var p = 0; p < lead; p++) {
@@ -1355,6 +1374,7 @@
           { weekday: "long", day: "numeric", month: "long", year: "numeric" }));
 
         if (+dt === +today) b.classList.add("cal__day--today");
+        if (dt < today) b.disabled = true; // past days are off-limits
 
         var isSel = cal.sel && cal.sel.y === cal.vy && cal.sel.m === cal.vm && cal.sel.d === day;
         if (isSel) { b.classList.add("cal__day--sel"); b.setAttribute("aria-pressed", "true"); }
@@ -1381,6 +1401,11 @@
       return;
     }
 
+    // on today's date, keep at least an hour of lead time
+    var nowS = new Date();
+    var isToday = cal.sel.y === nowS.getFullYear() && cal.sel.m === nowS.getMonth() && cal.sel.d === nowS.getDate();
+    var minHour = isToday ? nowS.getHours() + 1 : -1;
+
     var frag = document.createDocumentFragment();
     SLOT_GROUPS.forEach(function (g) {
       var group = document.createElement("div");
@@ -1400,6 +1425,7 @@
         b.textContent = pad2(h) + ":00";
         b.setAttribute("data-h", h);
         b.setAttribute("aria-pressed", (cal.sel && cal.sel.h === h && cal.sel.min == null) ? "true" : "false");
+        if (h <= minHour) b.disabled = true;
         b.addEventListener("click", function () {
           cal.sel.h = h;
           cal.sel.min = null;
