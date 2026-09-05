@@ -5,28 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- cypher-phone:begin -->
-<link rel="alternate" media="only screen and (max-width: 809px)" href="/m/contact/">
+<link rel="stylesheet" href="/m/phone.css">
+<script src="/m/phone.js" defer></SCRIPT>
 <script>
-/* Cypher Ai device split — desktop page guard. */
+/* Cypher Ai device split — phone page guard (reverse: wide screens go back). */
 (function () {
   try {
     var q = new URLSearchParams(location.search);
     if (q.get('view') === 'desktop') { try { sessionStorage.setItem('cypher-view', 'desktop'); } catch (e) {} }
     if (sessionStorage.getItem('cypher-view') === 'desktop') return;
-    var path = location.pathname;
-    if (/^\/m(\/|$)/.test(path)) return;
     var ua = navigator.userAgent || '';
     if (/bot|crawl|spider|slurp|mediapartners|baidu|yandex|sogou|exabot|facebot|ia_archiver|ahrefs|semrush|mj12bot|dotbot|petalbot|bytespider|gptbot|claudebot|ccbot|anthropic|openai|perplexity|cohere|diffbot|webdriver|lighthouse|pagespeed|pingdom/i.test(ua)) return;
-    if (/iPad|Tablet|PlayBook|Silk|Kindle|Nexus 7|Nexus 9|Nexus 10|SM-T|GT-P/i.test(ua)) return;
-    var narrow = window.matchMedia('(max-width: 809.98px)').matches || Math.min(screen.width, screen.height) < 810;
     var mobileUA = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(ua);
-    var touchPhone = ('ontouchstart' in window) && navigator.maxTouchPoints > 0 && narrow;
-    if (narrow && (mobileUA || touchPhone)) {
-      location.replace('/m/contact/' + location.search + location.hash);
+    var wide = window.matchMedia('(min-width: 810px)').matches && Math.min(screen.width, screen.height) >= 810;
+    if (wide && !mobileUA) {
+      var path = location.pathname.replace(/^\/m(\/|$)/, '/');
+      if (path === '') path = '/';
+      location.replace(path + location.search + location.hash);
     }
   } catch (e) { /* never block rendering */ }
 })();
 </SCRIPT>
+<link rel="canonical" href="/contact/">
 <!-- cypher-phone:end --><title>Book a Consultation — Cypher Ai</title>
 <meta name="description" content="Book a free consultation with Cypher Ai. Tell us about your workflows and we'll design the AI automation that fits.">
 <meta name="robots" content="index, follow">

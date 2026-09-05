@@ -2,7 +2,9 @@
   const I = window.RL_ICONS;
 
   // ---------- Spotlight hover (agency-webos: src/features/ui/SpotlightCard.tsx) ----------
+  // No-op on touch phones (no cursor) — skips per-move style writes on low-power devices.
   function initSpotlights() {
+    if (window.matchMedia && window.matchMedia('(max-width: 809.98px)').matches) return;
     document.querySelectorAll('.rl-spotlight-host').forEach((host) => {
       if (host.__rlSpotlightBound) return;
       host.__rlSpotlightBound = true;

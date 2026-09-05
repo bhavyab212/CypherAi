@@ -1,0 +1,95 @@
+/* Cypher Ai — phone override layer.
+   Loaded only on the /m/ mirrors, last in <head>. Same visual identity
+   (fonts, colors, radii, copy, order) but tuned for the phone screen:
+   single-column, larger tap targets, softer heavy loops, lazy images,
+   and a sticky Book-Consultation action. */
+
+/* ---- Layout: stack multi-column grids, keep identity ---- */
+@media (max-width: 809.98px) {
+  /* Process, whatwedo orbit, antimetal features, solutions panels, footer
+     grids — collapse to single column without touching type or palette. */
+  .rl-globe__grid-layout,
+  .wwd-grid-layout,
+  .am-features-grid,
+  .am-how-grid,
+  .rl-process__grid,
+  .ssr-variant [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Globe: reduce canvas scale on phones to free GPU and data more evenly */
+  #rl-globe-canvas { width: 100% !important; max-height: 52vh; }
+
+  /* Hero H1: the two heading rows (text + pill + text) measure 428px/728px
+     at Framer's 44px phone font and clip mid-letter on 390px screens.
+     Scale the preset's own font var so rows fit the viewport; same family,
+     weight, spacing, color — identity unchanged. */
+  #hero h1.framer-styles-preset-wd4756 {
+    --framer-font-size: clamp(17px, 5vw, 26px) !important;
+  }
+
+  /* Solutions: the desktop horizontal pin is mobile-gated in JS, but ensure
+     no pin spacer bleeds a gap on phones. */
+  #rl-solutions { height: auto !important; min-height: 0 !important; }
+
+  /* About: 6-card grid → 1 column */
+  .cypher-about-grid { grid-template-columns: 1fr !important; }
+
+  /* Header/nav: slightly more breathing room for thumbs */
+  .m-menu-row,
+  .framer-menu { gap: 10px !important; }
+
+  /* Tap targets: FAQ rows, modal cards, pills, socials, spinner controls
+     at least 44px without changing copy or hit style. */
+  summary,
+  [role="button"],
+  .rl-chip,
+  .framer-1w5wt8r,
+  .cypher-social-link,
+  .am-ticker-icon,
+  .wwd-orbit__content button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Sticky phone CTA (opt-in via body class, JS adds it once phone.css loads) */
+  .m-sticky {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: max(10px, env(safe-area-inset-bottom));
+    z-index: 60;
+    display: flex;
+    gap: 10px;
+    font-size: 15px;
+  }
+  .m-sticky a {
+    flex: 1;
+    text-align: center;
+    min-height: 54px;
+    line-height: 54px;
+    border-radius: 16px;
+    font-weight: 800;
+    text-decoration: none;
+  }
+  .m-sticky .m-sticky-call {
+    flex: 0 0 30%;
+    background: #141417;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    color: #f5f4f0;
+  }
+  .m-sticky .m-sticky-book {
+    background: linear-gradient(135deg, #00ffa3, #00e5ff);
+    color: #03110b;
+  }
+
+  /* Above-fold images: keep eager; below-fold will be lazy-assigned by JS. */
+  /* No font swaps — same Inter/Instrument Serif, same weights. */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wwd-orbit__glow,
+  .am-spinner__ring,
+  .am-pixel-veil { animation: none !important; }
+}

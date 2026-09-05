@@ -19,9 +19,13 @@
   function initLottie() {
     const container = document.getElementById("rl-tailored-ai-lottie");
     if (!container || !window.lottie) return;
-    fetch("./repeatless-import/assets/ai-intelligence.json")
-      .then((res) => res.json())
-      .then((animationData) => {
+    // Phone: defer the 172KB JSON + 299KB player burst until the section is
+    // near the viewport — keeps first paint lean and respects data budgets.
+    const onPhone = window.matchMedia && window.matchMedia("(max-width: 809.98px)").matches;
+    function fire() {
+      fetch("./repeatless-import/assets/ai-intelligence.json")
+        .then(function (res) { return res.json(); })
+        .then(function (animationData) {
         window.lottie.loadAnimation({
           container,
           renderer: "svg",
@@ -31,8 +35,17 @@
           rendererSettings: { preserveAspectRatio: "xMidYMid meet" },
         });
         if (window.ScrollTrigger) window.ScrollTrigger.refresh();
-      })
-      .catch(() => {});
+        })
+        .catch(function () {});
+    }
+    if (onPhone && "IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { fire(); io.disconnect(); } });
+      }, { rootMargin: "200px 0px" });
+      io.observe(container);
+    } else {
+      fire();
+    }
   }
 
   function initSolutions() {

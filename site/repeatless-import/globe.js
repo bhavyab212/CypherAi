@@ -62,7 +62,7 @@ function initGlobe() {
   });
 
   const globe = createGlobe(canvas, {
-    devicePixelRatio: 2,
+    devicePixelRatio: window.matchMedia && window.matchMedia("(max-width: 809.98px)").matches ? 1 : 2,
     width: width * 2,
     height: width * 2,
     phi: 0,
