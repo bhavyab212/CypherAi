@@ -1,0 +1,2 @@
+import{a as u}from"/app.framerstatic.com/chunk-UJM2YVVA.mjs";import{a as n}from"/app.framerstatic.com/chunk-425IX65M.mjs";import{e as o}from"/app.framerstatic.com/chunk-4PTFRIXN.mjs";var e=o(u(),1),i=(0,e.createContext)(void 0);function m(){let t=(0,e.useContext)(i);return n(t,"modulesRuntime is not found in the context, make sure ModulesRuntimeContext.Provider is present in the tree."),t}export{i as a,m as b};
+//# sourceMappingURL=/app.framerstatic.com/chunk-UYNMK5CK.mjs.map

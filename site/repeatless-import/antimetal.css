@@ -1,0 +1,208 @@
+/* ============================================================
+   Antimetal import — Features (AI demo + ticker) and
+   How It Works (process cards) sections.
+   Ported from welcomed-actions-561341.framer.app
+   ============================================================ */
+
+.am-section { padding: 5rem 1.5rem; }
+@media (min-width: 768px) { .am-section { padding: 6rem 2rem; } }
+.am-inner { max-width: 1100px; margin-inline: auto; }
+
+.am-head { max-width: 640px; margin: 0 0 3rem; }
+.am-head h2 {
+  font-family: "RL Manrope", ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #0f1728;
+  margin: 0 0 1rem;
+}
+.am-head p {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* word-reveal spans (JS toggles .am-word--in) */
+.am-word {
+  display: inline-block;
+  opacity: 0.001;
+  filter: blur(5px);
+  transform: translateY(10px);
+  transition: opacity 0.5s cubic-bezier(0.44, 0, 0.56, 1), filter 0.5s cubic-bezier(0.44, 0, 0.56, 1), transform 0.5s cubic-bezier(0.44, 0, 0.56, 1);
+}
+.am-word--in { opacity: 1; filter: blur(0px); transform: translateY(0); }
+
+/* ---------------------------------------------------------
+   Features section (light)
+   --------------------------------------------------------- */
+.am-features { background: #f6f8fb; }
+.am-features-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+@media (min-width: 900px) { .am-features-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.am-card {
+  background: #ececec;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06), 0 15px 15px -4px rgba(0,0,0,0.03);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.am-card__stage { position: relative; aspect-ratio: 16/10; background: #ededed; overflow: hidden; }
+.am-card__text { padding: 1.5rem 1.75rem 1.75rem; }
+.am-card__text h5 { font-size: 1.15rem; font-weight: 700; color: #0f1728; margin: 0 0 0.5rem; font-family: "RL Manrope", ui-sans-serif, system-ui, sans-serif; }
+.am-card__text p { font-size: 0.95rem; color: #64748b; line-height: 1.55; margin: 0; }
+
+/* --- Card 1: AI demo cycle --- */
+.am-demo-stage { position: relative; width: 100%; height: 100%; }
+.am-demo-input, .am-demo-processing, .am-demo-image {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.4s cubic-bezier(0.44,0,0.56,1);
+  pointer-events: none;
+}
+.am-demo-stage[data-phase="input"] .am-demo-input,
+.am-demo-stage[data-phase="processing"] .am-demo-processing,
+.am-demo-stage[data-phase="image"] .am-demo-image { opacity: 1; }
+
+.am-demo-input {
+  align-items: flex-start; justify-content: flex-start;
+  padding: 1.75rem;
+}
+.am-demo-typed-wrap {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.6;
+  color: #596074; max-width: 100%;
+}
+.am-demo-cursor { display: inline-block; margin-left: 2px; color: #1b2540; animation: am-blink 0.9s steps(1) infinite; }
+@keyframes am-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+
+.am-demo-processing .am-spinner { width: 42px; height: 42px; }
+
+.am-demo-image { overflow: hidden; }
+.am-demo-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.am-pixel-veil {
+  position: absolute; inset: 0;
+  background: repeating-conic-gradient(#0050f8 0% 25%, #1b2540 0% 50%) 50% / 20px 20px;
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.am-demo-stage[data-phase="image"][data-revealed="1"] .am-pixel-veil { clip-path: inset(100% 0 0 0); }
+
+/* --- Card 2: live ticker --- */
+.am-ticker-stage {
+  display: flex; align-items: center; justify-content: center;
+  background: #ececec;
+}
+.am-ticker-track {
+  display: flex; align-items: center; gap: 24px;
+  animation: am-ticker-scroll 14s linear infinite;
+  will-change: transform;
+}
+.am-ticker-icon {
+  flex: none;
+  width: 56px; height: 56px; border-radius: 9999px;
+  background: #3a3f4b;
+  display: flex; align-items: center; justify-content: center;
+  color: #d7dae0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.am-ticker-icon svg { width: 22px; height: 22px; }
+@keyframes am-ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.am-ticker-focus {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 72px; height: 72px; border-radius: 9999px;
+  background: radial-gradient(circle at 35% 30%, #4d9dff, #0050f8);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 80, 248, 0.45);
+}
+.am-ticker-focus::before, .am-ticker-focus::after {
+  content: ""; position: absolute; inset: 0; border-radius: 9999px;
+  border: 1px solid rgba(0, 80, 248, 0.35);
+  animation: am-ring-pulse 2.4s cubic-bezier(0.44,0,0.56,1) infinite;
+}
+.am-ticker-focus::after { animation-delay: 1.2s; }
+@keyframes am-ring-pulse {
+  0% { transform: scale(1); opacity: 0.9; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+.am-ticker-focus svg { width: 20px; height: 20px; color: #fff; }
+.am-ticker-fade {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to right, #ececec 0%, transparent 15%, transparent 85%, #ececec 100%);
+}
+
+/* ---------------------------------------------------------
+   How It Works section (dark)
+   --------------------------------------------------------- */
+.am-how { background: #0c1424; }
+.am-how .am-head h2 { color: #fafafa; }
+.am-how .am-head p { color: #c7c7c7; }
+
+.am-how-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+@media (min-width: 900px) { .am-how-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.am-how-card {
+  background: #1b2540;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 15px 15px -4px rgba(255,255,255,0.03);
+  display: flex; flex-direction: column; gap: 1.25rem;
+}
+.am-how-card h5 { font-size: 1.1rem; font-weight: 700; color: #fafafa; margin: 0; font-family: "RL Manrope", ui-sans-serif, system-ui, sans-serif; }
+.am-how-card p { font-size: 0.92rem; color: #c7c7c7; line-height: 1.55; margin: 0.4rem 0 0; }
+
+.am-mock-input {
+  background: #fafafa; border-radius: 12px; padding: 1rem;
+  display: flex; flex-direction: column; gap: 2.5rem; min-height: 150px;
+}
+.am-mock-input__placeholder { font-size: 14px; color: #596074; font-weight: 500; }
+.am-mock-input__cursor { display: inline-block; width: 1px; height: 15px; background: #1b2540; margin-left: 2px; vertical-align: middle; animation: am-blink 0.9s steps(1) infinite; }
+.am-mock-input__toolbar { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+.am-mock-input__icons { display: flex; gap: 0.6rem; color: #b6bac2; }
+.am-mock-input__icons svg { width: 16px; height: 16px; }
+.am-mock-input__send { width: 28px; height: 28px; border-radius: 8px; background: #1b2540; display: flex; align-items: center; justify-content: center; }
+.am-mock-input__send svg { width: 14px; height: 14px; color: #fafafa; }
+
+.am-icon-badge {
+  width: 100px; height: 100px; border-radius: 9999px; background: #fafafa;
+  display: flex; align-items: center; justify-content: center; position: relative;
+  align-self: flex-start;
+}
+
+/* Processing spinner: radiating lines + rotating conic ring */
+.am-spinner { position: relative; width: 42px; height: 42px; }
+.am-spinner__arm {
+  position: absolute; left: 50%; top: 50%; width: 2px; height: 42%;
+  background: #1b2540; border-radius: 2px; transform-origin: 50% 0%;
+  opacity: 0.25; animation: am-spin-fade 1.2s linear infinite;
+}
+.am-spinner__ring {
+  position: absolute; inset: -6px; border-radius: 9999px;
+  border: 2px solid transparent; border-top-color: #1b2540;
+  animation: am-ring-spin 1s linear infinite;
+}
+@keyframes am-spin-fade { 0% { opacity: 1; } 100% { opacity: 0.15; } }
+@keyframes am-ring-spin { to { transform: rotate(360deg); } }
+
+.am-check-badge svg { width: 40px; height: 40px; }
+.am-check-path {
+  stroke-dasharray: 30; stroke-dashoffset: 30;
+  animation: am-draw 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+@keyframes am-draw {
+  0% { stroke-dashoffset: 30; }
+  35%, 60% { stroke-dashoffset: 0; }
+  85%, 100% { stroke-dashoffset: -30; }
+}

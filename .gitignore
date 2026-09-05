@@ -1,0 +1,16 @@
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.local
+.env.*.local
+.pw-test/
+.zcode/
+# Non-web strays (kept locally in docs/, never committed)
+site/images/*.zip
+site/images/*.pdf
+site/images/*.xlsx
+docs/
+*.bak
+*.tmp
