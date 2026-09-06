@@ -226,10 +226,10 @@
   async function inject() {
     try {
       const [res, res2, res3, res4] = await Promise.all([
-        fetch("./repeatless-import/section.html"),
-        fetch("./repeatless-import/antimetal-section.html"),
-        fetch("./repeatless-import/whatwedo-section.html"),
-        fetch("./repeatless-import/intro2-section.html"),
+        fetch("/repeatless-import/section.html"),
+        fetch("/repeatless-import/antimetal-section.html"),
+        fetch("/repeatless-import/whatwedo-section.html"),
+        fetch("/repeatless-import/intro2-section.html"),
       ]);
       html = await res.text();
       antimetalHtml = await res2.text();

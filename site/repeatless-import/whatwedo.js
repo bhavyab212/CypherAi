@@ -170,6 +170,10 @@
     gsap.registerPlugin(ScrollTrigger);
 
     const total = CARDS.length;
+    // Phones: 85% viewport per card makes the pin run 5.1 viewport-heights,
+    // which reads as an endless pinned stretch on small screens. 55% keeps
+    // the exact same card cycle in less scroll. Desktop unchanged.
+    const perCard = window.matchMedia && window.matchMedia("(max-width: 809.98px)").matches ? 55 : 85;
     const progressBars = [document.getElementById("wwd-progress-bar"), document.getElementById("wwd-progress-bar-m")];
     const labelsTrack = document.getElementById("wwd-labels-track");
     const descTrack = document.getElementById("wwd-desc-track");
@@ -182,7 +186,7 @@
     ScrollTrigger.create({
       trigger: section,
       start: "top top",
-      end: "+=" + (total - 1) * 85 + "%",
+      end: "+=" + (total - 1) * perCard + "%",
       scrub: 0.5,
       pin: true,
       pinSpacing: true,
@@ -218,7 +222,7 @@
       scrollTrigger: {
         trigger: section,
         start: "top top",
-        end: "+=" + (total - 1) * 85 + "%",
+        end: "+=" + (total - 1) * perCard + "%",
         scrub: 0.5,
       },
     });

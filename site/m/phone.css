@@ -21,16 +21,71 @@
   #rl-globe-canvas { width: 100% !important; max-height: 52vh; }
 
   /* Hero H1: the two heading rows (text + pill + text) measure 428px/728px
-     at Framer's 44px phone font and clip mid-letter on 390px screens.
-     Scale the preset's own font var so rows fit the viewport; same family,
-     weight, spacing, color — identity unchanged. */
+     at Framer's 44px phone font and clip mid-letter on phone screens. The
+     pills are fixed-size, so the font must cover them too: 5vw keeps the
+     widest row inside the viewport with margins across 390-809px (verified
+     19.5px @390, 27px @539, 40px @809). Same family, weight, color. */
   #hero h1.framer-styles-preset-wd4756 {
-    --framer-font-size: clamp(17px, 5vw, 26px) !important;
+    --framer-font-size: clamp(16px, 5vw, 44px) !important;
   }
 
   /* Solutions: the desktop horizontal pin is mobile-gated in JS, but ensure
-     no pin spacer bleeds a gap on phones. */
+     no pin spacer bleeds a gap on phones. Panels 2-5 keep their SSR dimmed
+     state (opacity .28, translateY 34px) because the desktop scrub never
+     runs on phones — normalize them so every panel heading reads normally. */
   #rl-solutions { height: auto !important; min-height: 0 !important; }
+  #rl-solutions [data-htext] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  #rl-solutions [data-imagemask] {
+    clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%) !important;
+  }
+
+  /* The native #intro section was replaced by the injected intro2 section
+     (inject.js) but never actually hidden — it renders as a blank cream
+     viewport-height stretch. Superseded content: hide on phones. */
+  #intro { display: none !important; }
+
+  /* Framer's editor affordance (draggable 30px pencil circle, fixed right
+     edge) — authoring tool, not site content. Same spirit as the export's
+     own hide-block for the Framer badge/CTA. */
+  #__framer-editorbar-container,
+  #__framer-editorbar,
+  #__framer-editorbar-button { display: none !important; }
+
+  /* WhatWeDo mobile: the orbit wrap's margin-top:auto absorbed ALL leftover
+     100svh space (dead band between text and orbit). Reclaim it: tighter
+     paddings, shorter uniform desc block (uniform height keeps the % scroll
+     math correct), hide the stray arrow glyph, slightly larger orbit. */
+  .wwd-mobile {
+    position: sticky !important;
+    top: 0 !important;
+    height: 100svh !important;
+    padding: 4.25rem 1.25rem 1.25rem !important;
+  }
+  .wwd-mobile__title { margin-top: 0.75rem !important; }
+  .wwd-mobile__arrow { display: none !important; }
+  .wwd-mobile__desc,
+  .wwd-mobile__desc-item { height: 110px !important; }
+  /* Balance the leftover 100svh space: two auto margins split it evenly
+     above the card row and between row and orbit (instead of pooling it
+     all between text and orbit), and the orbit grows past the old 380px
+     cap to use the space. */
+  .wwd-mobile__row { margin-top: auto !important; padding-top: 1rem; }
+  .wwd-mobile__orbit-wrap { margin-top: auto !important; padding-bottom: 0.5rem !important; }
+  .wwd-orbit--mobile { width: min(84vw, 46svh) !important; }
+
+  /* Footer CTA: the phone variant stretches the translucent outer pill to
+     100% width while the inner black button stays min-content (nested
+     misaligned pills). Make the inner button fill the pill — one clean
+     full-width CTA. */
+  .framer-qqegc2 { width: 100% !important; }
+  .framer-qqegc2 .framer-1610r1m-container { width: 100% !important; }
+  .framer-qqegc2 a {
+    width: 100% !important;
+    justify-content: center !important;
+  }
 
   /* About: 6-card grid → 1 column */
   .cypher-about-grid { grid-template-columns: 1fr !important; }

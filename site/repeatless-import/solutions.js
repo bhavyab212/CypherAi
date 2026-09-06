@@ -23,7 +23,7 @@
     // near the viewport — keeps first paint lean and respects data budgets.
     const onPhone = window.matchMedia && window.matchMedia("(max-width: 809.98px)").matches;
     function fire() {
-      fetch("./repeatless-import/assets/ai-intelligence.json")
+      fetch("/repeatless-import/assets/ai-intelligence.json")
         .then(function (res) { return res.json(); })
         .then(function (animationData) {
         window.lottie.loadAnimation({

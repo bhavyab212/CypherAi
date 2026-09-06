@@ -36,11 +36,8 @@
     if (/^\/m(\/|$)/.test(path)) return;
     var ua = navigator.userAgent || '';
     if (/bot|crawl|spider|slurp|mediapartners|baidu|yandex|sogou|exabot|facebot|ia_archiver|ahrefs|semrush|mj12bot|dotbot|petalbot|bytespider|gptbot|claudebot|ccbot|anthropic|openai|perplexity|cohere|diffbot|webdriver|lighthouse|pagespeed|pingdom/i.test(ua)) return;
-    if (/iPad|Tablet|PlayBook|Silk|Kindle|Nexus 7|Nexus 9|Nexus 10|SM-T|GT-P/i.test(ua)) return;
     var narrow = window.matchMedia('(max-width: 809.98px)').matches || Math.min(screen.width, screen.height) < 810;
-    var mobileUA = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(ua);
-    var touchPhone = ('ontouchstart' in window) && navigator.maxTouchPoints > 0 && narrow;
-    if (narrow && (mobileUA || touchPhone)) {
+    if (narrow) {
       location.replace('/m/work/' + location.search + location.hash);
     }
   } catch (e) { /* never block rendering */ }

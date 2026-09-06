@@ -13,7 +13,7 @@
 //   working tree, so re-running the build is idempotent.
 // - The phone mirror keeps the desktop canonical: the generator injects its
 //   own canonical INSIDE the marker block and records the removed original
-//   in the block, so stripInjected() can restore it for comparison.
+//   in the block, so stripMarkers() can restore it for comparison.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { execSync } from "node:child_process";
 import path from "node:path";
@@ -58,13 +58,10 @@ function desktopGuard(mobilePath) {
     "    if (/^\\/m(\\/|$)/.test(path)) return;",
     "    var ua = navigator.userAgent || '';",
     "    if (/bot|crawl|spider|slurp|mediapartners|baidu|yandex|sogou|exabot|facebot|ia_archiver|ahrefs|semrush|mj12bot|dotbot|petalbot|bytespider|gptbot|claudebot|ccbot|anthropic|openai|perplexity|cohere|diffbot|webdriver|lighthouse|pagespeed|pingdom/i.test(ua)) return;",
-    "    if (/iPad|Tablet|PlayBook|Silk|Kindle|Nexus 7|Nexus 9|Nexus 10|SM-T|GT-P/i.test(ua)) return;",
     "    var narrow = window.matchMedia('(max-width: 809.98px)').matches || Math.min(screen.width, screen.height) < 810;",
-    "    var mobileUA = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(ua);",
-    "    var touchPhone = ('ontouchstart' in window) && navigator.maxTouchPoints > 0 && narrow;",
-    '    if (narrow && (mobileUA || touchPhone)) {',
+    "    if (narrow) {",
     "      location.replace('" + mobilePath + "' + location.search + location.hash);",
-    '    }',
+    "    }",
     '  } catch (e) { /* never block rendering */ }',
     '})();',
     '</SC' + 'RIPT>',
@@ -75,7 +72,7 @@ function desktopGuard(mobilePath) {
 
 // Injected into the phone mirror only: override layer + reverse guard.
 // The original canonical is recorded as removed INSIDE the block so the
-// parity check can restore it (see stripInjected). The phone canonical
+// parity check can restore it (see stripMarkers). The phone canonical
 // reuses the desktop page's own canonical (absolute, e.g. the framer.app
 // URL) — standard separate-mobile-URL practice; falls back to the relative
 // desktopPath for hand-built pages without one (contact).
@@ -116,11 +113,11 @@ function phoneHead(desktopPath, removedCanon) {
   return lines.join('\n');
 }
 
-// Remove our injected blocks AND restore the recorded canonical removal,
-// yielding the pristine desktop source for comparison. Restores at the
-// ORIGINAL position (before og:url) — the regex removal point — not the
-// injection point, so line order matches HEAD exactly.
-function stripInjected(html) {
+// Remove our injected blocks and restore the recorded canonical removal,
+// yielding the pristine desktop source. Restores at the ORIGINAL position
+// (before og:url) so line order matches HEAD exactly, and consumes the
+// single separator newline the generator added before BEGIN.
+function stripMarkers(html) {
   let out = html;
   for (;;) {
     const b = out.indexOf(BEGIN);
@@ -129,10 +126,8 @@ function stripInjected(html) {
     if (e === -1) break;
     const block = out.slice(b, e + END.length);
     const m = block.match(/<!-- cypher-phone:removed (<link rel="canonical" href="[^"]*">) -->/);
-    // Drop the whole injected block, then put the canonical back where the
-    // generator took it from: immediately before the og:url meta.
-    // Also consume the single separator newline the generator added before
-    // BEGIN (see injectAfterHeadStart) so bytes restore bit-identical.
+    // Consume the single separator newline the generator added before BEGIN
+    // so stripped bytes match HEAD bit-identically.
     const start = b > 0 && out[b - 1] === "\n" ? b - 1 : b;
     out = out.slice(0, start) + out.slice(e + END.length);
     if (m) {
@@ -143,6 +138,20 @@ function stripInjected(html) {
     }
   }
   return out;
+}
+
+// The phone mirror rewrites page-relative asset paths ("./repeatless-import/...")
+// to root-absolute ("/repeatless-import/...") because mirrors live one level
+// deeper (/m/...) — page-relative paths 404 there and silently drop every
+// custom section. Parity normalization applies this rewrite to BOTH sides
+// before comparing, so --check proves everything else is byte-identical.
+// Never applied to the desktop write-back.
+const ASSET_NORMALIZE = (html) =>
+  html.replaceAll('"./repeatless-import/', '"/repeatless-import/')
+      .replaceAll("'./repeatless-import/", "'/repeatless-import/");
+
+function normalizeForCompare(html) {
+  return ASSET_NORMALIZE(stripMarkers(html));
 }
 
 function injectAfterHeadStart(html, injection) {
@@ -164,14 +173,19 @@ function pristineDesktop(rel) {
 }
 
 function mirrorFor(page) {
-  const clean = stripInjected(pristineDesktop(page.src));
+  const clean = stripMarkers(pristineDesktop(page.src));
   const canon = (clean.match(/<link rel="canonical" href="[^"]*">/) || [null])[0];
   const noCanon = canon ? clean.replace(canon, "") : clean;
-  return injectAfterHeadStart(noCanon, phoneHead(page.desktopPath, canon));
+  // Mirror-only: page-relative asset paths break one level deep (/m/...).
+  // inject.js/solutions.js fetches and the section fragments are fixed at
+  // the source; this covers the <script>/<link> tags baked into the page.
+  const absAssets = ASSET_NORMALIZE(noCanon);
+  return injectAfterHeadStart(absAssets, phoneHead(page.desktopPath, canon));
 }
 
 function desktopWithGuard(page) {
-  const clean = stripInjected(pristineDesktop(page.src));
+  // Byte-faithful to HEAD except the guard block — no asset rewrites here.
+  const clean = stripMarkers(pristineDesktop(page.src));
   const mobilePath = page.src === "index.html" ? "/m/" : "/m/" + page.src.slice(0, -"index.html".length);
   return injectAfterHeadStart(clean, desktopGuard(mobilePath));
 }
@@ -184,8 +198,8 @@ for (const page of PAGES) {
   if (check) {
     if (!existsSync(mirrorFile)) { console.log("MISSING " + page.mirror); failed++; continue; }
     const mirror = readFileSync(mirrorFile, "utf8");
-    const a = stripInjected(mirror).trim();
-    const b = stripInjected(pristineDesktop(page.src)).trim();
+    const a = normalizeForCompare(mirror).trim();
+    const b = normalizeForCompare(pristineDesktop(page.src)).trim();
     if (a === b) console.log("PARITY  " + page.mirror);
     else { console.log("DRIFT   " + page.mirror + " (content differs outside injected blocks)"); failed++; }
     continue;
