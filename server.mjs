@@ -29,6 +29,25 @@ const mimeTypes = {
   ".txt": "text/plain; charset=utf-8",
 };
 
+const OVERLAY_CSS_TAG =
+  '<link rel="stylesheet" href="/overlay/projects-coming-soon.css">';
+const OVERLAY_JS_TAG =
+  '<script src="/overlay/projects-coming-soon.js" defer></script>';
+const OVERLAY_MARKER = "projects-coming-soon";
+
+function isHomepageTarget(target) {
+  return target === "index.html" || target === "m/index.html";
+}
+
+function injectOverlay(html) {
+  if (html.includes(OVERLAY_MARKER)) return html; // idempotent
+  const injection = `<!-- cypher-overlay:projects-coming-soon -->\n${OVERLAY_CSS_TAG}\n${OVERLAY_JS_TAG}`;
+  if (html.includes("</head>")) {
+    return html.replace("</head>", `${injection}\n</head>`);
+  }
+  return `${injection}\n${html}`;
+}
+
 function safePath(urlPath) {
   const decoded = decodeURIComponent(urlPath).replace(/^\/+/, "").split("?")[0];
   if (decoded.includes("..") || decoded.includes("\\")) return null;
@@ -111,6 +130,17 @@ function findFile(relative) {
   return null;
 }
 
+async function sendHtml(response, filePath, homepage) {
+  const raw = await readFile(filePath, "utf8");
+  const html = homepage ? injectOverlay(raw) : raw;
+  response.writeHead(200, {
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "no-cache",
+    "access-control-allow-origin": "*",
+  });
+  response.end(Buffer.from(html, "utf8"));
+}
+
 async function handle(request, response) {
   const url = new URL(request.url || "/", `http://${request.headers.host || "localhost"}`);
   let target = safePath(url.pathname);
@@ -124,14 +154,7 @@ async function handle(request, response) {
     if (mobileTarget) {
       const mobileFile = findFile(mobileTarget);
       if (mobileFile) {
-        const bytes = await readFile(mobileFile);
-        response.writeHead(200, {
-          "content-type": "text/html; charset=utf-8",
-          "cache-control": "no-cache",
-          "access-control-allow-origin": "*",
-          vary: "User-Agent, Sec-CH-UA-Mobile",
-        });
-        response.end(bytes);
+        await sendHtml(response, mobileFile, isHomepageTarget(mobileTarget));
         return;
       }
     }
@@ -141,6 +164,12 @@ async function handle(request, response) {
   if (!filePath) {
     response.writeHead(404, { "content-type": "text/plain; charset=utf-8" });
     response.end(`Not found: /${target}`);
+    return;
+  }
+
+  const rel = path.relative(root, filePath).replace(/\\/g, "/");
+  if (filePath.endsWith(".html")) {
+    await sendHtml(response, filePath, isHomepageTarget(rel));
     return;
   }
 
