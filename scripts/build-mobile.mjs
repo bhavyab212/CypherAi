@@ -36,6 +36,8 @@ const PAGES = [
   { src: "work/project-3/index.html", mirror: "m/work/project-3/index.html", desktopPath: "/work/project-3/" },
   { src: "work/strida/index.html", mirror: "m/work/strida/index.html", desktopPath: "/work/strida/" },
   { src: "contact/index.html", mirror: "m/contact/index.html", desktopPath: "/contact/" },
+  { src: "seo/index.html", mirror: "m/seo/index.html", desktopPath: "/seo/" },
+  { src: "seo/proof/index.html", mirror: "m/seo/proof/index.html", desktopPath: "/seo/proof/" },
   { src: "404/index.html", mirror: "m/404/index.html", desktopPath: "/404/" },
 ];
 

@@ -1,0 +1,26 @@
+/* Cypher Ai — hide Framer's editor affordance (non-invasive overlay).
+   The dark 30px pencil circle on the right edge is Framer's editorbar
+   (#__framer-editorbar-container / #__framer-editorbar-button / label),
+   injected client-side by chunk-3SWZZEDP.mjs with z-index 2147483647.
+   Authoring tool, not site content. Loaded globally via server.mjs on
+   every HTML page (desktop + /m/), AFTER Framer's own injected <style>
+   so these rules win. Mirrors the export's own hide-block spirit for
+   the Framer badge/CTA. */
+
+/* Unscoped on purpose: the editorbar is position:fixed on body, outside
+   any section, and must stay hidden at every viewport (the old rule lived
+   inside @media (max-width:809.98px) in m/phone.css, so desktop leaked). */
+#__framer-editorbar-container,
+#__framer-editorbar,
+#__framer-editorbar-button,
+#__framer-editorbar-label,
+#__framer-editorbar-loading-spinner {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  clip-path: inset(100%) !important;
+}

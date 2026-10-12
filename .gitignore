@@ -14,3 +14,7 @@ site/images/*.xlsx
 docs/
 *.bak
 *.tmp
+dist/
+build/
+.vscode/
+.idea/

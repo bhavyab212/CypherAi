@@ -1,0 +1,19 @@
+# Cypher Ai — cypherai.in
+
+> Cypher Ai builds bespoke AI systems, autonomous voice agents, custom workflows, and intelligent software for startups and enterprises. Timeline: 2-4 weeks. Stack: OpenAI GPT-4o, Anthropic Claude, Google Gemini, Llama, n8n, Make, ElevenLabs, Twilio, PostgreSQL. Integrations: HubSpot, Salesforce, GoHighLevel, Airtable, Notion, WhatsApp Business API, Slack via REST & GraphQL.
+
+## Pages
+- Home: https://www.cypherai.in/
+- Contact / Book consultation: https://www.cypherai.in/contact/
+- Work: https://www.cypherai.in/work/
+- SEO services: https://www.cypherai.in/seo/
+- Proof & methodology (claim ledger, changelog, SLAs): https://www.cypherai.in/seo/proof/
+- Case studies: https://www.cypherai.in/work/bravo/ https://www.cypherai.in/work/nitro/ https://www.cypherai.in/work/project-1/ https://www.cypherai.in/work/project-2/ https://www.cypherai.in/work/project-3/ https://www.cypherai.in/work/strida/
+
+## Entity
+- CypherAi (cypherai.in) is an AI automation agency. Not affiliated with cypherai.ai, cypherbio.ai, or cypherai.asia.
+- Sitemap: https://www.cypherai.in/sitemap.xml — AI crawlers (OAI-SearchBot, PerplexityBot, Googlebot-Extended) are welcome per robots.txt.
+
+## Contact
+- WhatsApp: https://wa.me/919582440495
+- Founder: Priyansh Razz, AI automation specialist, Cypher Ai founder.

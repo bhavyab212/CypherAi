@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "node server.mjs",
-    "start": "node server.mjs"
+    "start": "node server.mjs",
+    "check:seo": "node scripts/check-seo.mjs",
+    "build:mobile": "node scripts/build-mobile.mjs"
   }
 }

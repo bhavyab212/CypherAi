@@ -27,6 +27,7 @@ const mimeTypes = {
   ".gif": "image/gif",
   ".ico": "image/x-icon",
   ".txt": "text/plain; charset=utf-8",
+  ".xml": "application/xml; charset=utf-8",
 };
 
 const OVERLAY_CSS_TAG =
@@ -35,8 +36,23 @@ const OVERLAY_JS_TAG =
   '<script src="/overlay/projects-coming-soon.js" defer></script>';
 const OVERLAY_MARKER = "projects-coming-soon";
 
+const HIDE_EDIT_CSS_TAG =
+  '<link rel="stylesheet" href="/overlay/hide-edit-button.css">';
+const HIDE_EDIT_JS_TAG =
+  '<script src="/overlay/hide-edit-button.js" defer></script>';
+const HIDE_EDIT_MARKER = "hide-edit-button";
+
 function isHomepageTarget(target) {
   return target === "index.html" || target === "m/index.html";
+}
+
+function injectHideEdit(html) {
+  if (html.includes(HIDE_EDIT_MARKER)) return html; // idempotent
+  const injection = `<!-- cypher-overlay:hide-edit-button -->\n${HIDE_EDIT_CSS_TAG}\n${HIDE_EDIT_JS_TAG}`;
+  if (html.includes("</head>")) {
+    return html.replace("</head>", `${injection}\n</head>`);
+  }
+  return `${injection}\n${html}`;
 }
 
 function injectOverlay(html) {
@@ -132,7 +148,9 @@ function findFile(relative) {
 
 async function sendHtml(response, filePath, homepage) {
   const raw = await readFile(filePath, "utf8");
-  const html = homepage ? injectOverlay(raw) : raw;
+  // hide-edit layer: every HTML page (desktop + /m/), non-breaking.
+  // projects overlay: homepage only (existing behaviour).
+  const html = injectHideEdit(homepage ? injectOverlay(raw) : raw);
   response.writeHead(200, {
     "content-type": "text/html; charset=utf-8",
     "cache-control": "no-cache",
