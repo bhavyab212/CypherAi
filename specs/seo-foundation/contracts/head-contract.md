@@ -28,7 +28,7 @@ current placeholder `/images/favicon.png`), `twitter:card` summary,
 `twitter:title`, `twitter:description`.
 
 ## 6. JSON-LD — ALLOWED: Organization, WebSite, Service, WebPage,
-BreadcrumbList, Person. FORBIDDEN: `FAQPage` for Google benefit (Aug 2023:
+BreadcrumbList (+ structural child ListItem), Person. FORBIDDEN: `FAQPage` for Google benefit (Aug 2023:
 gov/healthcare only), `HowTo` always (deprecated Sept 2023). Ids/urls absolute
 and canonical-consistent.
 

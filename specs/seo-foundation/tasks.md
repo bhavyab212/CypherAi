@@ -1,15 +1,16 @@
 # Tasks — remaining work after Phase 2 (wave-ordered)
 
-## Wave A — commit + regenerate (needs shell/git; blocked in sandbox)
-- [ ] Commit desktop changes (site + specs + scripts + package.json).
-- [ ] Run `node scripts/build-mobile.mjs`, then `--check` → 12 PARITY.
-- [ ] Commit mirrors/guards. If DRIFT: revert hand-edit or rebuild per contract.
-- [ ] Run `npm run check:seo` → exit 0. Fix code on failure, never weaken gates.
+## Wave A — commit + regenerate (DONE 12 Oct 2026, full-access session)
+- [x] Commit desktop changes (d571141, 2fc5481, e1b69ce).
+- [x] Builder + `--check` → 12/12 PARITY (fixed same-line canonical layout + 3 title floors en route).
+- [x] Mirrors committed. DRIFT root-caused (newline-split canonical) + contract amended.
+- [x] `npm run check:seo` → exit 0 (incl. JSON-LD parse + ListItem allowlist fix).
 
-## Wave B — live validation (needs deploy + network)
-- [ ] Start server; run quickstart §§2–3 probes (routes, MIME, mobile/bot/tablet).
+## Wave B — live validation (server probes DONE 12 Oct 2026; external pending)
+- [x] Server probes §§2–3 (all routes 200 + MIME, phone→mirror, bot/tablet→desktop).
 - [ ] Rich Results Test + Schema validator on `/`, `/seo/`, `/seo/proof/`.
-- [ ] PageSpeed mobile+desktop on `/`, `/seo/`; record p75 (graduates C-02).
+- [ ] PageSpeed mobile+desktop (keyless API quota exhausted 12 Oct — rerun with
+      key or pagespeed.web.dev manual); record p75 (graduates C-02).
 - [ ] Search Console: verify property, submit sitemap (11 URLs), inspect
       `/`, `/seo/`, `/seo/proof/`, one case study; confirm `/m/*` unindexed.
 

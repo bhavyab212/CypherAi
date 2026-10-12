@@ -16,7 +16,7 @@ One indexable content URL. Desktop file authoritative; mirror generated.
 | `h1` | R | Exactly one | `/seo/`: "AI SEO & Automation Services That Turn Search Into Revenue". |
 | `wordCount` | R | Hand-built ≥800 (nav/footer excluded) | Framer pages exempt-frozen. |
 | `internalLinks` | R (service) | 3–5 descriptive in-content links | No "click here" anchors. |
-| `jsonLd` | R | Allowlist: Organization, WebSite, Service, WebPage, BreadcrumbList, Person. **Denylist: FAQPage, HowTo.** | Home: Organization+WebSite. `/seo/`: Org+Page+Service+Breadcrumb. `/seo/proof/`: Page+Breadcrumb. |
+| `jsonLd` | R | Allowlist: Organization, WebSite, Service, WebPage, BreadcrumbList (+ListItem child), Person. **Denylist: FAQPage, HowTo.** | Home: Organization+WebSite. `/seo/`: Org+Page+Service+Breadcrumb. `/seo/proof/`: Page+Breadcrumb. |
 | `mirror` | R | `m/<slug>index.html`, generated, never hand-edited (markers excepted) | 12 PAGES entries. |
 | `freshnessSLA` | R (hand-built) | Cadence + last-verified date in byline/ledger | Stack/integration quarterly; speed per change; schema every publish; process annually. |
 | `ledgerStatus` | O | Row refs C-01…C-06 | Only `/seo/` + `/seo/proof/`. |

@@ -145,6 +145,35 @@ const desktopFiles = htmlFiles.filter((f) => !f.includes(`${path.sep}m${path.sep
   const all = desktopFiles.map((f) => readFileSync(f, "utf8")).join("\n");
   gate("no-faqpage-schema", !all.includes('"FAQPage"'));
   gate("no-howto-schema", !all.includes('"HowTo"'));
+  // Every JSON-LD block must parse and use only allowlisted @types.
+  {
+    const allowed = new Set([
+      "Organization", "WebSite", "WebPage", "Service",
+      "BreadcrumbList", "ListItem", "Person", // ListItem = BreadcrumbList child
+    ]);
+    const bad = [];
+    for (const f of desktopFiles) {
+      const rel = path.relative(siteDir, f).replace(/\\/g, "/");
+      const html = readFileSync(f, "utf8");
+      for (const m of html.matchAll(
+        /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g
+      )) {
+        try {
+          const types = new Set();
+          JSON.parse(m[1], (k, v) => {
+            if (k === "@type") (Array.isArray(v) ? v : [v]).forEach((t) => types.add(t));
+            return v;
+          });
+          for (const t of types) {
+            if (!allowed.has(t)) bad.push(`${rel}: disallowed @type ${t}`);
+          }
+        } catch (e) {
+          bad.push(`${rel}: JSON parse error ${e.message}`);
+        }
+      }
+    }
+    gate("jsonld-valid-allowlisted", bad.length === 0, bad.join("; ") || "parses clean");
+  }
   gate("home-has-organization", exists("index.html") && read("index.html").includes('"Organization"'));
   gate(
     "seo-has-service-breadcrumb",
