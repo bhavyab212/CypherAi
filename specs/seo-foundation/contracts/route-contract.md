@@ -39,16 +39,20 @@
 | `/work/strida/` | `site/work/strida/index.html` | 200 | `text/html; charset=utf-8` | `https://www.cypherai.in/work/strida/` | Phone → mirror; bot → desktop |
 | `/seo/` | `site/seo/index.html` | 200 | `text/html; charset=utf-8` | `https://www.cypherai.in/seo/` | Phone → mirror; bot → desktop |
 | `/seo/proof/` | `site/seo/proof/index.html` | 200 | `text/html; charset=utf-8` | `https://www.cypherai.in/seo/proof/` | Phone → mirror; bot → desktop |
-| `/404/` | `site/404/index.html` | 200 only when requested explicitly | `text/html; charset=utf-8` | `https://www.cypherai.in/404/` (noindex recommended — open item, not yet applied) | Phone → mirror; bot → desktop |
+| `/voice-agents/` | `site/voice-agents/index.html` | 200 | `text/html; charset=utf-8` | `https://www.cypherai.in/voice-agents/` | Phone → mirror; bot → desktop |
+| `/workflows/` | `site/workflows/index.html` | 200 | `text/html; charset=utf-8` | `https://www.cypherai.in/workflows/` | Phone → mirror; bot → desktop |
+| `/crm-integrations/` | `site/crm-integrations/index.html` | 200 | `text/html; charset=utf-8` | `https://www.cypherai.in/crm-integrations/` | Phone → mirror; bot → desktop |
+| `/404/` | `site/404/index.html` | 200 only when requested explicitly | `text/html; charset=utf-8` | `https://www.cypherai.in/404/` (`noindex, follow` applied) | Phone → mirror; bot → desktop |
 | `/robots.txt` | `site/robots.txt` | 200 | `text/plain; charset=utf-8` | n/a | Never mirrored |
 | `/sitemap.xml` | `site/sitemap.xml` | 200 | `application/xml; charset=utf-8` | n/a | Never mirrored |
 | `/llms.txt` | `site/llms.txt` | 200 | `text/plain; charset=utf-8` | n/a | Never mirrored |
 | `/m/…` | `site/m/…/index.html` | 200 direct | `text/html; charset=utf-8` | Desktop canonical inside marker block | Served as-is; reverse guard returns wide screens (unless `?view=desktop`/session opt-out) |
 | anything else | — | 404 `text/plain`, body `Not found: /<target>` | `text/plain; charset=utf-8` | n/a | NOTE: `/404/` page is NOT auto-served. |
 
-## Sitemap coverage (11 URLs)
+## Sitemap coverage (14 URLs)
 
 `/` (1.0, weekly) · `/contact/` · `/work/` (0.8) · `/seo/` (0.9) ·
+`/voice-agents/` (0.9) · `/workflows/` (0.9) · `/crm-integrations/` (0.9) ·
 `/seo/proof/` · 6× `/work/*/` (0.6, monthly). Absolute www locs. No `/404/`,
 `/m/*`, infra files, or query strings.
 
