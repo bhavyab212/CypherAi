@@ -24,6 +24,10 @@ back to desktop).
 `node scripts/build-mobile.mjs --check` → 12× `PARITY m/…`, exit 0.
 `DRIFT`/`MISSING` → rebuild or revert, never hand-edit mirrors (marker-block
 canonical alignment excepted as a documented healing channel).
+Layout rule (learned Oct 2026): keep `<link rel="canonical">` and
+`<meta property="og:url">` on the SAME line (Framer style). The builder's
+remove/restore round-trip cannot reproduce a newline split between them and
+`--check` reports DRIFT on hand-built pages that split them.
 
 ## 4. Commit-before-rebuild (HARD)
 Edit desktop → `git commit` → run builder → `--check` → commit mirrors.
