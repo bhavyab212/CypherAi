@@ -149,8 +149,10 @@ function findFile(relative) {
 async function sendHtml(response, filePath, homepage) {
   const raw = await readFile(filePath, "utf8");
   // hide-edit layer: every HTML page (desktop + /m/), non-breaking.
-  // projects overlay: homepage only (existing behaviour).
-  const html = injectHideEdit(homepage ? injectOverlay(raw) : raw);
+  // NOTE: projects-coming-soon overlay injection disabled until the overlay is
+  // specified (its placeholder files only 404-noise the homepage otherwise).
+  // Re-enable with: injectHideEdit(homepage ? injectOverlay(raw) : raw)
+  const html = injectHideEdit(raw);
   response.writeHead(200, {
     "content-type": "text/html; charset=utf-8",
     "cache-control": "no-cache",
@@ -192,9 +194,19 @@ async function handle(request, response) {
   }
 
   const bytes = await readFile(filePath);
+  // HTML stays uncached (always fresh). Versioned vendor bytes (Framer chunks,
+  // fonts, media) are content-hashed upstream: cache them hard. Site-owned
+  // files (CSS/JS/icons/txt/xml) get a short public TTL: big repeat-view win,
+  // stale at most an hour after a deploy.
+  const p = filePath.toLowerCase();
+  const vendor = p.includes("framerstatic.com") || p.includes("framerusercontent.com");
+  const hashedAsset = /\.(woff2?|ttf|otf|mjs)$/.test(p) || vendor;
+  const cacheControl = hashedAsset
+    ? "public, max-age=31536000, immutable"
+    : "public, max-age=3600";
   response.writeHead(200, {
     "content-type": detectMime(filePath, bytes),
-    "cache-control": "no-cache",
+    "cache-control": cacheControl,
     "access-control-allow-origin": "*",
   });
   response.end(bytes);

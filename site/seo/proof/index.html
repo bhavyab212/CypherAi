@@ -32,8 +32,8 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Proof &amp; Methodology — SEO Claims Ledger | CypherAi">
 <meta property="og:description" content="Every SEO claim with source, date, and verify link. Methodology, SLAs, changelog.">
-<meta property="og:image" content="https://www.cypherai.in/images/favicon.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://www.cypherai.in/images/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Proof &amp; Methodology — SEO Claims Ledger | CypherAi">
 <meta name="twitter:description" content="Every SEO claim with source, date, and verify link.">
 <link rel="icon" href="/images/favicon.png">
@@ -65,7 +65,9 @@
 <style>
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif; color: #161616; line-height: 1.65; background: #fff; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: #161616; line-height: 1.65; background: #fff; }
+  .skip { position: absolute; left: -9999px; top: 0; }
+  .skip:focus { left: 12px; top: 12px; background: #161616; color: #fff; padding: 10px 16px; z-index: 99; border-radius: 8px; }
   .wrap { max-width: 760px; margin: 0 auto; padding: 0 22px; }
   header.nav { border-bottom: 1px solid #ececec; }
   header.nav .wrap { display: flex; align-items: center; gap: 22px; padding-top: 16px; padding-bottom: 16px; }
@@ -84,11 +86,17 @@
   table.compare { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
   table.compare th, table.compare td { border: 1px solid #ddd; padding: 10px 12px; text-align: left; vertical-align: top; }
   table.compare th { background: #f6f6f6; }
+  @media (max-width: 640px) {
+    table.compare { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table.compare th, table.compare td { min-width: 140px; }
+    .cta-row .cta { flex: 1; text-align: center; }
+  }
   footer { border-top: 1px solid #ececec; margin-top: 48px; padding: 22px 0 60px; color: #555; font-size: 14px; }
   footer a { color: #161616; }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="/">CypherAi</a>
@@ -101,7 +109,7 @@
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="main">
   <p class="crumbs"><a href="/">Home</a> / <a href="/seo/">AI SEO Services</a> / Proof &amp; Methodology</p>
   <h1>Proof &amp; Methodology: the Ledger Behind /seo/</h1>
   <p class="byline">By Priyansh Razz, Founder and AI automation specialist · Published 12 October 2026 · Updated 12 October 2026</p>

@@ -108,6 +108,16 @@
     align-items: center;
   }
 
+  /* Hand-built + ledger tables: scroll-wrap instead of overflow (R1 defect 1).
+     CTA rows: full-width stacked buttons for thumbs. */
+  table.compare {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  table.compare th, table.compare td { min-width: 140px; }
+  .cta-row .cta { flex: 1; text-align: center; min-height: 52px; }
+
   /* Sticky phone CTA (opt-in via body class, JS adds it once phone.css loads) */
   .m-sticky {
     position: fixed;

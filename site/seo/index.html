@@ -32,8 +32,8 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="AI SEO Services: Voice, CRM &amp; Workflow Automation | CypherAi">
 <meta property="og:description" content="Voice agents, CRM integrations, and workflow automation that lift SEO and GEO visibility. Book a free consultation.">
-<meta property="og:image" content="https://www.cypherai.in/images/favicon.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://www.cypherai.in/images/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI SEO Services: Voice, CRM &amp; Workflow Automation | CypherAi">
 <meta name="twitter:description" content="GPT-4o voice agents, n8n workflows &amp; CRM integrations for SEO &amp; GEO. Book a free consultation.">
 <link rel="icon" href="/images/favicon.png">
@@ -82,7 +82,9 @@
 <style>
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif; color: #161616; line-height: 1.65; background: #fff; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: #161616; line-height: 1.65; background: #fff; }
+  .skip { position: absolute; left: -9999px; top: 0; }
+  .skip:focus { left: 12px; top: 12px; background: #161616; color: #fff; padding: 10px 16px; z-index: 99; border-radius: 8px; }
   .wrap { max-width: 760px; margin: 0 auto; padding: 0 22px; }
   header.nav { border-bottom: 1px solid #ececec; }
   header.nav .wrap { display: flex; align-items: center; gap: 22px; padding-top: 16px; padding-bottom: 16px; }
@@ -102,6 +104,11 @@
   table.compare { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
   table.compare th, table.compare td { border: 1px solid #ddd; padding: 10px 12px; text-align: left; vertical-align: top; }
   table.compare th { background: #f6f6f6; }
+  @media (max-width: 640px) {
+    table.compare { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table.compare th, table.compare td { min-width: 140px; }
+    .cta-row .cta { flex: 1; text-align: center; }
+  }
   ol.steps li { margin-bottom: 10px; }
   .stat { background: #f6f6f6; border-left: 4px solid #161616; padding: 14px 18px; margin: 20px 0; font-size: 16px; }
   footer { border-top: 1px solid #ececec; margin-top: 48px; padding: 22px 0 60px; color: #555; font-size: 14px; }
@@ -109,6 +116,7 @@
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="/">CypherAi</a>
@@ -121,7 +129,7 @@
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="main">
   <p class="crumbs"><a href="/">Home</a> / AI SEO Services</p>
   <h1>AI SEO &amp; Automation Services That Turn Search Into Revenue</h1>
   <p class="byline">By Priyansh Razz, Founder and AI automation specialist · Published 12 October 2026 · Updated 12 October 2026</p>
@@ -185,6 +193,7 @@
     <p>Ledger rows expire: stack and integration rows are re-confirmed quarterly, speed rows after every template or hosting change, process rows annually. Expired rows are flagged in place until re-verified — never silently deleted — so the page history stays auditable.</p>
   </details>
 
+  <h2>Frequently asked questions</h2>
   <h3>How long until we see results?</h3>
   <p>Technical fixes typically reflect in Search Console within two to six weeks of indexing. Competitive-term movement usually takes two to four months. AI-citation visibility often moves faster once entities and FAQ content are clean, because answer engines re-ingest structured pages quickly.</p>
   <h3>Do you guarantee rankings or AI citations?</h3>
@@ -200,7 +209,7 @@
 
   <div class="cta-row">
     <a class="cta" href="https://wa.me/919582440495">Book a free consultation</a>
-    <a class="cta ghost" href="/">Back to home</a>
+    <a class="cta ghost" href="/seo/proof/">See the proof ledger</a>
   </div>
 </main>
 
