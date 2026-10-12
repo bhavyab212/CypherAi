@@ -78,6 +78,9 @@ const desktopFiles = htmlFiles.filter((f) => !f.includes(`${path.sep}m${path.sep
     "work/strida/index.html": "/work/strida/",
     "seo/index.html": "/seo/",
     "seo/proof/index.html": "/seo/proof/",
+    "voice-agents/index.html": "/voice-agents/",
+    "workflows/index.html": "/workflows/",
+    "crm-integrations/index.html": "/crm-integrations/",
     "404/index.html": "/404/",
   };
   for (const [rel, route] of Object.entries(expectations)) {
@@ -119,6 +122,7 @@ const desktopFiles = htmlFiles.filter((f) => !f.includes(`${path.sep}m${path.sep
     "/", "/contact/", "/work/", "/work/bravo/", "/work/nitro/",
     "/work/project-1/", "/work/project-2/", "/work/project-3/",
     "/work/strida/", "/seo/", "/seo/proof/",
+    "/voice-agents/", "/workflows/", "/crm-integrations/",
   ];
   const missing = contentRoutes.filter((r) => !locs.includes(`${PROD}${r}`));
   const extra = locs.filter((u) => !contentRoutes.includes(new URL(u).pathname));
@@ -197,6 +201,9 @@ const desktopFiles = htmlFiles.filter((f) => !f.includes(`${path.sep}m${path.sep
     ["work/strida/index.html", "m/work/strida/index.html"],
     ["seo/index.html", "m/seo/index.html"],
     ["seo/proof/index.html", "m/seo/proof/index.html"],
+    ["voice-agents/index.html", "m/voice-agents/index.html"],
+    ["workflows/index.html", "m/workflows/index.html"],
+    ["crm-integrations/index.html", "m/crm-integrations/index.html"],
     ["404/index.html", "m/404/index.html"],
   ];
   for (const [desk, mirror] of pairs) {

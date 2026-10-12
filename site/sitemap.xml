@@ -21,6 +21,21 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.cypherai.in/voice-agents/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.cypherai.in/workflows/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.cypherai.in/crm-integrations/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.cypherai.in/seo/proof/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

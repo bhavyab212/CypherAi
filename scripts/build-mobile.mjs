@@ -38,6 +38,9 @@ const PAGES = [
   { src: "contact/index.html", mirror: "m/contact/index.html", desktopPath: "/contact/" },
   { src: "seo/index.html", mirror: "m/seo/index.html", desktopPath: "/seo/" },
   { src: "seo/proof/index.html", mirror: "m/seo/proof/index.html", desktopPath: "/seo/proof/" },
+  { src: "voice-agents/index.html", mirror: "m/voice-agents/index.html", desktopPath: "/voice-agents/" },
+  { src: "workflows/index.html", mirror: "m/workflows/index.html", desktopPath: "/workflows/" },
+  { src: "crm-integrations/index.html", mirror: "m/crm-integrations/index.html", desktopPath: "/crm-integrations/" },
   { src: "404/index.html", mirror: "m/404/index.html", desktopPath: "/404/" },
 ];
 

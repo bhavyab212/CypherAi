@@ -6,6 +6,9 @@
 - Home: https://www.cypherai.in/
 - Contact / Book consultation: https://www.cypherai.in/contact/
 - Work: https://www.cypherai.in/work/
+- Voice Agents: https://www.cypherai.in/voice-agents/
+- AI Workflows: https://www.cypherai.in/workflows/
+- CRM Integrations: https://www.cypherai.in/crm-integrations/
 - SEO services: https://www.cypherai.in/seo/
 - Proof & methodology (claim ledger, changelog, SLAs): https://www.cypherai.in/seo/proof/
 - Case studies: https://www.cypherai.in/work/bravo/ https://www.cypherai.in/work/nitro/ https://www.cypherai.in/work/project-1/ https://www.cypherai.in/work/project-2/ https://www.cypherai.in/work/project-3/ https://www.cypherai.in/work/strida/
