@@ -42,8 +42,59 @@ const HIDE_EDIT_JS_TAG =
   '<script src="/overlay/hide-edit-button.js" defer></script>';
 const HIDE_EDIT_MARKER = "hide-edit-button";
 
+// --- Project-card hard-navigation hijack -----------------------------------
+// Framer's client-side SPA router (script_main) registers a click handler that
+// intercepts same-origin <a> clicks and renders the target route in-place via
+// history.pushState, WITHOUT a real page load. Because we replaced the project
+// detail pages with standalone static HTML, that in-place render shows the old
+// pre-patch Framer bundle (Strida template) until the user hard-refreshes.
+//
+// This inline classic <script> is injected into <head> and executes synchronously
+// during the initial HTML parse, i.e. BEFORE Framer's async <script type="module">
+// can fetch + run and attach its own listener. It installs a document-level,
+// CAPTURE-phase click listener (capture at document fires before React's
+// bubble-phase delegated listener on the render root). For any left-click on a
+// link to a replaced project route it calls preventDefault + stopImmediatePropagation
+// and forces a real navigation via location.href, so the browser always fetches
+// the fresh standalone page instead of letting the SPA hijack it.
+const HARD_NAV_MARKER = "cypher-hard-nav";
+const HARD_NAV_ROUTES = ["/work/rstate-automation/", "/work/bravo/", "/work/nitro/"];
+const HARD_NAV_SCRIPT = `<script data-cypher="${HARD_NAV_MARKER}">
+(function () {
+  var ROUTES = ${JSON.stringify(HARD_NAV_ROUTES)};
+  function isHardRoute(pathname) {
+    for (var i = 0; i < ROUTES.length; i++) {
+      if (pathname === ROUTES[i] || pathname === ROUTES[i].slice(0, -1)) return true;
+    }
+    return false;
+  }
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var el = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+    if (!el) return;
+    var href = el.getAttribute('href');
+    if (!href || href.charAt(0) === '#') return;
+    var url;
+    try { url = new URL(href, window.location.href); } catch (err) { return; }
+    if (url.origin !== window.location.origin) return;
+    if (!isHardRoute(url.pathname)) return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    window.location.href = url.href;
+  }, true);
+})();
+</script>`;
+
 function isHomepageTarget(target) {
   return target === "index.html" || target === "m/index.html";
+}
+
+function injectHardNav(html) {
+  if (html.includes(HARD_NAV_MARKER)) return html; // idempotent
+  if (html.includes("</head>")) {
+    return html.replace("</head>", `${HARD_NAV_SCRIPT}\n</head>`);
+  }
+  return `${HARD_NAV_SCRIPT}\n${html}`;
 }
 
 function injectHideEdit(html) {
@@ -152,7 +203,7 @@ async function sendHtml(response, filePath, homepage) {
   // NOTE: projects-coming-soon overlay injection disabled until the overlay is
   // specified (its placeholder files only 404-noise the homepage otherwise).
   // Re-enable with: injectHideEdit(homepage ? injectOverlay(raw) : raw)
-  const html = injectHideEdit(raw);
+  const html = injectHardNav(injectHideEdit(raw));
   response.writeHead(200, {
     "content-type": "text/html; charset=utf-8",
     "cache-control": "no-cache",
@@ -165,6 +216,13 @@ async function handle(request, response) {
   const url = new URL(request.url || "/", `http://${request.headers.host || "localhost"}`);
   let target = safePath(url.pathname);
   if (!target || target === "") target = "index.html";
+
+  // Seamless redirect from legacy strida path to rstate-automation
+  if (target === "work/strida" || target === "work/strida/") {
+    response.writeHead(301, { "Location": "/work/rstate-automation/" });
+    response.end();
+    return;
+  }
 
   // Server-side layer of the desktop/phone split: rewrite HTML routes to the
   // phone tree when the request looks like a phone — but only when the phone
@@ -198,12 +256,26 @@ async function handle(request, response) {
   // fonts, media) are content-hashed upstream: cache them hard. Site-owned
   // files (CSS/JS/icons/txt/xml) get a short public TTL: big repeat-view win,
   // stale at most an hour after a deploy.
+  //
+  // EXCEPTION: the Framer bundles we patched IN PLACE (same filename, new
+  // content) must never be cached-immutable, or the browser keeps serving the
+  // pre-patch bytes (old Strida template) for a year. Force revalidation.
+  // Matched by basename (robust to path separators / casing).
+  const PATCHED_BASENAMES = [
+    "ambzybpl4wq6mncuyymodchty-1fy_s3std8sdrhojs.dcndxkii.mjs",
+    "wssslb-5mdmtpdf5eghamjf57h2ryfmjpu1rc8po2xc.dqkydi_y.mjs",
+    "eikopqdce.js",
+  ];
   const p = filePath.toLowerCase();
+  const baseLower = path.basename(filePath).toLowerCase();
   const vendor = p.includes("framerstatic.com") || p.includes("framerusercontent.com");
   const hashedAsset = /\.(woff2?|ttf|otf|mjs)$/.test(p) || vendor;
-  const cacheControl = hashedAsset
-    ? "public, max-age=31536000, immutable"
-    : "public, max-age=3600";
+  const patched = PATCHED_BASENAMES.includes(baseLower);
+  const cacheControl = patched
+    ? "no-cache, must-revalidate"
+    : hashedAsset
+      ? "public, max-age=31536000, immutable"
+      : "public, max-age=3600";
   response.writeHead(200, {
     "content-type": detectMime(filePath, bytes),
     "cache-control": cacheControl,

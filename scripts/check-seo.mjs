@@ -76,6 +76,7 @@ const desktopFiles = htmlFiles.filter((f) => !f.includes(`${path.sep}m${path.sep
     "work/project-2/index.html": "/work/project-2/",
     "work/project-3/index.html": "/work/project-3/",
     "work/strida/index.html": "/work/strida/",
+    "work/rstate-automation/index.html": "/work/rstate-automation/",
     "seo/index.html": "/seo/",
     "seo/proof/index.html": "/seo/proof/",
     "voice-agents/index.html": "/voice-agents/",
@@ -121,7 +122,7 @@ const desktopFiles = htmlFiles.filter((f) => !f.includes(`${path.sep}m${path.sep
   const contentRoutes = [
     "/", "/contact/", "/work/", "/work/bravo/", "/work/nitro/",
     "/work/project-1/", "/work/project-2/", "/work/project-3/",
-    "/work/strida/", "/seo/", "/seo/proof/",
+    "/work/strida/", "/work/rstate-automation/", "/seo/", "/seo/proof/",
     "/voice-agents/", "/workflows/", "/crm-integrations/",
   ];
   const missing = contentRoutes.filter((r) => !locs.includes(`${PROD}${r}`));
@@ -199,6 +200,7 @@ const desktopFiles = htmlFiles.filter((f) => !f.includes(`${path.sep}m${path.sep
     ["work/project-2/index.html", "m/work/project-2/index.html"],
     ["work/project-3/index.html", "m/work/project-3/index.html"],
     ["work/strida/index.html", "m/work/strida/index.html"],
+    ["work/rstate-automation/index.html", "m/work/rstate-automation/index.html"],
     ["seo/index.html", "m/seo/index.html"],
     ["seo/proof/index.html", "m/seo/proof/index.html"],
     ["voice-agents/index.html", "m/voice-agents/index.html"],

@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Start of headStart -->
+<!-- cypher-phone:begin -->
+<!-- cypher-phone:removed <link rel="canonical" href="https://www.cypherai.in/work/rstate-automation/"> -->
+<link rel="stylesheet" href="/m/phone.css">
+<script src="/m/phone.js" defer></SCRIPT>
+<script>
+/* Cypher Ai device split — phone page guard (reverse: wide screens go back). */
+(function () {
+  try {
+    var q = new URLSearchParams(location.search);
+    if (q.get('view') === 'desktop') { try { sessionStorage.setItem('cypher-view', 'desktop'); } catch (e) {} }
+    if (sessionStorage.getItem('cypher-view') === 'desktop') return;
+    var ua = navigator.userAgent || '';
+    if (/bot|crawl|spider|slurp|mediapartners|baidu|yandex|sogou|exabot|facebot|ia_archiver|ahrefs|semrush|mj12bot|dotbot|petalbot|bytespider|gptbot|claudebot|ccbot|anthropic|openai|perplexity|cohere|diffbot|webdriver|lighthouse|pagespeed|pingdom/i.test(ua)) return;
+    var mobileUA = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(ua);
+    var wide = window.matchMedia('(min-width: 810px)').matches && Math.min(screen.width, screen.height) >= 810;
+    if (wide && !mobileUA) {
+      var path = location.pathname.replace(/^\/m(\/|$)/, '/');
+      if (path === '') path = '/';
+      location.replace(path + location.search + location.hash);
+    }
+  } catch (e) { /* never block rendering */ }
+})();
+</SCRIPT>
+<link rel="canonical" href="https://www.cypherai.in/work/rstate-automation/">
+<!-- cypher-phone:end -->
+
+<title>RState Automation: Real Estate AI &amp; n8n Pipeline | CypherAi</title>
+<meta name="description" content="CypherAi engineered RState Automation, an autonomous WhatsApp AI real estate sales agent and n8n pipeline with 30-day follow-up and cold lead revival.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:url" content="https://www.cypherai.in/work/rstate-automation/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RState Automation: Real Estate AI &amp; n8n Pipeline | CypherAi">
+<meta property="og:description" content="CypherAi engineered RState Automation, an autonomous WhatsApp AI real estate sales agent and n8n pipeline with 30-day follow-up and cold lead revival.">
+<meta property="og:image" content="https://www.cypherai.in/images/rstate-banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RState Automation: Real Estate AI &amp; n8n Pipeline | CypherAi">
+<meta name="twitter:description" content="CypherAi engineered RState Automation, an autonomous WhatsApp AI real estate sales agent and n8n pipeline with 30-day follow-up and cold lead revival.">
+<meta name="twitter:image" content="https://www.cypherai.in/images/rstate-banner.png">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.cypherai.in/#org",
+      "name": "CypherAi",
+      "alternateName": ["Cypher Ai", "CypherAI"],
+      "url": "https://www.cypherai.in/",
+      "logo": "https://www.cypherai.in/images/favicon.png",
+      "description": "CypherAi (cypherai.in) is an AI automation agency building voice agents, workflows, and CRM integrations.",
+      "founder": {
+        "@type": "Person",
+        "name": "Priyansh Razz",
+        "jobTitle": "Founder, AI automation specialist"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.cypherai.in/work/rstate-automation/#page",
+      "url": "https://www.cypherai.in/work/rstate-automation/",
+      "name": "RState Automation: Real Estate AI & n8n Pipeline | CypherAi",
+      "description": "CypherAi engineered RState Automation, an autonomous WhatsApp AI real estate sales agent and n8n pipeline with 30-day follow-up and cold lead revival.",
+      "isPartOf": { "@id": "https://www.cypherai.in/#org" }
+    },
+    {
+      "@type": "Service",
+      "name": "WhatsApp AI Sales Agent & n8n CRM Automation",
+      "url": "https://www.cypherai.in/workflows/",
+      "provider": { "@id": "https://www.cypherai.in/#org" },
+      "description": "Autonomous real estate WhatsApp AI sales engine combining instant lead qualification, automated site visit booking, 30-day nurturing cadences, and cold lead revival.",
+      "areaServed": "Worldwide"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.cypherai.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Work",
+          "item": "https://www.cypherai.in/work/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "RState Automation",
+          "item": "https://www.cypherai.in/work/rstate-automation/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --rstate-primary: #ff3700;
+    --rstate-wa: #25d366;
+    --rstate-n8n: #ea4b71;
+    --rstate-blue: #1856ff;
+    --rstate-dark: #10141e;
+    --rstate-ink: #141824;
+    --rstate-text-sub: #525866;
+    --rstate-bg-base: #f0f3f8;
+    --rstate-glass-bg: rgba(255, 255, 255, 0.78);
+    --rstate-glass-border: rgba(255, 255, 255, 0.85);
+    --rstate-glass-shadow: 0 16px 36px -8px rgba(18, 28, 45, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+    --rstate-clay-shadow: 6px 8px 18px rgba(18, 28, 45, 0.08), inset 2px 2px 4px rgba(255, 255, 255, 0.8), inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+    --rstate-neumorph-inset: inset 3px 3px 8px rgba(18, 28, 45, 0.06), inset -3px -3px 8px rgba(255, 255, 255, 0.9);
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--rstate-ink);
+    background: #f4f6fa;
+    background-image: 
+      radial-gradient(at 15% 15%, rgba(255, 255, 255, 0.95) 0px, transparent 65%),
+      radial-gradient(at 85% 10%, rgba(24, 86, 255, 0.04) 0px, transparent 55%),
+      radial-gradient(at 50% 90%, rgba(255, 55, 0, 0.03) 0px, transparent 55%);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Subtle Noise Texture */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url(/framerusercontent.com/images/6mcf62RlDfRfU61Yg5vb2pefpi4.png);
+    background-size: 160px;
+    opacity: 0.035;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  
+  .skip { position: absolute; left: -9999px; top: 0; }
+  .skip:focus { left: 16px; top: 16px; background: var(--rstate-ink); color: #fff; padding: 10px 16px; z-index: 9999; border-radius: 9999px; }
+  
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  
+  /* Floating Pill Top Navigation System (CypherAi Native Framer Aesthetic) */
+  .cypher-floating-header {
+    position: sticky;
+    top: 20px;
+    z-index: 500;
+    width: 100%;
+    margin-bottom: 24px;
+    pointer-events: none;
+  }
+  .cypher-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: auto;
+  }
+  .cypher-pills-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cypher-pill-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid rgba(228, 231, 236, 0.85);
+    border-radius: 9999px;
+    padding: 8px 18px;
+    color: var(--rstate-ink);
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 700;
+    box-shadow: 0 4px 16px rgba(18, 28, 45, 0.06), 0 1px 2px rgba(18, 28, 45, 0.04);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .cypher-pill-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(18, 28, 45, 0.1);
+    border-color: #d0d5dd;
+  }
+  .cypher-pill-btn:active { transform: translateY(1px); }
+  .cypher-pill-logo { width: 20px; height: 20px; object-fit: contain; }
+  
+  .cypher-pills-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cypher-nav-glass-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 9999px;
+    padding: 6px 14px;
+    box-shadow: 0 4px 16px rgba(18, 28, 45, 0.06);
+  }
+  .cypher-nav-link {
+    color: var(--rstate-text-sub);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 11px;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+  }
+  .cypher-nav-link:hover, .cypher-nav-link.active {
+    color: var(--rstate-ink);
+    background: rgba(240, 243, 248, 0.8);
+  }
+  .cypher-consult-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #141824;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 9999px;
+    box-shadow: 0 4px 14px rgba(20, 24, 36, 0.25);
+    transition: all 0.2s ease;
+  }
+  .cypher-consult-btn:hover {
+    background: var(--rstate-primary);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(255, 55, 0, 0.35);
+  }
+
+  /* Secondary Floating Section Quick Nav */
+  .rstate-quick-nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 9999px;
+    padding: 7px 12px;
+    margin: 16px auto 36px;
+    width: fit-content;
+    max-width: 100%;
+    overflow-x: auto;
+    box-shadow: 0 8px 24px rgba(18, 28, 45, 0.06);
+    scrollbar-width: none;
+  }
+  .rstate-quick-nav-bar::-webkit-scrollbar { display: none; }
+  .rstate-nav-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--rstate-text-sub);
+    text-decoration: none;
+    background: #ffffff;
+    border: 1px solid #e4e7ec;
+    box-shadow: var(--rstate-clay-shadow);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+  }
+  .rstate-nav-chip:hover, .rstate-nav-chip.active {
+    color: #ffffff;
+    background: var(--rstate-ink);
+    border-color: var(--rstate-ink);
+    transform: translateY(-1px);
+  }
+  .rstate-nav-chip.active .chip-num { color: #ffffff; }
+  .chip-num {
+    font-size: 10px;
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    color: var(--rstate-primary);
+    font-weight: 700;
+  }
+
+  /* Breadcrumb & Hero Meta */
+  .crumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #717784;
+    margin-bottom: 12px;
+  }
+  .crumbs a { color: var(--rstate-text-sub); text-decoration: none; }
+  .crumbs a:hover { color: var(--rstate-ink); }
+  
+  .rstate-badge-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .rstate-clay-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    box-shadow: var(--rstate-clay-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+  }
+  .badge-wa { background: #e8f9ee; color: #0f7a36; }
+  .badge-n8n { background: #feeef2; color: #cf2752; }
+  .badge-accent { background: #fff0eb; color: var(--rstate-primary); }
+  .badge-blue { background: #edf2ff; color: var(--rstate-blue); }
+  .status-pulsar { width: 7px; height: 7px; border-radius: 50%; background: var(--rstate-wa); box-shadow: 0 0 8px var(--rstate-wa); }
+
+  /* Typography */
+  h1.project-hero-title {
+    font-size: 44px;
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+    color: var(--rstate-ink);
+    margin: 12px 0 14px;
+  }
+  h2.project-hero-sub {
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -0.015em;
+    font-weight: 500;
+    color: #475467;
+    margin-bottom: 22px;
+  }
+  .rstate-hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 34px;
+    flex-wrap: wrap;
+  }
+  .rstate-btn-clay {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-clay-dark {
+    background: #141824;
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(20, 24, 36, 0.25);
+  }
+  .btn-clay-dark:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(20, 24, 36, 0.3); }
+  .btn-clay-light {
+    background: #ffffff;
+    color: var(--rstate-ink);
+    border: 1px solid #d0d5dd;
+    box-shadow: var(--rstate-clay-shadow);
+  }
+  .btn-clay-light:hover { transform: translateY(-2px); border-color: #98a2b3; }
+  .btn-clay-orange {
+    background: var(--rstate-primary);
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(255, 55, 0, 0.35);
+  }
+  .btn-clay-orange:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(255, 55, 0, 0.45); }
+
+  /* Spec Sheet Grid */
+  .rstate-spec-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 28px 0 36px;
+  }
+  .rstate-spec-tile {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 14px;
+    padding: 16px 18px;
+    box-shadow: var(--rstate-clay-shadow);
+  }
+  .rstate-spec-label {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: #717784;
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    margin-bottom: 4px;
+  }
+  .rstate-spec-val { font-size: 14px; font-weight: 700; color: var(--rstate-ink); }
+
+  /* Floating Stats Grid */
+  .rstate-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 32px 0 44px;
+  }
+  .rstate-stat-box {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 22px 20px;
+    box-shadow: var(--rstate-clay-shadow);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease;
+  }
+  .rstate-stat-box:hover { transform: translateY(-3px); }
+  .rstate-stat-box::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--rstate-ink);
+  }
+  .rstate-stat-box.wa::before { background: var(--rstate-wa); }
+  .rstate-stat-box.n8n::before { background: var(--rstate-n8n); }
+  .rstate-stat-box.primary::before { background: var(--rstate-primary); }
+  .rstate-stat-num {
+    font-size: 34px;
+    font-weight: 800;
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    line-height: 1.1;
+    color: var(--rstate-ink);
+  }
+  .rstate-stat-delta {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0f7a36;
+    margin-top: 5px;
+    font-family: ui-monospace, SFMono-Regular, monospace;
+  }
+  .rstate-stat-desc {
+    font-size: 13px;
+    color: var(--rstate-text-sub);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  /* High Contrast Showcase Image Card */
+  .rstate-image-frame {
+    background: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 36px 0;
+    box-shadow: 0 24px 52px -12px rgba(18, 28, 45, 0.12), 0 0 1px 1px rgba(0, 0, 0, 0.04);
+  }
+  .rstate-image-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 22px;
+    background: #ffffff;
+    border-bottom: 1px solid #eef2f6;
+    font-size: 12px;
+    color: #717784;
+    font-family: ui-monospace, SFMono-Regular, monospace;
+  }
+  .rstate-topbar-dots { display: flex; gap: 7px; }
+  .rstate-dot-item { width: 10px; height: 10px; border-radius: 50%; background: #e2e8f0; }
+  .rstate-image-frame img { width: 100%; height: auto; display: block; }
+  .rstate-image-caption {
+    padding: 16px 22px;
+    font-size: 13px;
+    color: #525866;
+    background: #ffffff;
+    border-top: 1px solid #eef2f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* ========================================================
+     INTERACTIVE N8N WORKFLOW CANVAS SIMULATOR
+     ======================================================== */
+  .n8n-simulator-frame {
+    background: #ffffff;
+    border: 1px solid #e4e7ec;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 36px 0;
+    box-shadow: 0 18px 44px rgba(18, 28, 45, 0.08);
+  }
+  .n8n-sim-toolbar {
+    background: #fafbfc;
+    border-bottom: 1px solid #e4e7ec;
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .n8n-crumb-path {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #344054;
+  }
+  .n8n-logo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #ff5c35;
+    color: #ffffff;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 11px;
+    font-family: ui-monospace, monospace;
+  }
+  .n8n-sim-actions { display: flex; align-items: center; gap: 10px; }
+  .n8n-run-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ff5c35;
+    color: #ffffff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(255, 92, 53, 0.35);
+    transition: all 0.2s ease;
+  }
+  .n8n-run-btn:hover { background: #e0441e; transform: translateY(-1px); }
+  .n8n-run-btn:active { transform: translateY(1px); }
+  .n8n-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #edfcf2;
+    color: #0f7a36;
+    border: 1px solid #b7f4cb;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 11.5px;
+    font-weight: 700;
+  }
+
+  /* n8n Node Canvas */
+  .n8n-canvas-body {
+    background-color: #fcfcfd;
+    background-image: radial-gradient(#d0d5dd 1.2px, transparent 1.2px);
+    background-size: 20px 20px;
+    padding: 36px 24px;
+    overflow-x: auto;
+    position: relative;
+    min-height: 440px;
+  }
+  .n8n-nodes-row {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    min-width: 900px;
+    padding: 20px 10px;
+  }
+  .n8n-node-card {
+    background: #ffffff;
+    border: 1px solid #d0d5dd;
+    border-radius: 12px;
+    padding: 16px;
+    width: 210px;
+    box-shadow: 0 4px 12px rgba(16, 24, 40, 0.05);
+    position: relative;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .n8n-node-card:hover, .n8n-node-card.selected {
+    border-color: #ff5c35;
+    box-shadow: 0 10px 24px -4px rgba(255, 92, 53, 0.2), 0 0 0 2px rgba(255, 92, 53, 0.2);
+    transform: translateY(-3px);
+  }
+  .n8n-node-card.executing {
+    border-color: #25d366;
+    box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.35);
+    animation: nodePulse 0.8s ease infinite alternate;
+  }
+  @keyframes nodePulse { 0% { transform: scale(1); } 100% { transform: scale(1.03); } }
+
+  .n8n-node-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .n8n-node-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 800;
+    color: #ffffff;
+    flex-shrink: 0;
+  }
+  .icon-meta { background: #1877f2; }
+  .icon-ai { background: #ff5c35; }
+  .icon-wa { background: #25d366; }
+  .icon-cal { background: #0284c7; }
+  .icon-crm { background: #ff7a59; }
+
+  .n8n-node-name { font-size: 13.5px; font-weight: 700; color: #101828; }
+  .n8n-node-type { font-size: 11px; color: #667085; }
+  .n8n-node-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #f2f4f7;
+    font-size: 11px;
+  }
+  .node-time { font-family: ui-monospace, monospace; color: #027a48; font-weight: 700; }
+  .node-status-check { color: #027a48; font-weight: 800; }
+  .n8n-connector-arrow { color: #98a2b3; font-size: 18px; font-weight: bold; flex-shrink: 0; }
+
+  /* n8n Live Execution Console Drawer */
+  .n8n-inspector-drawer {
+    background: #ffffff;
+    border-top: 1px solid #e4e7ec;
+    padding: 20px 24px;
+  }
+  .n8n-inspector-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .n8n-inspector-title { font-size: 14px; font-weight: 700; color: #101828; }
+  .n8n-console-tabs { display: flex; gap: 8px; }
+  .n8n-c-tab {
+    background: #f2f4f7;
+    border: 1px solid #e4e7ec;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #344054;
+    cursor: pointer;
+  }
+  .n8n-c-tab.active { background: #101828; color: #ffffff; border-color: #101828; }
+  .n8n-json-terminal {
+    background: #0f172a;
+    color: #94a3b8;
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-family: ui-monospace, monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    max-height: 220px;
+    overflow-y: auto;
+  }
+
+  /* WhatsApp Interactive Simulator */
+  .rstate-wa-box {
+    background: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 36px 0;
+    box-shadow: 0 20px 48px -12px rgba(18, 28, 45, 0.12);
+  }
+  .rstate-wa-top {
+    background: #005c4b;
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .rstate-wa-agent-info { display: flex; align-items: center; gap: 12px; }
+  .rstate-wa-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #005c4b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  .rstate-wa-scenario-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .rstate-scenario-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .rstate-scenario-btn:hover, .rstate-scenario-btn.active {
+    background: #ffffff;
+    color: #005c4b;
+    border-color: #ffffff;
+  }
+  .rstate-chat-scroll {
+    background: #efeae2;
+    background-image: radial-gradient(#d1d7db 1px, transparent 1px);
+    background-size: 20px 20px;
+    padding: 28px 24px;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .rstate-chat-bubble {
+    max-width: 78%;
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+  }
+  .rstate-chat-bubble.agent { background: #ffffff; color: #111b21; border-top-left-radius: 2px; }
+  .rstate-chat-bubble.user { background: #d9fdd3; color: #111b21; border-top-right-radius: 2px; }
+  .rstate-bubble-time { font-size: 10.5px; color: #667781; margin-top: 4px; text-align: right; font-family: ui-monospace, monospace; }
+  .rstate-pdf-attachment {
+    background: #f7f9fa;
+    border: 1px solid #e1e6ea;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* Comparison Table */
+  .rstate-compare-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 32px 0;
+    font-size: 14px;
+    background: #ffffff;
+    border: 1px solid #e4e7ec;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--rstate-clay-shadow);
+  }
+  .rstate-compare-table th, .rstate-compare-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #f2f4f7;
+    text-align: left;
+    vertical-align: top;
+  }
+  .rstate-compare-table th {
+    background: #fafbfc;
+    font-weight: 700;
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #344054;
+  }
+  .rstate-compare-table tr:last-child td { border-bottom: none; }
+  .rstate-compare-table td.highlight-cell {
+    background: #f4fbf7;
+    font-weight: 600;
+    color: #0f7a36;
+    border-left: 3px solid #25d366;
+  }
+
+  /* Claymorphic Quote Box */
+  .rstate-quote-box {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-left: 5px solid var(--rstate-primary);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin: 40px 0;
+    box-shadow: var(--rstate-clay-shadow);
+  }
+  .rstate-quote-text { font-size: 17.5px; line-height: 1.65; font-style: italic; color: #141824; margin-bottom: 16px; }
+  .rstate-quote-person { font-size: 14px; font-weight: 700; color: #141824; }
+  .rstate-quote-role { font-size: 12.5px; color: #667085; }
+
+  /* Claymorphic CTA Banner */
+  .rstate-cta-clay {
+    background: #141824;
+    color: #ffffff;
+    border-radius: 22px;
+    padding: 44px 38px;
+    margin: 48px 0 24px;
+    box-shadow: 0 24px 60px -12px rgba(20, 24, 36, 0.35);
+    position: relative;
+    overflow: hidden;
+  }
+  .rstate-cta-clay h3 { color: #ffffff; margin: 0 0 12px; font-size: 28px; }
+  .rstate-cta-clay p { color: #98a2b3; font-size: 15.5px; max-width: 680px; margin-bottom: 24px; }
+  .rstate-primary-clay-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25d366;
+    color: #0b141a;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14.5px;
+    padding: 13px 26px;
+    border-radius: 9999px;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+    transition: all 0.2s ease;
+  }
+  .rstate-primary-clay-btn:hover { background: #20ba59; transform: translateY(-2px); box-shadow: 0 12px 26px rgba(37, 211, 102, 0.5); }
+  .rstate-primary-clay-btn:active { transform: translateY(1px); }
+
+  /* Project Navigation */
+  .project-nav-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e4e7ec;
+    border-bottom: 1px solid #e4e7ec;
+    padding: 24px 0;
+    margin: 48px 0;
+  }
+  .project-nav-btn { text-decoration: none; display: flex; flex-direction: column; gap: 4px; }
+  .project-nav-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: var(--rstate-text-sub);
+    font-family: ui-monospace, monospace;
+  }
+  .project-nav-title { font-size: 15px; font-weight: 700; color: var(--rstate-ink); transition: color 0.15s ease; }
+  .project-nav-btn:hover .project-nav-title { color: var(--rstate-primary); }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid #e4e7ec;
+    padding: 40px 0 60px;
+    color: var(--rstate-text-sub);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  footer a { color: var(--rstate-text-sub); text-decoration: none; }
+  footer a:hover { color: var(--rstate-ink); }
+  footer .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  @media (max-width: 809px) {
+    .cypher-nav-glass-bar { display: none; }
+    .rstate-spec-grid { grid-template-columns: repeat(2, 1fr); }
+    .rstate-stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .rstate-compare-table { display: block; overflow-x: auto; }
+    h1.project-hero-title { font-size: 30px; }
+    h2.project-hero-sub { font-size: 18px; }
+  }
+  @media (max-width: 520px) {
+    .rstate-spec-grid { grid-template-columns: 1fr; }
+    .rstate-stats-grid { grid-template-columns: 1fr; }
+    .rstate-cta-clay { padding: 30px 22px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<!-- Floating Pill Header System (Matches Rest of Website) -->
+<div class="cypher-floating-header">
+  <div class="wrap">
+    <div class="cypher-header-row">
+      <div class="cypher-pills-left">
+        <a class="cypher-pill-btn" href="/work/">← Back</a>
+        <a class="cypher-pill-btn" href="/">
+          <img src="/images/studio-logo.png" alt="Cypher Ai" class="cypher-pill-logo">
+          <span>Cypher Ai</span>
+        </a>
+      </div>
+      <div class="cypher-pills-right">
+        <nav class="cypher-nav-glass-bar" aria-label="Primary Navigation">
+          <a class="cypher-nav-link" href="/">Home</a>
+          <a class="cypher-nav-link active" href="/work/">Work</a>
+          <a class="cypher-nav-link" href="/voice-agents/">Voice Agents</a>
+          <a class="cypher-nav-link" href="/workflows/">Workflows</a>
+          <a class="cypher-nav-link" href="/crm-integrations/">CRM</a>
+          <a class="cypher-nav-link" href="/seo/">SEO</a>
+          <a class="cypher-nav-link" href="/contact/">Contact</a>
+        </nav>
+        <a class="cypher-consult-btn" href="https://wa.me/919582440495">Book Consult</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap" id="main">
+  <!-- Secondary Section Jump Navigation -->
+  <div class="rstate-quick-nav-bar" aria-label="RState Section Navigation">
+    <a href="#rst-overview" class="rstate-nav-chip active"><span class="chip-num">01</span> Overview</a>
+    <a href="#rst-n8n" class="rstate-nav-chip"><span class="chip-num">02</span> Interactive n8n Canvas</a>
+    <a href="#rst-wa" class="rstate-nav-chip"><span class="chip-num">03</span> WhatsApp Simulator</a>
+    <a href="#rst-blueprint" class="rstate-nav-chip"><span class="chip-num">04</span> High-Contrast Blueprint</a>
+    <a href="#rst-benchmarks" class="rstate-nav-chip"><span class="chip-num">05</span> Benchmarks</a>
+    <a href="#rst-roi" class="rstate-nav-chip"><span class="chip-num">06</span> Commercial ROI</a>
+  </div>
+
+  <!-- Breadcrumb -->
+  <p class="crumbs">
+    <a href="/">Home</a>
+    <span>/</span>
+    <a href="/work/">Work</a>
+    <span>/</span>
+    <span>RState Automation</span>
+  </p>
+
+  <!-- Section 1: Overview & High-Contrast Banner -->
+  <section id="rst-overview">
+    <div class="rstate-badge-row">
+      <span class="rstate-clay-badge badge-wa"><span class="status-pulsar"></span> WHATSAPP CLOUD API</span>
+      <span class="rstate-clay-badge badge-n8n">N8N ORCHESTRATION ENGINE</span>
+      <span class="rstate-clay-badge badge-accent">REAL ESTATE SALES &amp; LIFECYCLE FOLLOW-UP</span>
+      <span class="rstate-clay-badge badge-blue">ENTERPRISE PRODUCTION</span>
+    </div>
+
+    <h1 class="project-hero-title">RState Automation</h1>
+    <h2 class="project-hero-sub">RState — Autonomous WhatsApp Sales Agent &amp; Real Estate Pipeline</h2>
+
+    <div class="rstate-hero-actions">
+      <a href="#rst-n8n" class="rstate-btn-clay btn-clay-dark">Interactive n8n Pipeline ⚙️</a>
+      <a href="#rst-wa" class="rstate-btn-clay btn-clay-light">Live WhatsApp Demo 💬</a>
+      <a href="https://wa.me/919582440495" class="rstate-btn-clay btn-clay-orange">Book Consultation →</a>
+    </div>
+
+    <!-- High-Contrast Luminous Banner Card -->
+    <div class="rstate-image-frame">
+      <div class="rstate-image-topbar">
+        <div class="rstate-topbar-dots">
+          <div class="rstate-dot-item"></div>
+          <div class="rstate-dot-item"></div>
+          <div class="rstate-dot-item"></div>
+        </div>
+        <span>RSTATE_AUTONOMOUS_OPERATING_CONSOLE · V4.0</span>
+        <span class="rstate-clay-badge badge-wa">N8N PIPELINE ACTIVE</span>
+      </div>
+      <img src="/images/rstate-banner.png" alt="RState Automation luxury real estate AI platform iPad Pro mockup showcasing luxury villas, live WhatsApp sales agent, and n8n workflow metrics" width="1536" height="1024" loading="eager">
+      <div class="rstate-image-caption">
+        <span><strong>Figure 1.1:</strong> Luminous RState high-contrast console: real-time Palm Jumeirah villa inventory, active WhatsApp sales dialogue, hot lead scoring gauge (92/100), and live n8n workflow execution feeds.</span>
+        <span class="rstate-clay-badge badge-accent">HIGH CONTRAST THEME</span>
+      </div>
+    </div>
+
+    <!-- Spec Sheet -->
+    <div class="rstate-spec-grid">
+      <div class="rstate-spec-tile"><div class="rstate-spec-label">Platform</div><div class="rstate-spec-val">RState Automation</div></div>
+      <div class="rstate-spec-tile"><div class="rstate-spec-label">Domain</div><div class="rstate-spec-val">Luxury Real Estate &amp; High-Rises</div></div>
+      <div class="rstate-spec-tile"><div class="rstate-spec-label">Core Pipeline</div><div class="rstate-spec-val">n8n Workflow &amp; GPT-4o</div></div>
+      <div class="rstate-spec-tile"><div class="rstate-spec-label">Messaging Protocol</div><div class="rstate-spec-val">WhatsApp Cloud API (Meta)</div></div>
+      <div class="rstate-spec-tile"><div class="rstate-spec-label">Speed to Lead</div><div class="rstate-spec-val">&lt; 2.4s instant pickup</div></div>
+      <div class="rstate-spec-tile"><div class="rstate-spec-label">Lifecycle Scope</div><div class="rstate-spec-val">30-day automated cadence</div></div>
+      <div class="rstate-spec-tile"><div class="rstate-spec-label">Cold Revival</div><div class="rstate-spec-val">30 to 90-day dormant triggers</div></div>
+      <div class="rstate-spec-tile"><div class="rstate-spec-label">CRM Sync</div><div class="rstate-spec-val">HubSpot, Salesforce, PostgreSQL</div></div>
+    </div>
+
+    <!-- Key Metrics -->
+    <div class="rstate-stats-grid">
+      <div class="rstate-stat-box wa">
+        <div class="rstate-stat-num">89.4%</div>
+        <div class="rstate-stat-delta">↑ +76.6% vs email/SMS</div>
+        <div class="rstate-stat-desc">Inbound WhatsApp engagement &amp; response rate</div>
+      </div>
+      <div class="rstate-stat-box primary">
+        <div class="rstate-stat-num">3.8×</div>
+        <div class="rstate-stat-delta">↑ 412 bookings/mo</div>
+        <div class="rstate-stat-desc">Increase in confirmed VIP penthouse site inspections</div>
+      </div>
+      <div class="rstate-stat-box n8n">
+        <div class="rstate-stat-num">41.2%</div>
+        <div class="rstate-stat-delta">↑ 180+ recovered deals</div>
+        <div class="rstate-stat-desc">Cold lead archive revival rate (&gt;30 days dormant)</div>
+      </div>
+      <div class="rstate-stat-box">
+        <div class="rstate-stat-num">&lt; 2.4s</div>
+        <div class="rstate-stat-delta">↓ -99% response lag</div>
+        <div class="rstate-stat-desc">Instant 24/7 lead qualification &amp; floor plan dispatch</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Interactive n8n Pipeline Canvas Experience -->
+  <section id="rst-n8n">
+    <h2>2. Interactive n8n Automation Canvas</h2>
+    <p>Experience the actual n8n orchestration engine powering RState. Click any node below to inspect its live data payload, or click <strong>'Run Live Test Simulation'</strong> to watch data packets execute through the pipeline in real time:</p>
+
+    <div class="n8n-simulator-frame">
+      <div class="n8n-sim-toolbar">
+        <div class="n8n-crumb-path">
+          <span class="n8n-logo-badge">n8n</span>
+          <span>Workflows</span>
+          <span>/</span>
+          <span>RState Automation</span>
+          <span>/</span>
+          <span>Real Estate Pipeline</span>
+        </div>
+        <div class="n8n-sim-actions">
+          <span class="n8n-status-pill">Active ●</span>
+          <button type="button" id="n8n-sim-run-btn" class="n8n-run-btn" onclick="window.runN8nSimulation()">
+            <span>▶</span> Run Live Test Simulation
+          </button>
+        </div>
+      </div>
+
+      <div class="n8n-canvas-body">
+        <div class="n8n-nodes-row">
+          <!-- Node 1 -->
+          <div class="n8n-node-card selected" id="n8n-node-1" onclick="window.selectN8nNode(1)">
+            <div class="n8n-node-top">
+              <div class="n8n-node-icon icon-meta">f</div>
+              <div>
+                <div class="n8n-node-name">Webhook Trigger</div>
+                <div class="n8n-node-type">Meta Ads Lead Form</div>
+              </div>
+            </div>
+            <div class="n8n-node-meta">
+              <span>1 new lead</span>
+              <span class="node-time">0.2s</span>
+              <span class="node-status-check">✓</span>
+            </div>
+          </div>
+
+          <div class="n8n-connector-arrow">→</div>
+
+          <!-- Node 2 -->
+          <div class="n8n-node-card" id="n8n-node-2" onclick="window.selectN8nNode(2)">
+            <div class="n8n-node-top">
+              <div class="n8n-node-icon icon-ai">🤖</div>
+              <div>
+                <div class="n8n-node-name">n8n AI Agent</div>
+                <div class="n8n-node-type">GPT-4o Lead Qualifier</div>
+              </div>
+            </div>
+            <div class="n8n-node-meta">
+              <span>Knowledge tools</span>
+              <span class="node-time">0.4s</span>
+              <span class="node-status-check">✓</span>
+            </div>
+          </div>
+
+          <div class="n8n-connector-arrow">→</div>
+
+          <!-- Node 3 -->
+          <div class="n8n-node-card" id="n8n-node-3" onclick="window.selectN8nNode(3)">
+            <div class="n8n-node-top">
+              <div class="n8n-node-icon icon-wa">💬</div>
+              <div>
+                <div class="n8n-node-name">WhatsApp Cloud</div>
+                <div class="n8n-node-type">Message &amp; Brochure</div>
+              </div>
+            </div>
+            <div class="n8n-node-meta">
+              <span>Delivered</span>
+              <span class="node-time">0.2s</span>
+              <span class="node-status-check">✓</span>
+            </div>
+          </div>
+
+          <div class="n8n-connector-arrow">→</div>
+
+          <!-- Node 4 -->
+          <div class="n8n-node-card" id="n8n-node-4" onclick="window.selectN8nNode(4)">
+            <div class="n8n-node-top">
+              <div class="n8n-node-icon icon-cal">📅</div>
+              <div>
+                <div class="n8n-node-name">Book Site Visit</div>
+                <div class="n8n-node-type">Google Calendar Sync</div>
+              </div>
+            </div>
+            <div class="n8n-node-meta">
+              <span>Slot confirmed</span>
+              <span class="node-time">0.4s</span>
+              <span class="node-status-check">✓</span>
+            </div>
+          </div>
+
+          <div class="n8n-connector-arrow">→</div>
+
+          <!-- Node 5 -->
+          <div class="n8n-node-card" id="n8n-node-5" onclick="window.selectN8nNode(5)">
+            <div class="n8n-node-top">
+              <div class="n8n-node-icon icon-crm">⚡</div>
+              <div>
+                <div class="n8n-node-name">Sync to HubSpot</div>
+                <div class="n8n-node-type">Deal &amp; Contact Sync</div>
+              </div>
+            </div>
+            <div class="n8n-node-meta">
+              <span>Deal updated</span>
+              <span class="node-time">0.3s</span>
+              <span class="node-status-check">✓</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Node Inspector / Terminal -->
+      <div class="n8n-inspector-drawer">
+        <div class="n8n-inspector-header">
+          <span class="n8n-inspector-title">Active Node Inspector &amp; Execution Output</span>
+          <div class="n8n-console-tabs">
+            <span class="n8n-c-tab active">Execution Data</span>
+            <span class="n8n-c-tab">Parameters</span>
+            <span class="n8n-c-tab">Schema</span>
+          </div>
+        </div>
+        <pre class="n8n-json-terminal" id="n8n-terminal-content">// [NODE 1: Meta Ads Lead Webhook]
+{
+  "event": "meta_leadgen_webhook",
+  "lead_id": "meta_lead_9820149204",
+  "created_time": "2026-10-24T10:14:02.100Z",
+  "form_data": {
+    "full_name": "Priya Sharma",
+    "phone": "+91 98765 43210",
+    "ad_campaign": "Instagram_Luxury_SkyVillas",
+    "property_interest": "3 BHK Penthouse",
+    "location": "Whitefield, Bengaluru"
+  },
+  "execution_time_ms": 210,
+  "status": "200_SUCCESS"
+}</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: WhatsApp Interactive Simulator -->
+  <section id="rst-wa">
+    <h2>3. Live WhatsApp Interactive Experience</h2>
+    <p>Experience how RState conducts intelligent, human-like conversations over WhatsApp. Click scenario buttons to switch between customer journeys:</p>
+
+    <div class="rstate-wa-box">
+      <div class="rstate-wa-top">
+        <div class="rstate-wa-agent-info">
+          <div class="rstate-wa-avatar">R</div>
+          <div>
+            <h4 style="margin:0;font-size:15px;font-weight:700;">RState Sales Agent <span style="color:#25d366;font-size:12px;">✔ Verified</span></h4>
+            <p style="margin:0;font-size:11.5px;opacity:0.85;">Online · Replies in under 15 seconds</p>
+          </div>
+        </div>
+        <div class="rstate-wa-scenario-pills">
+          <button type="button" class="rstate-scenario-btn active" onclick="window.switchRStateChat(1, this)">1. Penthouse Booking</button>
+          <button type="button" class="rstate-scenario-btn" onclick="window.switchRStateChat(2, this)">2. Payment Plan &amp; ROI</button>
+          <button type="button" class="rstate-scenario-btn" onclick="window.switchRStateChat(3, this)">3. Cold Revival (Day 90+)</button>
+        </div>
+      </div>
+
+      <div class="rstate-chat-scroll" id="rstate-chat-scroll-target">
+        <div id="rst-chat-sc1">
+          <div class="rstate-chat-bubble user" style="align-self:flex-end;">
+            Hi! I saw your ad for Palm Jumeirah Sky Villas. Are 4-BHK duplex units available for viewing this weekend?
+            <div class="rstate-bubble-time">10:14 AM</div>
+          </div>
+          <div class="rstate-chat-bubble agent" style="align-self:flex-start;">
+            Hello Priya! Yes, we have 2 exclusive high-floor 4-BHK duplex penthouses available in Tower Aurum with panoramic sea views and private plunge pools.<br><br>Pricing is $2.85M with flexible construction-linked schedules. Are you seeking personal residency or an investment asset?
+            <div class="rstate-bubble-time">10:14 AM · RState AI</div>
+          </div>
+          <div class="rstate-chat-bubble user" style="align-self:flex-end;">
+            Personal residency. Can I schedule a private viewing this Saturday morning?
+            <div class="rstate-bubble-time">10:15 AM</div>
+          </div>
+          <div class="rstate-chat-bubble agent" style="align-self:flex-start;">
+            Splendid! I have checked our senior property director Vikram Mehta's calendar. We have an executive slot open this Saturday at 11:00 AM.<br><br>Would you like me to lock that slot and dispatch your VIP entrance gate pass?
+            <div class="rstate-bubble-time">10:15 AM · RState AI</div>
+          </div>
+          <div class="rstate-chat-bubble user" style="align-self:flex-end;">
+            Yes please, 11:00 AM works perfectly.
+            <div class="rstate-bubble-time">10:16 AM</div>
+          </div>
+          <div class="rstate-chat-bubble agent" style="align-self:flex-start;">
+            Your site viewing is confirmed! 🏛️<br><strong>Location:</strong> RState Experience Lounge, Palm West Wing<br><strong>Host:</strong> Senior Director Vikram Mehta<br><strong>Google Maps:</strong> https://maps.rstate.com/vip-gate-2<br><br>I have synced this booking into our calendar and attached your architectural floor plan dossier:
+            <div class="rstate-pdf-attachment">
+              <span style="font-size:22px;">📄</span>
+              <div>
+                <div style="font-size:13.5px;font-weight:700;color:#111b21;">RState_Palm_SkyVilla_Floorplan.pdf</div>
+                <div style="font-size:11.5px;color:#667781;">14.2 MB · Architectural Blueprint</div>
+              </div>
+            </div>
+            <div class="rstate-bubble-time">10:16 AM · RState AI · Synced to HubSpot</div>
+          </div>
+        </div>
+
+        <div id="rst-chat-sc2" style="display:none;">
+          <div class="rstate-chat-bubble user" style="align-self:flex-end;">Could you share the payment schedule and expected rental yields for your 3-BHK luxury suites?<div class="rstate-bubble-time">02:30 PM</div></div>
+          <div class="rstate-chat-bubble agent" style="align-self:flex-start;">Certainly! For our 3-BHK luxury suites (2,450 sq.ft.), we offer a structured 20:80 investor payment plan:<br>• 10% on booking confirmation<br>• 10% within 45 days<br>• 80% upon superstructure handover<br><br>Historical rental yield across this district averages 7.2% to 8.6% net annually, driven by corporate executive leases.<div class="rstate-bubble-time">02:30 PM · RState AI</div></div>
+          <div class="rstate-chat-bubble user" style="align-self:flex-end;">That sounds competitive. Is there any bank pre-approval in place?<div class="rstate-bubble-time">02:32 PM</div></div>
+          <div class="rstate-chat-bubble agent" style="align-self:flex-start;">Yes, we have pre-approved mortgage partnerships with HSBC, Standard Chartered, and Emirates NBD with preferred financing rates.<br><br>Here is the full financial dossier and mortgage amortization schedule:
+            <div class="rstate-pdf-attachment">
+              <span style="font-size:22px;">📊</span>
+              <div>
+                <div style="font-size:13.5px;font-weight:700;color:#111b21;">RState_Investor_ROI_Mortgage_Guide.pdf</div>
+                <div style="font-size:11.5px;color:#667781;">8.6 MB · Financial Schedule</div>
+              </div>
+            </div>
+            <div class="rstate-bubble-time">02:32 PM · RState AI · Deal Stage Updated</div>
+          </div>
+        </div>
+
+        <div id="rst-chat-sc3" style="display:none;">
+          <div class="rstate-chat-bubble agent" style="align-self:flex-start;">Hello Rajesh! Trust you are having a wonderful week.<br><br>You previously inquired about high-floor penthouses at RState Residences last month. We just released the Penthouse Collection in Tower Solarium with special early-access pricing before the public launch on November 1st.<br><br>Would you like to review the exclusive 3D virtual walkthrough before inventory opens publicly?<div class="rstate-bubble-time">11:00 AM · Automated n8n Revival Trigger</div></div>
+          <div class="rstate-chat-bubble user" style="align-self:flex-end;">Hello! Yes, I was still looking. Please send over the virtual tour link and price sheet.<div class="rstate-bubble-time">11:18 AM</div></div>
+          <div class="rstate-chat-bubble agent" style="align-self:flex-start;">Wonderful to reconnect! Here is the private 3D tour link:<br>🌐 <strong>3D Experience:</strong> https://tour.rstate.com/penthouse-solarium<br><br>Our lead consultant Natasha is available tomorrow at 4:00 PM if you would like a guided virtual screen-share walk-through. May I book that for you?<div class="rstate-bubble-time">11:18 AM · RState AI · Deal Reactivated in CRM</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: High-Contrast n8n Blueprint Image -->
+  <section id="rst-blueprint">
+    <h2>4. Production n8n Architecture Blueprint (High-Contrast Theme)</h2>
+    <p>The complete end-to-end technical blueprint demonstrating how RState connects Meta Lead forms, n8n AI decision logic, WhatsApp Cloud messaging, and CRM synchronization in sub-second loops:</p>
+
+    <div class="rstate-image-frame">
+      <div class="rstate-image-topbar">
+        <div class="rstate-topbar-dots">
+          <div class="rstate-dot-item"></div>
+          <div class="rstate-dot-item"></div>
+          <div class="rstate-dot-item"></div>
+        </div>
+        <span>N8N_ENGINEERING_SCHEMATIC · REAL_ESTATE_LIFECYCLE_CANVAS</span>
+        <span class="rstate-clay-badge badge-n8n">ENTERPRISE SPEC</span>
+      </div>
+      <img src="/images/rstate-n8n-pipeline.png" alt="High-contrast bright light theme n8n automation workflow canvas schematic diagram for RState Automation real estate pipeline" width="1774" height="887" loading="lazy">
+      <div class="rstate-image-caption">
+        <span><strong>Figure 4.1:</strong> Luminous n8n workflow canvas: Webhook ingestion (Meta Ads), n8n AI Agent qualifier, WhatsApp Cloud API message sender, Google Calendar Site Visit booker, HubSpot CRM updater, 30-day nurture wait loop, and cold archive revival engine.</span>
+        <span class="rstate-clay-badge badge-blue">CANVAS SPEC</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Comparative Benchmarks -->
+  <section id="rst-benchmarks">
+    <h2>5. Comparative Performance Benchmarks</h2>
+    <p>A rigorous 90-day comparative study comparing legacy manual broker outreach against generic WhatsApp bulk blasts and RState Automation's integrated n8n engine:</p>
+
+    <table class="rstate-compare-table">
+      <thead>
+        <tr>
+          <th>Capability</th>
+          <th>Manual Broker Outreach</th>
+          <th>Generic WhatsApp Blasts</th>
+          <th>RState Automation (n8n + AI)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Speed to Lead</strong></td>
+          <td>2 to 6 hours lag</td>
+          <td>Scheduled batch lag</td>
+          <td class="highlight-cell">&lt; 2.4 seconds instant pickup</td>
+        </tr>
+        <tr>
+          <td><strong>Lead Engagement Rate</strong></td>
+          <td>18.4% phone pickup</td>
+          <td>4.2% click-through rate</td>
+          <td class="highlight-cell">89.4% conversation completion</td>
+        </tr>
+        <tr>
+          <td><strong>Site Visit Booking Rate</strong></td>
+          <td>6.1% of inquiries</td>
+          <td>1.2% link conversions</td>
+          <td class="highlight-cell">23.8% confirmed calendar visits</td>
+        </tr>
+        <tr>
+          <td><strong>Site Visit No-Show Rate</strong></td>
+          <td>38% absent on appointment</td>
+          <td>N/A (No calendar lock)</td>
+          <td class="highlight-cell">9% (Automated T-24h/T-2h reminders)</td>
+        </tr>
+        <tr>
+          <td><strong>30-Day Follow-Up Rigor</strong></td>
+          <td>1-2 sporadic manual calls</td>
+          <td>Generic unread promo blasts</td>
+          <td class="highlight-cell">Tailored milestones, 4K video, PDFs</td>
+        </tr>
+        <tr>
+          <td><strong>Cold Lead Revival</strong></td>
+          <td>0% (Dormant leads abandoned)</td>
+          <td>Flagged as spam / opt-out</td>
+          <td class="highlight-cell">41.2% re-activated into active pipeline</td>
+        </tr>
+        <tr>
+          <td><strong>CRM Synchronization</strong></td>
+          <td>Manual entry (delayed 2-3 days)</td>
+          <td>None</td>
+          <td class="highlight-cell">Real-time bi-directional sync (&lt;3s)</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Section 6: Commercial ROI & Testimonial -->
+  <section id="rst-roi">
+    <h2>6. Commercial ROI &amp; Client Testimonial</h2>
+    <p>Within 90 days of going live across high-rise residential developments, RState Automation delivered measurable top-line business impact:</p>
+    <ul style="margin: 0 0 20px 24px; color: #344054; line-height: 1.8;">
+      <li><strong>412 Confirmed VIP Site Visits Booked Monthly:</strong> A 3.8x lift over manual broker outreach.</li>
+      <li><strong>$4.2M in Pipeline Recovered from Cold Archives:</strong> 180+ dormant inquiries converted into active negotiations through automated price-drop and tower-release hooks.</li>
+      <li><strong>89.4% Lead Engagement on WhatsApp:</strong> Establishing direct, trusted two-way dialogue while competitors were trapped in voicemail boxes.</li>
+      <li><strong>Zero Lead Spillage on Nights &amp; Weekends:</strong> 100% of off-hours inquiries qualified and booked into sales calendars instantaneously.</li>
+    </ul>
+
+    <div class="rstate-quote-box">
+      <div class="rstate-quote-text">
+        "In luxury real estate, buyers do not want cold marketing calls while sitting in meetings. They want instant answers on WhatsApp with high-resolution floor plans, accurate pricing, and zero hassle. RState Automation handles inquiries in seconds, books our site visits flawlessly, and follows up with architectural updates so thoughtfully that clients assume they are speaking with our top partner. It has completely modernized our sales pipeline."
+      </div>
+      <div class="rstate-quote-person">Rajeshwar Kulkarni</div>
+      <div class="rstate-quote-role">Chief Marketing Officer · RState Luxury Living</div>
+    </div>
+
+    <!-- Project Navigation -->
+    <div class="project-nav-row" aria-label="Case Study Navigation">
+      <a href="/work/" class="project-nav-btn">
+        <span class="project-nav-label">← Back to Overview</span>
+        <span class="project-nav-title">All CypherAi Case Studies</span>
+      </a>
+      <a href="/work/bravo/" class="project-nav-btn" style="text-align: right;">
+        <span class="project-nav-label">Next Case Study →</span>
+        <span class="project-nav-title">Bravo UI/UX &amp; Mobile App</span>
+      </a>
+    </div>
+
+    <!-- Claymorphic CTA Banner -->
+    <div class="rstate-cta-clay">
+      <h3>Deploy WhatsApp AI &amp; n8n Automation for Your Properties</h3>
+      <p>CypherAi builds, tests, and launches custom WhatsApp sales agents and automated lead revival pipelines for real estate developers and high-growth enterprises in 2 to 4 weeks.</p>
+      <a href="https://wa.me/919582440495" class="rstate-primary-clay-btn">
+        <span>💬</span> Chat with Founder on WhatsApp
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div style="font-weight: 700; color: var(--rstate-ink);">CypherAi Engineering</div>
+      <div>
+        <a href="/">Home</a> · 
+        <a href="/voice-agents/">Voice Agents</a> · 
+        <a href="/workflows/">Workflows</a> · 
+        <a href="/crm-integrations/">CRM</a> · 
+        <a href="/work/">Work</a> · 
+        <a href="/seo/">SEO</a> · 
+        <a href="/contact/">Contact</a>
+      </div>
+    </div>
+    <p>CypherAi (cypherai.in) is an autonomous AI automation engineering firm specializing in low-latency voice agents, deterministic workflow automations, and deep CRM integrations. Not affiliated with cypherai.ai, cypherbio.ai, or cypherai.asia.</p>
+    <p>Founder &amp; Lead Engineer: Priyansh Razz · Direct WhatsApp: <a href="https://wa.me/919582440495">+91 95824 40495</a> · New Delhi, India &amp; Worldwide.</p>
+  </div>
+</footer>
+
+<!-- Interactive Scripts -->
+<script>
+// WhatsApp Chat Switcher
+window.switchRStateChat = function(num, btn) {
+  for (let i = 1; i <= 3; i++) {
+    const el = document.getElementById("rst-chat-sc" + i);
+    if (el) el.style.display = i === num ? "block" : "none";
+  }
+  const btns = btn?.parentNode?.querySelectorAll(".rstate-scenario-btn");
+  btns?.forEach(b => b.classList.remove("active"));
+  btn?.classList.add("active");
+};
+
+// n8n Node Selection
+window.selectN8nNode = function(nodeId) {
+  document.querySelectorAll(".n8n-node-card").forEach(el => el.classList.remove("selected"));
+  const card = document.getElementById("n8n-node-" + nodeId);
+  if (card) card.classList.add("selected");
+
+  const detailEl = document.getElementById("n8n-terminal-content");
+  if (!detailEl) return;
+
+  const NODE_DATA = {
+    1: `// [NODE 1: Meta Ads Lead Webhook]
+{
+  "event": "meta_leadgen_webhook",
+  "lead_id": "meta_lead_9820149204",
+  "created_time": "2026-10-24T10:14:02.100Z",
+  "form_data": {
+    "full_name": "Priya Sharma",
+    "phone": "+91 98765 43210",
+    "ad_campaign": "Instagram_Luxury_SkyVillas",
+    "property_interest": "3 BHK Penthouse",
+    "location": "Whitefield, Bengaluru"
+  },
+  "execution_time_ms": 210,
+  "status": "200_SUCCESS"
+}`,
+    2: `// [NODE 2: n8n AI Agent (GPT-4o Qualifier)]
+{
+  "agent_model": "gpt-4o-realtime",
+  "tools_connected": ["Knowledge_Base", "Calculator_EMI", "Calendar_Booking"],
+  "intent_detected": "High_Intent_Site_Visit_Request",
+  "qualification_score": 92,
+  "budget_extracted": "$2.4M - $3.0M",
+  "recommended_inventory": ["Tower_Solarium_Unit_1804", "SkyVilla_Duplex_02"],
+  "next_action": "DISPATCH_WHATSAPP_RESPONSE_AND_CALENDAR_SLOT",
+  "execution_time_ms": 420
+}`,
+    3: `// [NODE 3: WhatsApp Cloud API Dispatcher]
+{
+  "message_id": "wamid_HBgMOTE5ODc2NTQzMjEwFQIA",
+  "recipient": "+91 98765 43210",
+  "template": "rstate_vip_inquiry_ack",
+  "media_attached": {
+    "type": "document",
+    "filename": "RState_Sky_Villas_Brochure.pdf",
+    "url": "https://vault.cypherai.in/rstate/brochure.pdf"
+  },
+  "interactive_buttons": ["Schedule Site Visit", "View 3D Tour", "Payment Schedule"],
+  "delivery_status": "delivered",
+  "execution_time_ms": 180
+}`,
+    4: `// [NODE 4: Google Calendar Slot Lock]
+{
+  "calendar_action": "create_event",
+  "calendar_id": "vip_tours@rstate.com",
+  "event_title": "VIP Site Inspection - Priya Sharma",
+  "start_time": "2026-10-26T11:00:00+05:30",
+  "end_time": "2026-10-26T12:00:00+05:30",
+  "assigned_host": "Vikram Mehta (Director Client Relations)",
+  "location_pin": "RState Experience Lounge, Whitefield Gate 2",
+  "calendar_sync_status": "CONFIRMED_200"
+}`,
+    5: `// [NODE 5: HubSpot CRM Deal Sync]
+{
+  "crm_provider": "HubSpot_Enterprise_V3",
+  "contact_id": "hs_cnt_9820149204",
+  "deal_created": {
+    "dealname": "Priya Sharma - SkyVilla 3BHK Penthouse",
+    "amount": 2850000,
+    "pipeline_stage": "site_visit_scheduled",
+    "lifecycle_stage": "opportunity"
+  },
+  "whatsapp_transcript_logged": true,
+  "webhook_latency_ms": 310
+}`
+  };
+
+  detailEl.textContent = NODE_DATA[nodeId] || "// Select any n8n workflow node above to inspect its real-time payload.";
+};
+
+// Live n8n Simulation Runner
+window.runN8nSimulation = function() {
+  const runBtn = document.getElementById("n8n-sim-run-btn");
+  if (runBtn) {
+    runBtn.innerHTML = "<span>⚙️</span> Simulating Pipeline...";
+    runBtn.style.background = "#d97706";
+  }
+
+  const terminal = document.getElementById("n8n-terminal-content");
+  if (terminal) terminal.textContent = "// [INITIATING N8N PIPELINE SIMULATION] Running 5-stage real estate flow...";
+
+  const sequence = [
+    { id: 1, name: "Webhook Trigger (Meta Ads)", time: "0.2s", log: "[0.2s] Webhook received: Priya Sharma submitted Instagram Lead Ad (3 BHK Whitefield)" },
+    { id: 2, name: "n8n AI Agent (GPT-4o)", time: "0.6s", log: "[0.6s] GPT-4o analyzed buyer intent: Budget $2.85M · Hot Lead Score 92 · Matched Unit #1804" },
+    { id: 3, name: "WhatsApp Cloud API", time: "1.0s", log: "[1.0s] WhatsApp message + PDF brochure dispatched directly to +91 98765 43210" },
+    { id: 4, name: "Google Calendar Booking", time: "1.4s", log: "[1.4s] Calendar slot locked: Saturday 11:00 AM with Vikram Mehta (Host)" },
+    { id: 5, name: "Sync to HubSpot CRM", time: "1.8s", log: "[1.8s] HubSpot Deal created: $2,850,000 · Stage: Site Visit Scheduled · Complete Transcript Logged" }
+  ];
+
+  sequence.forEach((step, idx) => {
+    setTimeout(() => {
+      document.querySelectorAll(".n8n-node-card").forEach(el => el.classList.remove("executing"));
+      const node = document.getElementById("n8n-node-" + step.id);
+      if (node) node.classList.add("executing");
+      if (terminal) {
+        terminal.textContent += "\n" + step.log;
+        terminal.scrollTop = terminal.scrollHeight;
+      }
+
+      if (idx === sequence.length - 1) {
+        setTimeout(() => {
+          if (runBtn) {
+            runBtn.innerHTML = "<span>▶</span> Run Live Test Simulation";
+            runBtn.style.background = "#ff5c35";
+          }
+          if (terminal) {
+            terminal.textContent += "\n// [PIPELINE EXECUTION COMPLETE] All 5 nodes executed successfully in 1.82s (200 OK)";
+          }
+          document.querySelectorAll(".n8n-node-card").forEach(el => el.classList.remove("executing"));
+        }, 600);
+      }
+    }, idx * 600);
+  });
+};
+</script>
+</body>
+</html>

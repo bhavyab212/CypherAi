@@ -35,6 +35,7 @@ const PAGES = [
   { src: "work/project-2/index.html", mirror: "m/work/project-2/index.html", desktopPath: "/work/project-2/" },
   { src: "work/project-3/index.html", mirror: "m/work/project-3/index.html", desktopPath: "/work/project-3/" },
   { src: "work/strida/index.html", mirror: "m/work/strida/index.html", desktopPath: "/work/strida/" },
+  { src: "work/rstate-automation/index.html", mirror: "m/work/rstate-automation/index.html", desktopPath: "/work/rstate-automation/" },
   { src: "contact/index.html", mirror: "m/contact/index.html", desktopPath: "/contact/" },
   { src: "seo/index.html", mirror: "m/seo/index.html", desktopPath: "/seo/" },
   { src: "seo/proof/index.html", mirror: "m/seo/proof/index.html", desktopPath: "/seo/proof/" },
@@ -167,14 +168,9 @@ function injectAfterHeadStart(html, injection) {
   return html.replace(/<head[^>]*>/, (h) => h + "\n" + injection);
 }
 
-// Pristine desktop source from git HEAD (falls back to working tree if the
-// baseline commit is missing — never in practice).
+// Pristine desktop source (read directly from working tree, stripped of guards).
 function pristineDesktop(rel) {
-  try {
-    return execSync("git show HEAD:site/" + rel, { cwd: root, encoding: "utf8" });
-  } catch (e) {
-    return readFileSync(path.join(site, rel), "utf8");
-  }
+  return readFileSync(path.join(site, rel), "utf8");
 }
 
 function mirrorFor(page) {

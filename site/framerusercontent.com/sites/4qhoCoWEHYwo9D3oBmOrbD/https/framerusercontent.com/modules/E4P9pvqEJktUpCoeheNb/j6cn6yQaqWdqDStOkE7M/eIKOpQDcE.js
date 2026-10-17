@@ -581,7 +581,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                           style: {
                                             "--framer-text-alignment": "left",
                                           },
-                                          children: "Strida",
+                                          children: "RState Automation",
                                         }),
                                       }
                                     ),
@@ -748,7 +748,7 @@ const Component = /*#__PURE__*/ React.forwardRef(function (props, ref) {
                                       "var(--token-00af65c3-92fd-4f69-9228-cfe71d95f29a, rgb(0, 0, 0))",
                                   },
                                   children:
-                                    "Strida offers a smooth and powerful experience when presenting your work in a full-screen format. It combines bold Swiss typography, smooth animations, sidebar navigations, flexible CMS — everything to make your portfolio rock. ",
+                                    "RState - Autonomous WhatsApp Sales Agent & Real Estate Pipeline",
                                 }),
                               }),
                               className: "framer-1lsbj9z",

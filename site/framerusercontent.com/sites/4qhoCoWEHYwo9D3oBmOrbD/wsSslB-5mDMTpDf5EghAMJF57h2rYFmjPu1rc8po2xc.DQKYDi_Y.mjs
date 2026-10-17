@@ -3,18 +3,18 @@ const PROJECTS = [
     id: "strida",
     index: 0,
     uTZAUbA1P: "strida",
-    uLRpQRGcH: "Strida",
-    V48QqcuXU: "Strida — Full-Screen Portfolio",
-    rm2tapp6I: "https://strida.framer.website",
-    lQBdWmB0N: "portfolio",
-    dnVagKu6Z: "sidebar",
-    Ilm_tuKWl: "UI/UX, Web Design",
-    gFi3QPm5F: "Framer, React",
-    rA8UF9a3f: "2024 / 2 Weeks",
+    uLRpQRGcH: "Omkara",
+    V48QqcuXU: "Omkara - WhatsApp AI Sales Agent & Lifecycle Lead Automation",
+    rm2tapp6I: "/work/strida/",
+    lQBdWmB0N: "WhatsApp AI",
+    dnVagKu6Z: "Real Estate",
+    Ilm_tuKWl: "WhatsApp AI, CRM Automation",
+    gFi3QPm5F: "GPT-4o, WhatsApp Cloud API",
+    rA8UF9a3f: "2026 / Enterprise Production",
     tS_yc4nrS: {
-      src: "/framerusercontent.com/images/aLickQcDkn7JlTftxkq33tHE.jpg",
-      srcSet: "/framerusercontent.com/images/aLickQcDkn7JlTftxkq33tHE.jpg?scale-down-to=512 512w,/framerusercontent.com/images/aLickQcDkn7JlTftxkq33tHE.jpg?scale-down-to=1024 1024w,/framerusercontent.com/images/aLickQcDkn7JlTftxkq33tHE.jpg 2560w",
-      alt: "Strida"
+      src: "/images/omkara-banner.png",
+      srcSet: "/images/omkara-banner.png 1536w",
+      alt: "Omkara Real Estate AI & WhatsApp Sales Agent"
     }
   },
   {

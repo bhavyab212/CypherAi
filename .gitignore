@@ -18,3 +18,4 @@ dist/
 build/
 .vscode/
 .idea/
+.edge-temp/

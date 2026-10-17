@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Intro2 QA Preview</title>
+<link rel="stylesheet" href="/repeatless-import/intro2.css">
+<style>
+  html, body { margin: 0; padding: 0; background: #f4f1ec; }
+</style>
+</head>
+<body>
+<div id="mount"></div>
+<script src="/repeatless-import/intro2.js"></script>
+<script>
+fetch('/repeatless-import/intro2-section.html')
+  .then(r => r.text())
+  .then(t => {
+    document.getElementById('mount').innerHTML = t;
+    if (window.__rlInitIntro2) window.__rlInitIntro2();
+    document.title = 'ready';
+  });
+</script>
+</body>
+</html>

@@ -11,7 +11,7 @@
 - CRM Integrations: https://www.cypherai.in/crm-integrations/
 - SEO services: https://www.cypherai.in/seo/
 - Proof & methodology (claim ledger, changelog, SLAs): https://www.cypherai.in/seo/proof/
-- Case studies: https://www.cypherai.in/work/bravo/ https://www.cypherai.in/work/nitro/ https://www.cypherai.in/work/project-1/ https://www.cypherai.in/work/project-2/ https://www.cypherai.in/work/project-3/ https://www.cypherai.in/work/strida/
+- Case studies: https://www.cypherai.in/work/bravo/ https://www.cypherai.in/work/nitro/ https://www.cypherai.in/work/project-1/ https://www.cypherai.in/work/project-2/ https://www.cypherai.in/work/project-3/ https://www.cypherai.in/work/strida/ https://www.cypherai.in/work/rstate-automation/
 
 ## Entity
 - CypherAi (cypherai.in) is an AI automation agency. Not affiliated with cypherai.ai, cypherbio.ai, or cypherai.asia.

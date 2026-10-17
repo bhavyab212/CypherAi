@@ -126,6 +126,7 @@
   max-width: 100vw;
   min-width: 0;
   overflow: hidden;
+  background-color: #050608;
   color: #fff;
   user-select: none;
 }
@@ -137,13 +138,15 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 12rem;
-  background: linear-gradient(to bottom, transparent, #000);
+  background: linear-gradient(to bottom, #f4f1ec 0%, rgba(244, 241, 236, 0.75) 25%, rgba(5, 6, 8, 0.5) 70%, #050608 100%);
+  background: linear-gradient(to bottom in oklab, #f4f1ec 0%, rgba(244, 241, 236, 0.6) 30%, #050608 100%);
   z-index: 0;
+  pointer-events: none;
 }
 .rl-globe__fade-bottom {
   position: absolute;
   top: 12rem; left: 0; right: 0; bottom: 0;
-  background: #000;
+  background: #050608;
   z-index: 0;
 }
 .rl-globe__radial {
@@ -163,6 +166,8 @@
     linear-gradient(to right, #fff 1px, transparent 1px),
     linear-gradient(to bottom, #fff 1px, transparent 1px);
   background-size: 60px 60px;
+  mask-image: linear-gradient(to bottom, transparent 0%, transparent 2rem, #000 8rem);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 2rem, #000 8rem);
 }
 
 .rl-globe__wrap {
