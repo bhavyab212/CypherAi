@@ -119,10 +119,13 @@ const desktopFiles = htmlFiles.filter((f) => !f.includes(`${path.sep}m${path.sep
   // Content pages are the head-contract expectations (gate 2), not every HTML
   // file on disk: captured vendor mirrors (framerusercontent, app.framerstatic,
   // repeatless-import fragments, events trackers) are not indexable content.
+  // Retired case-study slugs (bravo, nitro, project-1/2/3, strida, fargo) are
+  // intentionally excluded: they 301 to /work/ (server.mjs RETIRED_WORK_SLUGS)
+  // because they only ever carried unedited Framer template content, not a
+  // real case study. They must stay out of the sitemap so Google and AI
+  // crawlers aren't pointed at URLs that immediately redirect.
   const contentRoutes = [
-    "/", "/contact/", "/work/", "/work/bravo/", "/work/nitro/",
-    "/work/project-1/", "/work/project-2/", "/work/project-3/",
-    "/work/strida/", "/work/rstate-automation/", "/seo/", "/seo/proof/",
+    "/", "/contact/", "/work/", "/work/rstate-automation/", "/seo/", "/seo/proof/",
     "/voice-agents/", "/workflows/", "/crm-integrations/",
   ];
   const missing = contentRoutes.filter((r) => !locs.includes(`${PROD}${r}`));
@@ -140,7 +143,7 @@ const desktopFiles = htmlFiles.filter((f) => !f.includes(`${path.sep}m${path.sep
 {
   const robots = exists("robots.txt") ? read("robots.txt") : "";
   gate("robots-sitemap", robots.includes(`${PROD}/sitemap.xml`));
-  for (const bot of ["OAI-SearchBot", "PerplexityBot", "Googlebot-Extended"]) {
+  for (const bot of ["OAI-SearchBot", "PerplexityBot", "Google-Extended"]) {
     gate(`robots-allows-${bot}`, robots.includes(bot));
   }
 }

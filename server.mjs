@@ -42,6 +42,17 @@ const HIDE_EDIT_JS_TAG =
   '<script src="/overlay/hide-edit-button.js" defer></script>';
 const HIDE_EDIT_MARKER = "hide-edit-button";
 
+// Baseline security headers (technical SEO audit, 2026-11-18). No CSP here:
+// the Framer runtime loads modules from framer.com/app.framerstatic.com/
+// framerusercontent.com/fonts.gstatic.com/ga.jspm.io/unpkg.com via import
+// maps, so a CSP needs its own careful pass (allow-list + testing) rather
+// than being bolted on alongside unrelated fixes.
+const SECURITY_HEADERS = {
+  "x-content-type-options": "nosniff",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "x-frame-options": "SAMEORIGIN",
+};
+
 // --- Project-card hard-navigation hijack -----------------------------------
 // Framer's client-side SPA router (script_main) registers a click handler that
 // intercepts same-origin <a> clicks and renders the target route in-place via
@@ -58,7 +69,7 @@ const HIDE_EDIT_MARKER = "hide-edit-button";
 // and forces a real navigation via location.href, so the browser always fetches
 // the fresh standalone page instead of letting the SPA hijack it.
 const HARD_NAV_MARKER = "cypher-hard-nav";
-const HARD_NAV_ROUTES = ["/work/rstate-automation/", "/work/bravo/", "/work/nitro/"];
+const HARD_NAV_ROUTES = ["/work/rstate-automation/"];
 const HARD_NAV_SCRIPT = `<script data-cypher="${HARD_NAV_MARKER}">
 (function () {
   var ROUTES = ${JSON.stringify(HARD_NAV_ROUTES)};
@@ -208,6 +219,7 @@ async function sendHtml(response, filePath, homepage) {
     "content-type": "text/html; charset=utf-8",
     "cache-control": "no-cache",
     "access-control-allow-origin": "*",
+    ...SECURITY_HEADERS,
   });
   response.end(Buffer.from(html, "utf8"));
 }
@@ -220,6 +232,19 @@ async function handle(request, response) {
   // Seamless redirect from legacy strida path to rstate-automation
   if (target === "work/strida" || target === "work/strida/") {
     response.writeHead(301, { "Location": "/work/rstate-automation/" });
+    response.end();
+    return;
+  }
+
+  // These case-study slots still carry unedited Framer template content
+  // (unrelated UI/UX "design studio" copy, a fabricated employment history,
+  // and placeholder project pages never linked from navigation). Until each
+  // one has a real, verifiable case study, send both users and crawlers to
+  // the /work/ hub instead of serving template/placeholder content under a
+  // "case study" URL.
+  const RETIRED_WORK_SLUGS = ["bravo", "nitro", "project-1", "project-2", "project-3", "fargo"];
+  if (RETIRED_WORK_SLUGS.some((slug) => target === `work/${slug}` || target === `work/${slug}/`)) {
+    response.writeHead(301, { "Location": "/work/" });
     response.end();
     return;
   }
@@ -280,6 +305,7 @@ async function handle(request, response) {
     "content-type": detectMime(filePath, bytes),
     "cache-control": cacheControl,
     "access-control-allow-origin": "*",
+    ...SECURITY_HEADERS,
   });
   response.end(bytes);
 }
