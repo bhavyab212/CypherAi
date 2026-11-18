@@ -208,13 +208,21 @@ function findFile(relative) {
   return null;
 }
 
+// Third-party domain-verification files (Google Search Console, Bing, etc.)
+// must be served byte-for-byte: the verifier does an exact content match,
+// and our <head>-injection layer (hard-nav, hide-edit overlay) would prepend
+// script/link tags to any ".html" file that has no real <head>, silently
+// breaking verification. Recognize them by filename and skip all injection.
+const VERIFICATION_FILE_PATTERN = /^(google[0-9a-f]+|BingSiteAuth)\.html$/i;
+
 async function sendHtml(response, filePath, homepage) {
   const raw = await readFile(filePath, "utf8");
+  const isVerificationFile = VERIFICATION_FILE_PATTERN.test(path.basename(filePath));
   // hide-edit layer: every HTML page (desktop + /m/), non-breaking.
   // NOTE: projects-coming-soon overlay injection disabled until the overlay is
   // specified (its placeholder files only 404-noise the homepage otherwise).
   // Re-enable with: injectHideEdit(homepage ? injectOverlay(raw) : raw)
-  const html = injectHardNav(injectHideEdit(raw));
+  const html = isVerificationFile ? raw : injectHardNav(injectHideEdit(raw));
   response.writeHead(200, {
     "content-type": "text/html; charset=utf-8",
     "cache-control": "no-cache",
